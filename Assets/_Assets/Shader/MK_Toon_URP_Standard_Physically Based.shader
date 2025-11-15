@@ -1,5 +1,6 @@
 Shader "MK/Toon/URP/Standard/Physically Based" {
 	Properties {
+		[Range(0,2)] _HighlightIntensity ("Highlight Intensity", Float) = 1
 		[Enum(MK.Toon.Workflow)] _Workflow ("", Float) = 0
 		[Enum(MK.Toon.Surface)] _Surface ("", Float) = 0
 		_Blend ("", Float) = 0
@@ -159,6 +160,8 @@ Shader "MK/Toon/URP/Standard/Physically Based" {
 			float4x4 unity_ObjectToWorld;
 			float4x4 unity_MatrixVP;
 			float4 _MainTex_ST;
+			float _HighlightIntensity;
+
 
 			struct Vertex_Stage_Input
 			{
@@ -191,7 +194,8 @@ Shader "MK/Toon/URP/Standard/Physically Based" {
 
 			float4 frag(Fragment_Stage_Input input) : SV_TARGET
 			{
-				return _MainTex.Sample(sampler_MainTex, input.uv.xy) * _Color;
+				float4 baseColor = _MainTex.Sample(sampler_MainTex, input.uv.xy) * _Color;
+				return baseColor * _HighlightIntensity;
 			}
 
 			ENDHLSL
