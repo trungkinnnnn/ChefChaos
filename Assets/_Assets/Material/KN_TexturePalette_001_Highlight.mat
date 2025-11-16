@@ -246,7 +246,7 @@ Material:
     - _GlossyReflections: 0
     - _GoochRampIntensity: 0.5
     - _HatchingMapScale: 1
-    - _HighlightIntensity: 1.4
+    - _HighlightIntensity: 1.2
     - _IndirectFade: 0.94
     - _Initialized: 0
     - _InputTab: 1

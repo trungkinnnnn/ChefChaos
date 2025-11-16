@@ -36,6 +36,7 @@ public class BaseStation : MonoBehaviour, ISelectable
     {
         _player = player;
         Selected(true);
+        Debug.Log(_dataStation.name);
     }
 
     public void OnDeselectable()

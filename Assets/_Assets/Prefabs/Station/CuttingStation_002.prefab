@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4008536244297017173}
   - component: {fileID: 4008536244297023281}
   - component: {fileID: 4008536244297015980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Station_Cutting_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4008536244297028701}
-  m_Layer: 0
+  - component: {fileID: 7684810539126819741}
+  - component: {fileID: 1420133278358968036}
+  m_Layer: 6
   m_Name: CuttingStation_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,6 +119,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0.00006659434, z: 180}
+--- !u!114 &7684810539126819741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008536244297032079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c58655ae5d04f348b2ac7ada0ab2348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dataStation: {fileID: 11400000, guid: 27bd1d197cce4a34e9b05e614045fa86, type: 2}
+--- !u!65 &1420133278358968036
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008536244297032079}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2040076, y: 0.7254349, z: 1.196497}
+  m_Center: {x: 0.0039229393, y: 0.37267607, z: -0.004678756}
 --- !u!1 &4008536244297035336
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4008536244297029718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PortableObjectPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +187,7 @@ GameObject:
   - component: {fileID: 4008536244297019326}
   - component: {fileID: 4008536244297021852}
   - component: {fileID: 4008536244297015347}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prop_Knife_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

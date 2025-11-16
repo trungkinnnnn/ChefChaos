@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2505038701228375999}
   - component: {fileID: 2505038701228382353}
   - component: {fileID: 2505038701228377281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Station_Cooking_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2505038701228372921}
   - component: {fileID: 2505038701228385618}
   - component: {fileID: 2505038701228385986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FX_Fire_Embers_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2426,7 +2426,7 @@ GameObject:
   - component: {fileID: 2505038701228385536}
   - component: {fileID: 2505038701228386302}
   - component: {fileID: 2505038701228386621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle_Fire_001
   m_TagString: Fire
   m_Icon: {fileID: 0}
@@ -4872,7 +4872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2505038701228368905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PortableObjectPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4903,7 +4903,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2505038701228374044}
-  m_Layer: 0
+  - component: {fileID: 8128140757551267925}
+  - component: {fileID: 7923073637516023011}
+  m_Layer: 6
   m_Name: CookingStation_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4930,6 +4932,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0, y: 89.99997, z: 0}
+--- !u!65 &8128140757551267925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2505038701228362936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2115306, y: 0.7249481, z: 1.2230682}
+  m_Center: {x: 0.005769193, y: 0.373993, z: 0.00000023841858}
+--- !u!114 &7923073637516023011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2505038701228362936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2e8d2c9ce108d47b34d5d8d99900f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dataStation: {fileID: 11400000, guid: a9aa62d5cc1cad041b7f554dada06445, type: 2}
 --- !u!1 &2505038701228364822
 GameObject:
   m_ObjectHideFlags: 0
@@ -4941,7 +4969,7 @@ GameObject:
   - component: {fileID: 2505038701228378372}
   - component: {fileID: 2505038701228385433}
   - component: {fileID: 2505038701228390572}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle_Smoke_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7272,7 +7300,7 @@ GameObject:
   - component: {fileID: 2505038701228379461}
   - component: {fileID: 2505038701228382831}
   - component: {fileID: 2505038701228377659}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prop_Pan_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6614303944343815761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PortableObjectPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6614303944343845429}
-  m_Layer: 0
+  - component: {fileID: 1859776176740309807}
+  - component: {fileID: 6836161052458217198}
+  m_Layer: 6
   m_Name: ServiceStation_002_In
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,6 +67,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1859776176740309807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614303944343822418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c9a1ea03a60e641ae5df33ade05970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dataStation: {fileID: 11400000, guid: 94ea11688e20aa245858fcc7c3f6c21a, type: 2}
+--- !u!65 &6836161052458217198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614303944343822418}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4494562, y: 0.81881785, z: 1.4699409}
+  m_Center: {x: 0.000000059604645, y: 0.41898346, z: 0.12173164}
 --- !u!1 &6614303944343824329
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +104,7 @@ GameObject:
   - component: {fileID: 6614303944343845004}
   - component: {fileID: 6614303944343842349}
   - component: {fileID: 6614303944343843865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Station_Service_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +187,7 @@ GameObject:
   - component: {fileID: 6614303944343820090}
   - component: {fileID: 6614303944343834844}
   - component: {fileID: 6614303944343835788}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle_ServiceStation_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2492,7 +2520,7 @@ GameObject:
   - component: {fileID: 6614303944343820082}
   - component: {fileID: 6614303944343834822}
   - component: {fileID: 6614303944343835786}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FX_Direction_Arrows_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4823,7 +4851,7 @@ GameObject:
   - component: {fileID: 6614303944343820092}
   - component: {fileID: 6614303944343834840}
   - component: {fileID: 6614303944343835789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FX_Direction_Arrows_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}

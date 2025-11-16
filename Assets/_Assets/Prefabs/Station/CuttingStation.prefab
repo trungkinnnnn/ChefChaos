@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4942844168600679956}
   - component: {fileID: 4942844168600674612}
   - component: {fileID: 4942844168600681943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prop_Knife_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4942844168600650267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PortableObjectPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4942844168600650551}
   - component: {fileID: 4942844168600675161}
   - component: {fileID: 4942844168600680826}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Station_Cutting_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4942844168600657461}
-  m_Layer: 0
+  - component: {fileID: 5321024227050370768}
+  - component: {fileID: 4711712973911374978}
+  m_Layer: 6
   m_Name: CuttingStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,3 +233,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0.002375198, z: 180}
+--- !u!114 &5321024227050370768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4942844168600665063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c58655ae5d04f348b2ac7ada0ab2348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dataStation: {fileID: 11400000, guid: 27bd1d197cce4a34e9b05e614045fa86, type: 2}
+--- !u!65 &4711712973911374978
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4942844168600665063}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2003098, y: 0.71423364, z: 1.1962924}
+  m_Center: {x: -0.0019171238, y: 0.37532783, z: 0.0039258003}

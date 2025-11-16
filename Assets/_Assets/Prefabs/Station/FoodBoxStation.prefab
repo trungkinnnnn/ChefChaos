@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5280986052732645259}
   - component: {fileID: 5280986052732622397}
   - component: {fileID: 5280986052732618775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Station_Foodbox_001_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5280986052732648041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PortableObjectParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5280986052732646974}
-  m_Layer: 0
+  - component: {fileID: 6987428333757266073}
+  - component: {fileID: 8537784629851909927}
+  m_Layer: 6
   m_Name: FoodBoxStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,8 +139,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5280986052732636957}
-  m_LocalRotation: {x: -0, y: 0.00006607174, z: -0, w: -1}
-  m_LocalPosition: {x: -0.70214796, y: 0, z: 1.5154277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -146,7 +148,33 @@ Transform:
   - {fileID: 5280986052732617595}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0.0075712637, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6987428333757266073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280986052732636957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc9dbacf3299634b843bf057238d038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dataStation: {fileID: 11400000, guid: 4d2c430ea0a707042956eb9f3a0afb1c, type: 2}
+--- !u!65 &8537784629851909927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280986052732636957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1820116, y: 0.96234256, z: 1.1694592}
+  m_Center: {x: 0.0031380653, y: 0.49582478, z: -0.009414375}
 --- !u!1 &5280986052732642303
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +186,7 @@ GameObject:
   - component: {fileID: 5280986052732648503}
   - component: {fileID: 5280986052732622150}
   - component: {fileID: 5280986052732619216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Station_Foodbox_001_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5280986052732617595}
   - component: {fileID: 5280986052732622876}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Station_FoodBox_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7319003644351226403}
   - component: {fileID: 7319003644351236426}
   - component: {fileID: 7319003644351239668}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Station_Cutting_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7319003644351240874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PortableObjectPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 7319003644351228064}
   - component: {fileID: 7319003644351236127}
   - component: {fileID: 7319003644351238661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prop_Knife_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7319003644351241755}
-  m_Layer: 0
+  - component: {fileID: 8728497828908320614}
+  - component: {fileID: 8015089646856868979}
+  m_Layer: 6
   m_Name: CuttingStation_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,3 +233,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8728497828908320614
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319003644351233391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1964071, y: 0.7171741, z: 1.2121192}
+  m_Center: {x: 0.0039280355, y: 0.37710103, z: -0.000000059604645}
+--- !u!114 &8015089646856868979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319003644351233391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c58655ae5d04f348b2ac7ada0ab2348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dataStation: {fileID: 11400000, guid: 27bd1d197cce4a34e9b05e614045fa86, type: 2}

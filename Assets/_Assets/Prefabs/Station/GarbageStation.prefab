@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6950210982124085738}
-  m_Layer: 0
+  - component: {fileID: 7290282482229328941}
+  - component: {fileID: 4978678132268540211}
+  m_Layer: 6
   m_Name: GarbageStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,17 +26,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6950210982124078242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6250145, y: 0.000000029802322, z: -6.8729324}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6950210982124086824}
   - {fileID: 6950210982124088327}
   - {fileID: 6950210982124091492}
-  - {fileID: 6950210982124066630}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7290282482229328941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950210982124078242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b3a6485fda4de4b96a6f89bb98d406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dataStation: {fileID: 11400000, guid: 6ca7c89a87e122549a175082be108c86, type: 2}
+--- !u!65 &4978678132268540211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950210982124078242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1896391, y: 0.72247934, z: 1.2199416}
+  m_Center: {x: -0.0023127794, y: 0.37002754, z: -0.0014282465}
 --- !u!1 &6950210982124081896
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6950210982124091492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageDestination
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6950210982124088327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PortableObjectParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +135,8 @@ GameObject:
   - component: {fileID: 6950210982124086824}
   - component: {fileID: 6950210982124062293}
   - component: {fileID: 6950210982124067852}
-  m_Layer: 0
+  - component: {fileID: 8974602606727308147}
+  m_Layer: 6
   m_Name: Station_Garbage_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +154,8 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6950210982124066630}
   m_Father: {fileID: 6950210982124085738}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 89.99862, z: 0}
@@ -180,6 +209,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &8974602606727308147
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950210982124084585}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61760afa9dee6bd499b7d86a425485c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6950210982124091225
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +241,7 @@ GameObject:
   - component: {fileID: 6950210982124066630}
   - component: {fileID: 6950210982124061471}
   - component: {fileID: 6950210982124067482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prop_Recycle_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,14 +255,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6950210982124091225}
-  m_LocalRotation: {x: -0, y: -0.70709485, z: -0, w: 0.70711875}
-  m_LocalPosition: {x: -0.007, y: 0.687, z: -0.48}
+  m_LocalRotation: {x: -0.000006156983, y: 0.000006156983, z: -0.70710677, w: 0.70710677}
+  m_LocalPosition: {x: -0.593, y: 0.687, z: 0.007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6950210982124085738}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 89.99807, z: 0}
+  m_Father: {fileID: 6950210982124086824}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0.001, z: -90}
 --- !u!33 &6950210982124061471
 MeshFilter:
   m_ObjectHideFlags: 0

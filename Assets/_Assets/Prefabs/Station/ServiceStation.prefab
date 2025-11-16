@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2567277695198442472}
   - component: {fileID: 2567277695198436681}
   - component: {fileID: 2567277695198429604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle_ServiceStation_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2344,7 +2344,7 @@ GameObject:
   - component: {fileID: 2567277695198442486}
   - component: {fileID: 2567277695198436686}
   - component: {fileID: 2567277695198429530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FX_Direction_Arrows_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4675,7 +4675,7 @@ GameObject:
   - component: {fileID: 2567277695198442479}
   - component: {fileID: 2567277695198436687}
   - component: {fileID: 2567277695198429603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FX_Direction_Arrows_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7004,7 +7004,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2567277695198444209}
-  m_Layer: 0
+  - component: {fileID: 9145706180828502867}
+  - component: {fileID: -4089026320925260064}
+  m_Layer: 6
   m_Name: ServiceStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7032,6 +7034,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 89.99619, z: 0}
+--- !u!65 &9145706180828502867
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2567277695198450225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4856749, y: 0.82877046, z: 1.4837127}
+  m_Center: {x: -0.0099931955, y: 0.42737642, z: 0.12859738}
+--- !u!114 &-4089026320925260064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2567277695198450225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c9a1ea03a60e641ae5df33ade05970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dataStation: {fileID: 11400000, guid: 94ea11688e20aa245858fcc7c3f6c21a, type: 2}
 --- !u!1 &2567277695198451340
 GameObject:
   m_ObjectHideFlags: 0
@@ -7042,7 +7070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2567277695198491332}
   - component: {fileID: 2567277695198431557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7087,7 +7115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2567277695198491828}
   - component: {fileID: 2567277695198432389}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7148,7 +7176,7 @@ GameObject:
   - component: {fileID: 2567277695198447407}
   - component: {fileID: 2567277695198436489}
   - component: {fileID: 2567277695198429377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle_ServiceGlitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9456,7 +9484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2567277695198492281}
   - component: {fileID: 2567277695198430281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GlitterParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9501,7 +9529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2567277695198443264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle_ServiceAreatoUI_Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9532,7 +9560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2567277695198443139}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PortableObjectPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9565,7 +9593,7 @@ GameObject:
   - component: {fileID: 2567277695198448856}
   - component: {fileID: 2567277695198436520}
   - component: {fileID: 2567277695198429948}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle_ServiceGlitter_Glitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11951,7 +11979,7 @@ GameObject:
   - component: {fileID: 2567277695198452893}
   - component: {fileID: 2567277695198437671}
   - component: {fileID: 2567277695198444398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Station_Service_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12032,7 +12060,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2567277695198447386}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle_ServiceAreatoUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
