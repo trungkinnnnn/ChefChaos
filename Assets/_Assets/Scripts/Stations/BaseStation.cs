@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ public class BaseStation : MonoBehaviour, ISelectable
 
     private void Selected(bool value)
     {
-        if(_meshRenderer.Length <= 0) return;
+        if( _meshRenderer == null || _meshRenderer.Length <= 0 ) return;
         foreach(MeshRenderer renderer in _meshRenderer)
         {
             Material[] mats = renderer.materials;
@@ -32,14 +32,14 @@ public class BaseStation : MonoBehaviour, ISelectable
 
     // ================== ISelectable ========================
 
-    public void OnSelectable(PlayerInteraction player = null)
+    public virtual void OnSelectable(PlayerInteraction player = null)
     {
         _player = player;
         Selected(true);
         Debug.Log(_dataStation.name);
     }
 
-    public void OnDeselectable()
+    public virtual void OnDeselectable()
     {
         Selected(false);
     }

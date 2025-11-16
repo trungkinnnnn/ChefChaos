@@ -24,18 +24,21 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if(_playerMovement.GetInfoMovement())
+
+        if (_playerMovement.GetInfoMovement())
         {
             HandleSelectedStation();
-            _handleDoingObj = true; 
+            _handleDoingObj = true;
         }
-        else if (_handleDoingObj)
+        else
         {
-            Debug.Log("Do something one");
-            _handleDoingObj = false;
-        }   
+            HandleDoSomthingStation();
+        }
+       
     }
 
+
+    // =============== SelectedStation =================
     private void HandleSelectedStation()
     {
         Ray ray = new Ray(_raycastTransform.position, Vector3.down);
@@ -69,5 +72,26 @@ public class PlayerInteraction : MonoBehaviour
         _currentTransform = selectable.GetSelectableTransform();
         selectable.OnSelectable(this);
     }
+
+    // ==================== Doing Station =========================
+
+    private void HandleDoSomthingStation()
+    {
+        if (!_handleDoingObj) return;
+        _handleDoingObj = false;
+        
+        if(_currentSelectable == null) return;
+
+        Spawner();
+    }    
+
+    private void Spawner()
+    {
+        if(_currentTransform.TryGetComponent<ISpawnerFoodRaw>(out var food))
+        {
+            food.SpawnFood(this);
+        }    
+    }    
+
 
 }
