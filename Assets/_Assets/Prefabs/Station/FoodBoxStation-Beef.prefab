@@ -208,7 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5280986052732646974}
   - component: {fileID: 8537784629851909927}
-  - component: {fileID: -9146266997613545771}
+  - component: {fileID: 976287664}
   m_Layer: 6
   m_Name: FoodBoxStation-Beef
   m_TagString: Untagged
@@ -246,7 +246,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1849062, y: 0.96234256, z: 1.1952918}
   m_Center: {x: 0.009191275, y: 0.49582478, z: -0.0026661456}
---- !u!114 &-9146266997613545771
+--- !u!114 &976287664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

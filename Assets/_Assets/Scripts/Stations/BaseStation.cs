@@ -11,14 +11,14 @@ public class BaseStation : MonoBehaviour, ISelectable
     protected PlayerInteraction _player;
 
 
-    private void Start()
+    protected virtual void Start()
     {
         _meshRenderer = GetComponentsInChildren<MeshRenderer>();
     }
 
     private void Selected(bool value)
     {
-        if( _meshRenderer == null || _meshRenderer.Length <= 0 ) return;
+        if (_meshRenderer == null || _meshRenderer.Length <= 0 ) return;
         foreach(MeshRenderer renderer in _meshRenderer)
         {
             Material[] mats = renderer.materials;

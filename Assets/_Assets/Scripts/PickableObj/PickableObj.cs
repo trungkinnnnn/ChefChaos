@@ -1,9 +1,9 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class FoodObj : MonoBehaviour, ISelectable, IPickable
+public class PickableObj : MonoBehaviour, ISelectable, IPickable
 {
-    [SerializeField] FoodData _foodData;
+    [SerializeField] PickableData _pickableData;
 
     private Collider _collider;
     private Renderer[] _renderers;
@@ -31,14 +31,13 @@ public class FoodObj : MonoBehaviour, ISelectable, IPickable
             if(!renderer.gameObject.activeInHierarchy) continue;
 
             Material[] mats = renderer.materials;
-            mats[0] = value ? _foodData.materialHighlight : _foodData.materialDefault;
+            mats[0] = value ? _pickableData.materialHighlight : _pickableData.materialDefault;
             renderer.materials = mats;
         }
     }
 
-    public FoodObj PickUpFood(Transform transform, BaseStation station = null, float duration = 0.2f)
+    public PickableObj PickUpObj(Transform transform, BaseStation station = null, float duration = 0.2f)
     {
-        
         this.transform.DOKill();
         this.transform.DORotateQuaternion(transform.rotation, duration).SetEase(Ease.OutQuad);
         this.transform.DOMove(transform.position, duration).SetEase(Ease.OutQuad).OnComplete(() =>
@@ -72,7 +71,7 @@ public class FoodObj : MonoBehaviour, ISelectable, IPickable
     {
         _player = player;
         Selected(true);
-        Debug.Log(_foodData.name);
+        Debug.Log(_pickableData.name);
     }
 
     // ===================== IPickable ====================

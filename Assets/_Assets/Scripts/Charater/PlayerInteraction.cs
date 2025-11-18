@@ -15,13 +15,15 @@ public class PlayerInteraction : MonoBehaviour
     private ISelectable _currentSelectable;
     private Transform _currentTransform;
 
-    private FoodObj _foodObj;
+    private PickableObj _foodObj;
 
+    private PlayerAnimationController _playerAnimationController;
     private PlayerMovement _playerMovement;
     private bool _handleDoingObj = false;   
     private void Start()
     {
         _playerMovement = GetComponent<PlayerMovement>();
+        _playerAnimationController = GetComponent<PlayerAnimationController>();
     }
 
     private void Update()
@@ -92,6 +94,7 @@ public class PlayerInteraction : MonoBehaviour
         if(_currentTransform.TryGetComponent<ISpawnerFoodRaw>(out var food))
         {
             _foodObj = food.SpawnFood(this);
+            if(_foodObj != null) _playerAnimationController.SetBoolAnimationService(true);   
         }
     }    
 

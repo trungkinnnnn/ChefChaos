@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAnimationController : MonoBehaviour
@@ -36,5 +37,11 @@ public class PlayerAnimationController : MonoBehaviour
     {
         _animator.SetBool(ani, value);
     }    
+
+    public void SetBoolAnimationService(bool value)
+    {
+        _animator.SetBool(_HAS_ANI_BOOL_ISSERVICE, value);
+    } 
+        
 
 }

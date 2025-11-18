@@ -1276,6 +1276,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7290282482229328941, guid: 3c4facfadfc0e5d40a5b87caaf7adb4f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4facfadfc0e5d40a5b87caaf7adb4f, type: 3}
 --- !u!1 &142257074
@@ -13233,6 +13237,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1068257490}
     m_Modifications:
+    - target: {fileID: 512527797, guid: 222f54b8a3ab10345965b95571b7cfe0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5280986052732636957, guid: 222f54b8a3ab10345965b95571b7cfe0, type: 3}
       propertyPath: m_Name
       value: FoodBoxStation-Cucumber

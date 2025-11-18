@@ -7,8 +7,9 @@ public class GarbageStation : BaseStation
     private static int _HAS_ANI_BOOL_ISOPEN = Animator.StringToHash("isOpen");
     private Animator _animator;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         _animator = GetComponentInChildren<Animator>();
     }
 
