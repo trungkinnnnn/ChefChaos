@@ -5,9 +5,10 @@ using UnityEngine;
 public class BaseStation : MonoBehaviour, ISelectable
 {
     [SerializeField] DataStation _dataStation;
+    [SerializeField] protected Transform _transformHoldFood;
 
     private MeshRenderer[] _meshRenderer;
-    private PlayerInteraction _player;
+    protected PlayerInteraction _player;
 
 
     private void Start()
@@ -36,7 +37,7 @@ public class BaseStation : MonoBehaviour, ISelectable
     {
         _player = player;
         Selected(true);
-        Debug.Log(_dataStation.name);
+        //Debug.Log(_dataStation.name);
     }
 
     public virtual void OnDeselectable()
@@ -46,4 +47,7 @@ public class BaseStation : MonoBehaviour, ISelectable
 
     public Transform GetSelectableTransform() => transform;
 
+    // ================== Get, Set ==========================
+
+    public Transform GetTransformHoldFood() => _transformHoldFood;  
 }

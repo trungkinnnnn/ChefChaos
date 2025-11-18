@@ -11,9 +11,11 @@ public class PlayerInteraction : MonoBehaviour
     private float _radius = 0.5f;
 
     // =============== Selected Obj ====================
+    [SerializeField] Transform _transformHoldFood;
     private ISelectable _currentSelectable;
     private Transform _currentTransform;
 
+    private FoodObj _foodObj;
 
     private PlayerMovement _playerMovement;
     private bool _handleDoingObj = false;   
@@ -89,9 +91,12 @@ public class PlayerInteraction : MonoBehaviour
     {
         if(_currentTransform.TryGetComponent<ISpawnerFoodRaw>(out var food))
         {
-            food.SpawnFood(this);
-        }    
+            _foodObj = food.SpawnFood(this);
+        }
     }    
 
+    // ==================== Get, Set ===========================
+
+    public Transform GetTransformHoldFood() => _transformHoldFood;
 
 }

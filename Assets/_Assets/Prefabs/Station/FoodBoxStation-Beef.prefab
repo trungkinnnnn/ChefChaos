@@ -244,8 +244,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1820116, y: 0.96234256, z: 1.1694592}
-  m_Center: {x: 0.0031380653, y: 0.49582478, z: -0.009414375}
+  m_Size: {x: 1.1849062, y: 0.96234256, z: 1.1952918}
+  m_Center: {x: 0.009191275, y: 0.49582478, z: -0.0026661456}
 --- !u!114 &-9146266997613545771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,8 +259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataStation: {fileID: 11400000, guid: 4d2c430ea0a707042956eb9f3a0afb1c, type: 2}
+  _transformHoldFood: {fileID: 5280986052732648041}
   _foodPrefab: {fileID: 1174913194331386, guid: 0af8be0e5ff4d6d4d9ab6d1b4916c5ce, type: 3}
-  _transformSpawner: {fileID: 5280986052732648041}
 --- !u!1 &5280986052732642303
 GameObject:
   m_ObjectHideFlags: 0

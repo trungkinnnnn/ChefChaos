@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4533917042240643}
   - component: {fileID: 33141584304378486}
   - component: {fileID: 23578327648068932}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Bun_Top_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4264360880898027}
   - component: {fileID: 33317218518296110}
   - component: {fileID: 23938299276580566}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Bun_Bottom_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4090179607001913}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

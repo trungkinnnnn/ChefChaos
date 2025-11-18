@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ISpawnerFoodRaw 
 {
-    public void SpawnFood(PlayerInteraction interaction);
+    FoodObj SpawnFood(PlayerInteraction interaction);
 }

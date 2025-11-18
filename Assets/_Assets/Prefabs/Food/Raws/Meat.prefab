@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4415523344436123}
   - component: {fileID: 137788739647650917}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Meat_Sliced_001_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4925685496421757}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4382786412316307}
   - component: {fileID: 137841236852439345}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Meat_Sliced_001_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4716924998451553}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.005_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 4725643568464465}
   - component: {fileID: 33651736858375438}
   - component: {fileID: 23356924382356847}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Meat_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4306701035795796}
   - component: {fileID: 3050285677492985299}
-  m_Layer: 0
+  - component: {fileID: 646780630}
+  m_Layer: 7
   m_Name: Meat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,6 +381,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336cf2fdbf4a3124986541983b40a33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _foodData: {fileID: 11400000, guid: ad319ebdfc3f24b459504aebe80b1464, type: 2}
+--- !u!65 &646780630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174913194331386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.2, z: 1.3}
+  m_Center: {x: 0, y: 0.08, z: 0}
 --- !u!1 &1213402181802638
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4780295875606447}
   - component: {fileID: 137870021629601344}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Meat_Sliced_001_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4703444551195534}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4203525936277514}
   - component: {fileID: 137943154389862030}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Meat_Sliced_001_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4171511721181939}
   - component: {fileID: 95644801016628263}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Meat_Sliced_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4542061717693787}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4133887943016144}
   - component: {fileID: 137255890508483749}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Meat_Sliced_001_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +812,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4816804228669643}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4312029089554634}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4663657636647518}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.002_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4424438165585163}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.008_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -922,7 +937,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4715178178730868}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.001_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,7 +968,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4266122116432372}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -985,7 +1000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4463944630779231}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1018,7 +1033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4670362124871388}
   - component: {fileID: 137631327598711616}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Meat_Sliced_001_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1112,7 +1127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4900487511092875}
   - component: {fileID: 137781906099231335}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Meat_Sliced_001_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1205,7 +1220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4817877156067671}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4062821292461422}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.004_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,7 +1283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4060122725857631}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.006_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1299,7 +1314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4695909958540123}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Meat_Sliced_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1339,7 +1354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4013596531657595}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1372,7 +1387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4600182734320366}
   - component: {fileID: 137713713325457512}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Meat_Sliced_001_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4901470057694797}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.007_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1496,7 +1511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4242026799756188}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1528,7 +1543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539161583189388}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.003_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
