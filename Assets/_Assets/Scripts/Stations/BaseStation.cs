@@ -27,6 +27,16 @@ public class BaseStation : MonoBehaviour, ISelectable
         }
     }
 
+    private bool CheckTypePickUpObj(ObjType type)
+    {
+        foreach(PlaceType objType in _dataStation.placeTypes)
+        {
+            if(objType.type == ObjType.All || objType.type == type) return true;
+        }
+        return false;
+    }
+
+
     //
     // ================== Interface ==========================
     //
@@ -45,9 +55,21 @@ public class BaseStation : MonoBehaviour, ISelectable
         Selected(false);
     }
 
+    public virtual void DoSomeThing() 
+    { 
+        if(_player.CheckNullPickUpObj()) return;
+        PickableObj obj = _player.GetPickableObj();
+
+        if(!CheckTypePickUpObj(obj.GetTypeObj())) return;
+        obj.PickUpObj(_transformHoldFood, this);
+        _player.SetPickUpObj(null);
+    }
+
     public Transform GetSelectableTransform() => transform;
 
-    // ================== Get, Set ==========================
+    // ================== Service ==========================
 
-    public Transform GetTransformHoldFood() => _transformHoldFood;  
+    public Transform GetTransformHoldFood() => _transformHoldFood;
+
+
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class PickableObj : MonoBehaviour, ISelectable, IPickable
+public class PickableObj : MonoBehaviour, ISelectable
 {
     [SerializeField] PickableData _pickableData;
 
@@ -71,16 +71,18 @@ public class PickableObj : MonoBehaviour, ISelectable, IPickable
     {
         _player = player;
         Selected(true);
-        Debug.Log(_pickableData.name);
+        //Debug.Log(_pickableData.name);
     }
 
-    // ===================== IPickable ====================
-
-    public void PickUp(PlayerInteraction player, Transform transform, BaseStation baseStation = null)
+    public void DoSomeThing()
     {
-        if(_player != player) return;
+        if (!_player.CheckNullPickUpObj()) return;
+        PickUpObj(_player.GetTransformHoldFood());
+        _player.SetPickUpObj(this);
     }
 
-    public BaseStation GetSelectableStation() => _station;
+    // ================ Service ===================
+    public ObjType GetTypeObj() => _pickableData.typeObj;
+
 
 }

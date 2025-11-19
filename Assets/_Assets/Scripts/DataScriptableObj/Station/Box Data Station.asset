@@ -15,3 +15,4 @@ MonoBehaviour:
   nameStation: BoxStation
   materialDefault: {fileID: 2100000, guid: b0dc27c6c0a52d1488acc20f4d74f20a, type: 2}
   materialHighlight: {fileID: 2100000, guid: 0efa0d4dfd88a9748b04ac11486f3a20, type: 2}
+  placeTypes: []

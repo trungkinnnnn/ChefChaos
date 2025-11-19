@@ -8,14 +8,14 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] Transform _raycastTransform;
     [SerializeField] LayerMask _selectedLayerMark;
     [SerializeField] float _maxDirectionMark = 1.5f;
-    private float _radius = 0.5f;
+    private float _radius = 0.3f;
 
     // =============== Selected Obj ====================
     [SerializeField] Transform _transformHoldFood;
     private ISelectable _currentSelectable;
     private Transform _currentTransform;
 
-    private PickableObj _foodObj;
+    private PickableObj _pickObj;
 
     private PlayerAnimationController _playerAnimationController;
     private PlayerMovement _playerMovement;
@@ -86,20 +86,21 @@ public class PlayerInteraction : MonoBehaviour
         
         if(_currentSelectable == null) return;
 
-        Spawner();
-    }    
+        _currentSelectable.DoSomeThing();
+    }      
 
-    private void Spawner()
-    {
-        if(_currentTransform.TryGetComponent<ISpawnerFoodRaw>(out var food))
-        {
-            _foodObj = food.SpawnFood(this);
-            if(_foodObj != null) _playerAnimationController.SetBoolAnimationService(true);   
-        }
-    }    
-
-    // ==================== Get, Set ===========================
-
+    // ==================== Service ===========================
     public Transform GetTransformHoldFood() => _transformHoldFood;
+    public PickableObj GetPickableObj() => _pickObj;
+
+    public bool CheckNullPickUpObj() => _pickObj == null;
+
+    public void SetPickUpObj(PickableObj pickable)
+    {
+        _pickObj = pickable;
+        _playerAnimationController.SetBoolAnimationService(pickable != null);
+    }
+
+     
 
 }

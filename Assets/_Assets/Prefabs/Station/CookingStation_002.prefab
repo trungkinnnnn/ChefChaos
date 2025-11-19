@@ -4958,6 +4958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataStation: {fileID: 11400000, guid: a9aa62d5cc1cad041b7f554dada06445, type: 2}
+  _transformHoldFood: {fileID: 2505038701228368905}
 --- !u!1 &2505038701228364822
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,4 +9,5 @@ public class PickableData : ScriptableObject
     public Sprite spriteFood;
     public Material materialDefault;
     public Material materialHighlight;
+    public ObjType typeObj;
 }

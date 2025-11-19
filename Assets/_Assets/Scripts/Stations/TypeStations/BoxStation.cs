@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class BoxStation : BaseStation, ISpawnerFoodRaw
+public class BoxStation : BaseStation
 {
     private static int _HAS_ANI_BOOL_ISOPEN = Animator.StringToHash("isOpen");
 
@@ -32,10 +32,8 @@ public class BoxStation : BaseStation, ISpawnerFoodRaw
         food.Init(_player, this);
         yield return null;
         food.PickUpObj(_player.GetTransformHoldFood());
-    }    
+    }
 
-
-    // ===================== ISpawnerFoodRaw ========================
     public PickableObj SpawnFood(PlayerInteraction interaction)
     {
         var objFood = PoolManager.Instance.Spawner(_foodPrefab, _transformHoldFood.position, Quaternion.identity, _transformHoldFood);
@@ -43,7 +41,16 @@ public class BoxStation : BaseStation, ISpawnerFoodRaw
         {
             StartCoroutine(WaitOneFrameToSpawnerAndPickUp(obj));
             return obj;
-        }    
+        }
         return null;
     }
+
+    // ===================== DO SomeThing ========================
+
+    public override void DoSomeThing()
+    {
+        if (!_player.CheckNullPickUpObj()) return;
+        _player.SetPickUpObj(SpawnFood(_player));
+    }
+
 }

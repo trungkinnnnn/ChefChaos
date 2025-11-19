@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336cf2fdbf4a3124986541983b40a33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _foodData: {fileID: 11400000, guid: ad319ebdfc3f24b459504aebe80b1464, type: 2}
+  _pickableData: {fileID: 11400000, guid: ad319ebdfc3f24b459504aebe80b1464, type: 2}
 --- !u!65 &646780630
 BoxCollider:
   m_ObjectHideFlags: 0

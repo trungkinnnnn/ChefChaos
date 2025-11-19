@@ -5,3 +5,8 @@ public interface IPickable
     void PickUp(PlayerInteraction player, Transform transform, BaseStation baseStation = null);
     BaseStation GetSelectableStation();
 }
+
+public interface IPlaceable
+{
+    void Place(PlayerInteraction player, Transform transform, BaseStation baseStation = null);
+}
