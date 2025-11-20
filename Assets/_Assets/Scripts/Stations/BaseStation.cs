@@ -63,6 +63,8 @@ public class BaseStation : MonoBehaviour, ISelectable
         if(!CheckTypePickUpObj(obj.GetTypeObj())) return;
         obj.PickUpObj(_transformHoldFood, this);
         _player.SetPickUpObj(null);
+
+        OnDeselectable();
     }
 
     public Transform GetSelectableTransform() => transform;

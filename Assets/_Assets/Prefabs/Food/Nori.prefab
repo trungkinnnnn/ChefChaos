@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4825188756763229}
   - component: {fileID: 33359382017284685}
   - component: {fileID: 23753082326073047}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Food_Nori_Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4021305743325491}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Nori
   m_TagString: Untagged
   m_Icon: {fileID: 0}

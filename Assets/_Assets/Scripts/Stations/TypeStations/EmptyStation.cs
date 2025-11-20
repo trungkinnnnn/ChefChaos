@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookingStationSoup : BaseStation
+public class EmptyStation : BaseStation
 {
     [SerializeField] GameObject _pickUpPrefabs;
     [SerializeField] bool _spawner = false;
@@ -17,9 +17,11 @@ public class CookingStationSoup : BaseStation
     private void Spawner()
     {
         var obj = PoolManager.Instance.Spawner(_pickUpPrefabs, _transformHoldFood.position, Quaternion.identity, _transformHoldFood);
-        if (obj != null && obj.TryGetComponent<PickableObj>(out PickableObj objPickable))
+        if(obj != null && obj.TryGetComponent<PickableObj>(out PickableObj objPickable))
         {
             objPickable.Init(null, this);
         }
-    }
+    }    
+
+
 }

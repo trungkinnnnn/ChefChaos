@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4967865754726285}
   - component: {fileID: 198989804139919563}
   - component: {fileID: 199981771094401092}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle_Flies_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2400,7 +2400,7 @@ GameObject:
   - component: {fileID: 4591177554725767}
   - component: {fileID: 33756990637562526}
   - component: {fileID: 23522025500573080}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Prop_Plate_Clean_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2483,7 +2483,7 @@ GameObject:
   - component: {fileID: 4861768622388731}
   - component: {fileID: 198434743475247919}
   - component: {fileID: 199944335473297003}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle_SmellySmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4777,7 +4777,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4130383712800199}
-  m_Layer: 0
+  - component: {fileID: 8853702194260373337}
+  - component: {fileID: 2055981959691301070}
+  m_Layer: 7
   m_Name: PlateSoup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4802,6 +4804,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!65 &8853702194260373337
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631133336743161}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.2, z: 1.3}
+  m_Center: {x: 0, y: 0.08, z: 0}
+--- !u!114 &2055981959691301070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631133336743161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336cf2fdbf4a3124986541983b40a33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickableData: {fileID: 11400000, guid: 60b4be2dc8e20d14286af5583faf80cb, type: 2}
 --- !u!1 &1678207288101820
 GameObject:
   m_ObjectHideFlags: 0
@@ -4813,7 +4841,7 @@ GameObject:
   - component: {fileID: 4975483349975338}
   - component: {fileID: 33514791293166413}
   - component: {fileID: 23633801806292150}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Prop_Plate_Dirty_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4897,7 +4925,7 @@ GameObject:
   - component: {fileID: 4712132879106973293}
   - component: {fileID: 6088601929301487911}
   - component: {fileID: 4690936478361951463}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle_Smoke_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}

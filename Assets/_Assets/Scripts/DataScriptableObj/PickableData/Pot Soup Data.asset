@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0eed15c93d0ea04c893157307593ccc, type: 3}
-  m_Name: Cleaning Data Station
+  m_Script: {fileID: 11500000, guid: 90832e1e2e4555b4fb80cc8fb4ebf2a0, type: 3}
+  m_Name: Pot Soup Data
   m_EditorClassIdentifier: 
-  nameStation: CleaningStation
+  nameFood: PotSoup
+  spriteFood: {fileID: 0}
   materialDefault: {fileID: 2100000, guid: b0dc27c6c0a52d1488acc20f4d74f20a, type: 2}
   materialHighlight: {fileID: 2100000, guid: 0efa0d4dfd88a9748b04ac11486f3a20, type: 2}
-  placeTypes:
-  - type: 2
+  typeObj: 1

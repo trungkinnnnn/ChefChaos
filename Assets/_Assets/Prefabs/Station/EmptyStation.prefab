@@ -123,8 +123,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 265514323641898393}
-  - component: {fileID: 2980068741157515400}
   - component: {fileID: 9094541714637090593}
+  - component: {fileID: 7672286450880003810}
   m_Layer: 6
   m_Name: EmptyStation
   m_TagString: Untagged
@@ -149,20 +149,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
---- !u!114 &2980068741157515400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265514323641908678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbc9dbacf3299634b843bf057238d038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dataStation: {fileID: 11400000, guid: 68d3d412095197f4db0d566a1e7359bc, type: 2}
-  _transformHoldFood: {fileID: 265514323641899379}
 --- !u!65 &9094541714637090593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -176,3 +162,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1826724, y: 0.7559722, z: 1.182673}
   m_Center: {x: -0.003347218, y: 0.3711308, z: 0.0014398098}
+--- !u!114 &7672286450880003810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265514323641908678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205f18038a3835c45ab32ecd4240549c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dataStation: {fileID: 11400000, guid: 68d3d412095197f4db0d566a1e7359bc, type: 2}
+  _transformHoldFood: {fileID: 265514323641899379}
+  _pickUpPrefabs: {fileID: 1289631298093464, guid: 700c77b90c757af4bb3cff4dc0b2046d, type: 3}
+  _spawner: 0
