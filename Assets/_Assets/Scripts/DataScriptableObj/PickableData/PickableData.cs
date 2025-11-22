@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/PickableData")]
 public class PickableData : ScriptableObject
 {
-    public string nameFood;
-    public Sprite spriteFood;
+    public string nameObj;
+    public Sprite sprite;
     public Material materialDefault;
     public Material materialHighlight;
     public ObjType typeObj;

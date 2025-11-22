@@ -43,5 +43,9 @@ public class PlayerAnimationController : MonoBehaviour
         _animator.SetBool(_HAS_ANI_BOOL_ISSERVICE, value);
     } 
         
+    public void SetTriggerAnimationCutting()
+    {
+        _animator.SetTrigger(_HAS_ANI_TRIGGER_ISCUTTING);
+    }
 
 }

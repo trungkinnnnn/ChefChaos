@@ -101,6 +101,6 @@ public class PlayerInteraction : MonoBehaviour
         _playerAnimationController.SetBoolAnimationService(pickable != null);
     }
 
-     
+    public PlayerAnimationController GetAnimationController() => _playerAnimationController;
 
 }

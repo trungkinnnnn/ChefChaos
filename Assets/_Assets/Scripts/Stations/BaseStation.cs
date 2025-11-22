@@ -6,10 +6,11 @@ public class BaseStation : MonoBehaviour, ISelectable
 {
     [SerializeField] DataStation _dataStation;
     [SerializeField] protected Transform _transformHoldFood;
+    [SerializeField] protected StationType _stationType;
 
     private MeshRenderer[] _meshRenderer;
     protected PlayerInteraction _player;
-
+    protected PickableObj _pickableObj;
 
     protected virtual void Start()
     {
@@ -36,6 +37,13 @@ public class BaseStation : MonoBehaviour, ISelectable
         return false;
     }
 
+    protected virtual void PickableObj(PickableObj obj)
+    {
+        obj.PickUpObj(_transformHoldFood, this);
+        _player.SetPickUpObj(null);
+        OnDeselectable();
+    }    
+
 
     //
     // ================== Interface ==========================
@@ -59,12 +67,8 @@ public class BaseStation : MonoBehaviour, ISelectable
     { 
         if(_player.CheckNullPickUpObj()) return;
         PickableObj obj = _player.GetPickableObj();
-
         if(!CheckTypePickUpObj(obj.GetTypeObj())) return;
-        obj.PickUpObj(_transformHoldFood, this);
-        _player.SetPickUpObj(null);
-
-        OnDeselectable();
+        PickableObj(obj);
     }
 
     public Transform GetSelectableTransform() => transform;
@@ -72,6 +76,6 @@ public class BaseStation : MonoBehaviour, ISelectable
     // ================== Service ==========================
 
     public Transform GetTransformHoldFood() => _transformHoldFood;
-
+    public virtual void SetPickableObj(PickableObj obj) => _pickableObj = obj;  
 
 }

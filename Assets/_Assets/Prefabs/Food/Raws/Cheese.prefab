@@ -196,6 +196,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4879445092766412}
+  - component: {fileID: 7190461067886729402}
+  - component: {fileID: 614810449351224815}
   m_Layer: 7
   m_Name: Cheese
   m_TagString: Untagged
@@ -221,6 +223,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &7190461067886729402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200567877236324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de53200f55a84e4c9e1bd2aacf55b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickableData: {fileID: 11400000, guid: 86536b6dc89741d4cbdbb6d7c1786a0a, type: 2}
+  _foodData: {fileID: 11400000, guid: 5e1901e231641df45a196d4ef7fdb663, type: 2}
+--- !u!65 &614810449351224815
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200567877236324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.2, z: 1.3}
+  m_Center: {x: 0, y: 0.08, z: 0}
 --- !u!1 &1201943016532625
 GameObject:
   m_ObjectHideFlags: 0

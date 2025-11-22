@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90832e1e2e4555b4fb80cc8fb4ebf2a0, type: 3}
-  m_Name: Plate Soup Data
+  m_Name: Pot Soup Pick Data
   m_EditorClassIdentifier: 
-  nameFood: Plate Soup
-  spriteFood: {fileID: 0}
+  name: Pot Soup
+  sprite: {fileID: 0}
   materialDefault: {fileID: 2100000, guid: b0dc27c6c0a52d1488acc20f4d74f20a, type: 2}
   materialHighlight: {fileID: 2100000, guid: 0efa0d4dfd88a9748b04ac11486f3a20, type: 2}
-  typeObj: 2
+  typeObj: 1

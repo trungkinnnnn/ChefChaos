@@ -6,7 +6,6 @@ public class BoxStation : BaseStation
     private static int _HAS_ANI_BOOL_ISOPEN = Animator.StringToHash("isOpen");
 
     [SerializeField] GameObject _foodPrefab;
-    private bool _hasFood;  
     private Animator _animator;
 
     protected override void Start()
@@ -24,7 +23,7 @@ public class BoxStation : BaseStation
     public override void OnDeselectable()
     {
         base.OnDeselectable();
-        if(!_hasFood) _animator.SetBool(_HAS_ANI_BOOL_ISOPEN, false);
+        _animator.SetBool(_HAS_ANI_BOOL_ISOPEN, false);
     }
 
     private IEnumerator WaitOneFrameToSpawnerAndPickUp(PickableObj food)

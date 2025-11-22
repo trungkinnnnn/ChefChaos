@@ -48,9 +48,22 @@ public class PickableObj : MonoBehaviour, ISelectable
         });
 
         _collider.enabled = station != null;
-        _station = station;
+        SetPickableObjStation(station);
 
         return this;    
+    }
+
+    private void SetPickableObjStation(BaseStation station)
+    {
+        if(station == null)
+        {
+            _station.SetPickableObj(null);
+            _station = station;
+        }else
+        {
+            station.SetPickableObj(this);
+            _station = station;
+        }
     }
 
     //

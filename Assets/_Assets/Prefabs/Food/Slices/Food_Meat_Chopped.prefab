@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1023264624810293
+--- !u!1 &4234798399395222797
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,60 +8,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4028242281538439}
-  - component: {fileID: 2330072935975914600}
-  - component: {fileID: 2159193032296575793}
+  - component: {fileID: 5313687977379442951}
+  - component: {fileID: 6923564531259318384}
+  - component: {fileID: 624728360414547001}
   m_Layer: 7
-  m_Name: Cucumber
+  m_Name: Food_Meat_Chopped
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4028242281538439
+--- !u!4 &5313687977379442951
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023264624810293}
+  m_GameObject: {fileID: 4234798399395222797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.3357813, y: 0.4049174, z: -2.3404586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4774724693357665}
+  - {fileID: 6870496554721282951}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
---- !u!65 &2330072935975914600
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6923564531259318384
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023264624810293}
+  m_GameObject: {fileID: 4234798399395222797}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.3, y: 0.2, z: 1.3}
   m_Center: {x: 0, y: 0.08, z: 0}
---- !u!114 &2159193032296575793
+--- !u!114 &624728360414547001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023264624810293}
+  m_GameObject: {fileID: 4234798399395222797}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6de53200f55a84e4c9e1bd2aacf55b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pickableData: {fileID: 11400000, guid: 8a60c8a671e83cb49be50069f5f64792, type: 2}
-  _foodData: {fileID: 11400000, guid: a4b4898f2e10bac4cb6ca42382113786, type: 2}
---- !u!1 &1291789987452228
+  _pickableData: {fileID: 11400000, guid: ad319ebdfc3f24b459504aebe80b1464, type: 2}
+  _foodData: {fileID: 11400000, guid: 085ead83cd4216446ab957265bfb6db3, type: 2}
+--- !u!1 &6867271198371608363
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,46 +69,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4774724693357665}
-  - component: {fileID: 33019237244744362}
-  - component: {fileID: 23584686634627168}
+  - component: {fileID: 6870496554721282951}
+  - component: {fileID: 6862935542476294231}
+  - component: {fileID: 6853179538522671154}
   m_Layer: 7
-  m_Name: Food_Cucumber_001
+  m_Name: Food_Meat_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4774724693357665
+--- !u!4 &6870496554721282951
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291789987452228}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_GameObject: {fileID: 6867271198371608363}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4028242281538439}
+  m_Father: {fileID: 5313687977379442951}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -0, z: 0}
---- !u!33 &33019237244744362
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6862935542476294231
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291789987452228}
-  m_Mesh: {fileID: 4300000, guid: fca0dee7f20072b43a663a81bfa38337, type: 2}
---- !u!23 &23584686634627168
+  m_GameObject: {fileID: 6867271198371608363}
+  m_Mesh: {fileID: 4300000, guid: bf00474d3e3c90044af862beed37cdaf, type: 2}
+--- !u!23 &6853179538522671154
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291789987452228}
+  m_GameObject: {fileID: 6867271198371608363}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1

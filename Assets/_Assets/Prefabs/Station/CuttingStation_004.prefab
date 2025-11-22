@@ -259,3 +259,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataStation: {fileID: 11400000, guid: 27bd1d197cce4a34e9b05e614045fa86, type: 2}
+  _transformHoldFood: {fileID: 0}
+  _stationType: 0
+  _knife: {fileID: 7319003644351222534}

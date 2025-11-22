@@ -133,6 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataStation: {fileID: 11400000, guid: 27bd1d197cce4a34e9b05e614045fa86, type: 2}
   _transformHoldFood: {fileID: 4008536244297029718}
+  _stationType: 0
+  _knife: {fileID: 4008536244297036737}
 --- !u!65 &1420133278358968036
 BoxCollider:
   m_ObjectHideFlags: 0
