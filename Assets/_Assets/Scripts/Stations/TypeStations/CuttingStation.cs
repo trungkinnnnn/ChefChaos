@@ -6,7 +6,7 @@ using UnityEngine;
 public class CuttingStation : BaseStation
 {
     [SerializeField] GameObject _knife;
-    private float _timeWaitToSlice = 0.2f;
+    private float _timeWait = 0.2f;
     private bool CheckTypeFood(FoodData data)
     {
         return data.canCut;
@@ -31,12 +31,12 @@ public class CuttingStation : BaseStation
 
     private IEnumerator WaitScecondSliceFood(FoodObj obj, ProcessRule rule)
     {
-        yield return new WaitForSeconds(_timeWaitToSlice);
+        yield return new WaitForSeconds(_timeWait);
 
         PoolManager.Instance.Despawner(obj.gameObject);
         ProgressBarManager.Instance.CreateProgressBar(_transformHoldFood, rule.processTime);
 
-        _player.GetAnimationController().SetTriggerAnimationCutting(rule.processTime + _timeWaitToSlice);
+        _player.GetAnimationController().SetTriggerAnimationCutting(rule.processTime + _timeWait);
 
         SpawnObjSlice(rule);
     }

@@ -19,7 +19,8 @@ public class PickableObj : MonoBehaviour, ISelectable
     public void Init(PlayerInteraction player = null, BaseStation station = null)
     {   
         _player = player;
-        _station = station;
+        SetPickableObjStation(station);
+
     }    
 
     private void Selected(bool value)

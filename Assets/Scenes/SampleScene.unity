@@ -3774,6 +3774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424602861}
+  - component: {fileID: 424602862}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -3798,6 +3799,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &424602862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424602860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c5e9230fbb0784580412f68f29979a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentTransform: {fileID: 2127359820}
+  _progressBarPrefabs: {fileID: 8479833934866642530, guid: a2ad3f347f6145b44a55bca940a777e7, type: 3}
 --- !u!1001 &430780228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5637,6 +5652,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1068257490}
     m_Modifications:
+    - target: {fileID: 2505038701228361367, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2505038701228362936, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
       propertyPath: m_Name
       value: CookingStation_002
@@ -5684,6 +5703,10 @@ PrefabInstance:
     - target: {fileID: 2505038701228374044, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923073637516023011, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
+      propertyPath: _stationType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
@@ -6255,6 +6278,10 @@ PrefabInstance:
     - target: {fileID: 6098551419770764891, guid: 8492de6c87c442f4fb5b946bafd6c864, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792592696355410725, guid: 8492de6c87c442f4fb5b946bafd6c864, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8492de6c87c442f4fb5b946bafd6c864, type: 3}
@@ -14865,6 +14892,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4837197557503416582, guid: 8522780baed96ad4190441edd2f82960, type: 3}
+      propertyPath: _stationType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837197557503416582, guid: 8522780baed96ad4190441edd2f82960, type: 3}
       propertyPath: _pickUpPrefabs
       value: 
       objectReference: {fileID: 425767219455470080, guid: 71c84246988559e4f96994298216dab4, type: 3}
@@ -14915,6 +14946,14 @@ PrefabInstance:
     - target: {fileID: 7257915365372226531, guid: 8522780baed96ad4190441edd2f82960, type: 3}
       propertyPath: m_Name
       value: CookingStation_Soup
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257915365372228730, guid: 8522780baed96ad4190441edd2f82960, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257915365372230988, guid: 8522780baed96ad4190441edd2f82960, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8522780baed96ad4190441edd2f82960, type: 3}
@@ -15839,7 +15878,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2127359820}
-  - component: {fileID: 2127359821}
   m_Layer: 0
   m_Name: ProgressBar
   m_TagString: Untagged
@@ -15854,33 +15892,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127359819}
-  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1469761459}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2127359821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127359819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c5e9230fbb0784580412f68f29979a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parentTransform: {fileID: 2127359820}
-  _progressBarPrefabs: {fileID: 8479833934866642530, guid: a2ad3f347f6145b44a55bca940a777e7, type: 3}
 --- !u!1001 &2133678156
 PrefabInstance:
   m_ObjectHideFlags: 0
