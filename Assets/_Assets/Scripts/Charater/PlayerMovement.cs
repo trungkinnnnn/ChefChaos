@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] FixedJoystick _joystick;
     [SerializeField] float _movementSpeed;
 
+    private bool _lockInput = false;    
     private Rigidbody _rigidbody;
 
     private void Start()
@@ -14,13 +15,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_lockInput)
+        {
+            _rigidbody.velocity = Vector3.zero;
+            return;
+        }    
+
         _rigidbody.velocity = new Vector3(_joystick.Horizontal * _movementSpeed, _rigidbody.velocity.y, _joystick.Vertical * _movementSpeed);
         if(_joystick.Vertical != 0 || _joystick.Horizontal != 0) transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
     }
-    public bool GetInfoMovement()
+
+
+    // ============= Service ================
+    public bool IsMoving()   
     {
-        if (_joystick.Vertical != 0 || _joystick.Horizontal != 0) return true;
-        return false;
+        return _joystick.Vertical != 0 || _joystick.Horizontal != 0;;
+    }    
+
+    public void LockInput(bool value)
+    {
+        _lockInput = value;
     }    
 
 }

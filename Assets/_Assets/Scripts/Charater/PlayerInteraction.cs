@@ -29,7 +29,7 @@ public class PlayerInteraction : MonoBehaviour
     private void Update()
     {
 
-        if (_playerMovement.GetInfoMovement())
+        if (_playerMovement.IsMoving())
         {
             HandleSelectedStation();
             _handleDoingObj = true;
