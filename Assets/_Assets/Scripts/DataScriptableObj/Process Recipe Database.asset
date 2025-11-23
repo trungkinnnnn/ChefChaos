@@ -32,12 +32,12 @@ MonoBehaviour:
     - inputType: 2
       outputType: 3
       processTime: 5
-      resultPrefabs: {fileID: 8621634814015021580, guid: 5b3731df058729649be8584b0e41c906, type: 3}
+      resultPrefabs: {fileID: 8135093893645761117, guid: 9bbd5db8d0ed35b4db5c844a36907c09, type: 3}
     - inputType: 3
       outputType: 4
       processTime: 5
-      resultPrefabs: {fileID: 2844786287115877981, guid: b135a282612e24046a876cfe34040618, type: 3}
+      resultPrefabs: {fileID: 2051782840085478394, guid: b288a6cc1b7d71049880db108a798f5d, type: 3}
     - inputType: 4
       outputType: 5
       processTime: 5
-      resultPrefabs: {fileID: 2844786287115877981, guid: b135a282612e24046a876cfe34040618, type: 3}
+      resultPrefabs: {fileID: 3913501193008623277, guid: bd68a77b827d3904aaaf8ea44e34a9eb, type: 3}

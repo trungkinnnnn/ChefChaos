@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02da8132a1b356442a4820cb47ed32d9, type: 3}
-  m_Name: Meat Data
+  m_Name: Meat BurntCook Data
   m_EditorClassIdentifier: 
-  canCut: 1
+  canCut: 0
   canCook: 0
-  cookTime: 0
-  foodType: 0
+  foodType: 5
