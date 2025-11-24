@@ -5652,10 +5652,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1068257490}
     m_Modifications:
-    - target: {fileID: 2505038701228361367, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2505038701228362936, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
       propertyPath: m_Name
       value: CookingStation_002
@@ -5703,10 +5699,6 @@ PrefabInstance:
     - target: {fileID: 2505038701228374044, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7923073637516023011, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
-      propertyPath: _stationType
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
@@ -9451,7 +9443,7 @@ PrefabInstance:
     - target: {fileID: 976287664, guid: b798f5bf2f56a3d40a173c9ba5038e82, type: 3}
       propertyPath: _foodPrefab
       value: 
-      objectReference: {fileID: 1174913194331386, guid: 0af8be0e5ff4d6d4d9ab6d1b4916c5ce, type: 3}
+      objectReference: {fileID: 4234798399395222797, guid: 2bd7596dadfec914392c1ca6a0d5902a, type: 3}
     - target: {fileID: 5280986052732636957, guid: b798f5bf2f56a3d40a173c9ba5038e82, type: 3}
       propertyPath: m_Name
       value: FoodBoxStation-Beef

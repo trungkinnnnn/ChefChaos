@@ -7,7 +7,7 @@ public class PickableObj : MonoBehaviour, ISelectable
 
     private Collider _collider;
     private Renderer[] _renderers;
-    private PlayerInteraction _player;
+    protected PlayerInteraction _player;
     private BaseStation _station;
 
     private void Start()
@@ -45,7 +45,7 @@ public class PickableObj : MonoBehaviour, ISelectable
         {
             this.transform.SetParent(transform, false);
             this.transform.localPosition = Vector3.zero;
-            this.transform.localRotation = Quaternion.identity;  
+            this.transform.localRotation = Quaternion.identity;
         });
 
         _collider.enabled = station != null;
@@ -88,7 +88,7 @@ public class PickableObj : MonoBehaviour, ISelectable
         //Debug.Log(_pickableData.name);
     }
 
-    public void DoSomeThing()
+    public virtual void DoSomeThing()
     {
         if (!_player.CheckNullPickUpObj()) return;
         PickUpObj(_player.GetTransformHoldFood());
@@ -96,7 +96,7 @@ public class PickableObj : MonoBehaviour, ISelectable
     }
 
     // ================ Service ===================
-    public ObjType GetTypeObj() => _pickableData.typeObj;
+    public PickableData GetDataPickableObj() => _pickableData;
 
 
 }

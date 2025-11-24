@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc3a357665bbbc40a8a8af7003c28d1, type: 3}
+  m_Name: Cooking Recipe Database
+  m_EditorClassIdentifier: 
+  recipes:
+  - disName: Salat
+    resultPrefab: {fileID: 0}
+    kitchenType: 0
+    ingredients:
+    - foodType: 0b000000
+      amount: 1
+      isRequied: 1
+    - foodType: 0d000000
+      amount: 1
+      isRequied: 0
+    - foodType: 07000000
+      amount: 1
+      isRequied: 1
+  - disName: Soup
+    resultPrefab: {fileID: 0}
+    kitchenType: 2
+    ingredients:
+    - foodType: 0d000000
+      amount: 3
+      isRequied: 0
+    - foodType: 11000000
+      amount: 3
+      isRequied: 0
+    - foodType: 0f000000
+      amount: 3
+      isRequied: 0
+  - disName: Hamberger
+    resultPrefab: {fileID: 0}
+    kitchenType: 0
+    ingredients:
+    - foodType: 17000000
+      amount: 1
+      isRequied: 1
+    - foodType: 0300000004000000
+      amount: 1
+      isRequied: 1
+    - foodType: 0d000000
+      amount: 1
+      isRequied: 0
+    - foodType: 09000000
+      amount: 1
+      isRequied: 0

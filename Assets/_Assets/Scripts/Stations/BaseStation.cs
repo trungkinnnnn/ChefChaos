@@ -67,7 +67,7 @@ public class BaseStation : MonoBehaviour, ISelectable
     { 
         if(_player.CheckNullPickUpObj()) return;
         PickableObj obj = _player.GetPickableObj();
-        if(!CheckTypePickUpObj(obj.GetTypeObj())) return;
+        if(!CheckTypePickUpObj(obj.GetDataPickableObj().typeObj)) return;
         PickableObj(obj);
     }
 
