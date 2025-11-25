@@ -10,48 +10,62 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cc3a357665bbbc40a8a8af7003c28d1, type: 3}
-  m_Name: Cooking Recipe Database
+  m_Name: Plate Recipe Database
   m_EditorClassIdentifier: 
   recipes:
-  - disName: Salat
+  - id: 0
+    disName: Salat
     resultPrefab: {fileID: 0}
-    kitchenType: 0
     ingredients:
-    - foodType: 0b000000
+    - id: 0
+      foodType: 11
       amount: 1
       isRequied: 1
-    - foodType: 0d000000
+    - id: 0
+      foodType: 13
       amount: 1
       isRequied: 0
-    - foodType: 07000000
+    - id: 0
+      foodType: 7
       amount: 1
       isRequied: 1
-  - disName: Soup
+  - id: 1
+    disName: Hamberger
     resultPrefab: {fileID: 0}
-    kitchenType: 2
     ingredients:
-    - foodType: 0d000000
-      amount: 3
+    - id: 1
+      foodType: 23
+      amount: 1
+      isRequied: 1
+    - id: 1
+      foodType: 3
+      amount: 1
+      isRequied: 1
+    - id: 1
+      foodType: 13
+      amount: 1
       isRequied: 0
-    - foodType: 11000000
-      amount: 3
+    - id: 1
+      foodType: 9
+      amount: 1
       isRequied: 0
-    - foodType: 0f000000
-      amount: 3
-      isRequied: 0
-  - disName: Hamberger
+  - id: 2
+    disName: Hamberger
     resultPrefab: {fileID: 0}
-    kitchenType: 0
     ingredients:
-    - foodType: 17000000
+    - id: 2
+      foodType: 23
       amount: 1
       isRequied: 1
-    - foodType: 0300000004000000
+    - id: 2
+      foodType: 4
       amount: 1
       isRequied: 1
-    - foodType: 0d000000
+    - id: 2
+      foodType: 13
       amount: 1
       isRequied: 0
-    - foodType: 09000000
+    - id: 2
+      foodType: 9
       amount: 1
       isRequied: 0

@@ -27,6 +27,10 @@ MonoBehaviour:
       outputType: 7
       processTime: 1.5
       resultPrefabs: {fileID: 2844786287115877981, guid: b135a282612e24046a876cfe34040618, type: 3}
+    - inputType: 12
+      outputType: 13
+      processTime: 1.5
+      resultPrefabs: {fileID: 9123832758987226504, guid: 85217dce83024de4c98656ed9ed643a7, type: 3}
   - stationType: 1
     processRules:
     - inputType: 2

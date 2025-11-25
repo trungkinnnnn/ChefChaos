@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc3a357665bbbc40a8a8af7003c28d1, type: 3}
+  m_Name: PotSoup Recipe Database
+  m_EditorClassIdentifier: 
+  recipes:
+  - id: 0
+    disName: Soup
+    resultPrefab: {fileID: 0}
+    ingredients:
+    - id: 0
+      foodType: 13
+      amount: 1
+      isRequied: 1
+      timeCook: 5
+    - id: 0
+      foodType: 17
+      amount: 3
+      isRequied: 0
+      timeCook: 5
+    - id: 0
+      foodType: 15
+      amount: 3
+      isRequied: 0
+      timeCook: 5

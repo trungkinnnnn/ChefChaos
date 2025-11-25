@@ -28,4 +28,7 @@ public enum StationType
 {
     Slice,
     Fry,
+    Box,
+    trash,
+    Empty
 }

@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canCut: 0
   canCook: 0
-  cookTime: 0
-  foodType: 6
+  foodType: 7

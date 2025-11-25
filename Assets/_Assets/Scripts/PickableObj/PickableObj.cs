@@ -10,7 +10,7 @@ public class PickableObj : MonoBehaviour, ISelectable
     protected PlayerInteraction _player;
     private BaseStation _station;
 
-    private void Start()
+    protected virtual void Start()
     {
         _renderers = GetComponentsInChildren<Renderer>(true);
         _collider = GetComponent<Collider>();

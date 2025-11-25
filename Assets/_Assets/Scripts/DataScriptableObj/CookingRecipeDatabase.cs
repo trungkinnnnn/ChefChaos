@@ -11,16 +11,18 @@ public class CookingRecipeDatabase : ScriptableObject
 [System.Serializable]
 public class CookingRecipe
 {
+    public int id;
     public string disName;
     public GameObject resultPrefab;
-    public KitchenType kitchenType;
     public List<IngredientRequiment> ingredients;
 }
 
 [System.Serializable]
 public class IngredientRequiment
 {
-    public List<FoodType> foodType;
+    public int id;  
+    public FoodType foodType;
     public int amount;
     public bool isRequied;
+    public float timeCook;
 }

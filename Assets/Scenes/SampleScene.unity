@@ -1280,6 +1280,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7290282482229328941, guid: 3c4facfadfc0e5d40a5b87caaf7adb4f, type: 3}
+      propertyPath: _stationType
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4facfadfc0e5d40a5b87caaf7adb4f, type: 3}
 --- !u!1 &142257074
@@ -9443,7 +9447,11 @@ PrefabInstance:
     - target: {fileID: 976287664, guid: b798f5bf2f56a3d40a173c9ba5038e82, type: 3}
       propertyPath: _foodPrefab
       value: 
-      objectReference: {fileID: 4234798399395222797, guid: 2bd7596dadfec914392c1ca6a0d5902a, type: 3}
+      objectReference: {fileID: 9123832758987226504, guid: 85217dce83024de4c98656ed9ed643a7, type: 3}
+    - target: {fileID: 976287664, guid: b798f5bf2f56a3d40a173c9ba5038e82, type: 3}
+      propertyPath: _stationType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5280986052732636957, guid: b798f5bf2f56a3d40a173c9ba5038e82, type: 3}
       propertyPath: m_Name
       value: FoodBoxStation-Beef
@@ -13495,6 +13503,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 512527797, guid: 222f54b8a3ab10345965b95571b7cfe0, type: 3}
+      propertyPath: _foodPrefab
+      value: 
+      objectReference: {fileID: 2844786287115877981, guid: b135a282612e24046a876cfe34040618, type: 3}
+    - target: {fileID: 512527797, guid: 222f54b8a3ab10345965b95571b7cfe0, type: 3}
+      propertyPath: _stationType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5280986052732636957, guid: 222f54b8a3ab10345965b95571b7cfe0, type: 3}
       propertyPath: m_Name
       value: FoodBoxStation-Cucumber
@@ -16087,6 +16103,10 @@ PrefabInstance:
     - target: {fileID: 7672286450880003810, guid: 3a40c3342b248814aa2c54cff4719389, type: 3}
       propertyPath: _spawner
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7672286450880003810, guid: 3a40c3342b248814aa2c54cff4719389, type: 3}
+      propertyPath: _stationType
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7672286450880003810, guid: 3a40c3342b248814aa2c54cff4719389, type: 3}
       propertyPath: _pickUpPrefabs

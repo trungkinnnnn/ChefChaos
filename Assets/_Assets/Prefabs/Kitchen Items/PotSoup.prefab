@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 425767219455473533}
   - component: {fileID: 5203617560383365641}
   - component: {fileID: -4060527641541660854}
+  - component: {fileID: 6059194865494252546}
   m_Layer: 7
   m_Name: PotSoup
   m_TagString: Untagged
@@ -94,6 +95,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickableData: {fileID: 11400000, guid: 83ee56be0330e2f4ba0dfdc2987bb08d, type: 2}
+--- !u!114 &6059194865494252546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425767219455470080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5dc1c2da60db4c4084de0d3949b6422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cookingRecipeData: {fileID: 11400000, guid: cbe09f709d1ea5e4080297cdf7a9e29a, type: 2}
 --- !u!1 &425767219455471541
 GameObject:
   m_ObjectHideFlags: 0
