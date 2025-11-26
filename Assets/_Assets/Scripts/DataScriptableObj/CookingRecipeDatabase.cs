@@ -24,5 +24,4 @@ public class IngredientRequiment
     public FoodType foodType;
     public int amount;
     public bool isRequied;
-    public float timeCook;
 }

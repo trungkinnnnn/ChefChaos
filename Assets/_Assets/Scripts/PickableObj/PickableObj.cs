@@ -8,7 +8,7 @@ public class PickableObj : MonoBehaviour, ISelectable
     private Collider _collider;
     private Renderer[] _renderers;
     protected PlayerInteraction _player;
-    private BaseStation _station;
+    protected BaseStation _station;
 
     protected virtual void Start()
     {

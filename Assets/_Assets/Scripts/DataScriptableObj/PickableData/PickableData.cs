@@ -6,7 +6,6 @@ using UnityEngine;
 public class PickableData : ScriptableObject
 {
     public string nameObj;
-    public Sprite sprite;
     public Material materialDefault;
     public Material materialHighlight;
     public ObjType typeObj;

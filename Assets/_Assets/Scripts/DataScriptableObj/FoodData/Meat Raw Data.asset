@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canCut: 1
   canCook: 0
-  cookTime: 0
+  sprite: {fileID: 21300000, guid: 3606a2db3e13fa34cb82cb2c0e5d910f, type: 2}
   foodType: 0
+  timeCooking: 0

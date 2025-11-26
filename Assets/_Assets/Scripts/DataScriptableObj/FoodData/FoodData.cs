@@ -7,7 +7,9 @@ public class FoodData : ScriptableObject
 {
     public bool canCut;
     public bool canCook;
+    public Sprite sprite;
     public FoodType foodType;
+    public float timeCooking;
 }
 
 public enum FoodType
