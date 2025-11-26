@@ -1,4 +1,5 @@
 using Lean.Common;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class ProgressBar : MonoBehaviour
     private Coroutine _CurrentCoroutine;
     private float _timeStart = 0;
     private bool _canDestroy;
+
+    public Action OnCompleted;
+
     private void OnEnable()
     {
         if (_imageFill != null) _imageFill.fillAmount = 1;
@@ -31,6 +35,9 @@ public class ProgressBar : MonoBehaviour
             _imageFill.fillAmount = Mathf.Lerp(0, 1, _timeStart / timeEnd);
             yield return null;
         }
+
+        OnCompleted?.Invoke();
+
         if (_canDestroy) DespawnerProgressBar();
         else gameObject.SetActive(false);
     }    

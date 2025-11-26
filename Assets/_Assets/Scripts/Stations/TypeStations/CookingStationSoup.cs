@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CookingStationSoup : BaseStation
 {
+    [SerializeField] GameObject _fire;
     [SerializeField] GameObject _pickUpPrefabs;
     [SerializeField] bool _spawner = false;
 
@@ -21,5 +22,10 @@ public class CookingStationSoup : BaseStation
         {
             objPickable.Init(null, this);
         }
+    }
+
+    public void ActiveFire(bool value)
+    { 
+        _fire.SetActive(value); 
     }
 }

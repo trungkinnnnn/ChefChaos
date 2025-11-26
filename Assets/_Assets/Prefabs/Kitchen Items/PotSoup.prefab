@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickableData: {fileID: 11400000, guid: 83ee56be0330e2f4ba0dfdc2987bb08d, type: 2}
-  _positionHoldFood: {fileID: 7425802601397015913}
+  _positionHoldFood: {fileID: 8357409841782647286}
   _ingredientUI: {fileID: 1006215473199179374}
 --- !u!114 &6059194865494252546
 MonoBehaviour:

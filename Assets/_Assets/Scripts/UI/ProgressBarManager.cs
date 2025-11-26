@@ -23,7 +23,7 @@ public class ProgressBarManager : MonoBehaviour
 
     public ProgressBar CreateProgressBar(Transform transform, float timeEnd, float timeStart = 0, bool value = true)
     {
-        Vector3 position = transform.position + Vector3.up * 1.5f;
+        Vector3 position = transform.position + Vector3.up * 1f;
         var progesBarUI = PoolManager.Instance.Spawner(_progressBarPrefabs, position, Quaternion.identity);
         progesBarUI.transform.SetParent(_parentTransform);
 

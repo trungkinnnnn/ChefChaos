@@ -13,9 +13,12 @@ public class PotSoupObj : PickableObj
     private PotContentVisual _potVisual;
     private ProgressBar _progressBar;
 
+    private CookingState _cookingState = CookingState.Raw;
+
     private int _maxFoodAmount = 3;
     private float _timeCurrent = 0;
     private float _timeMax = 0;
+    private float _timeFire = 5f;
 
     protected override void Start()
     {
@@ -29,7 +32,7 @@ public class PotSoupObj : PickableObj
         base.DoSomeThing();
         var pickableObj = _player.GetPickableObj();
 
-        if (pickableObj is FoodObj food)
+        if (pickableObj is FoodObj food && _cookingState != CookingState.Bruned)
         {
             var foodData = food.GetDataFood();
 
@@ -44,7 +47,6 @@ public class PotSoupObj : PickableObj
             }    
 
             if (cookingRecipe != null) Debug.Log("Food completed");
-
         }    
         
     }
@@ -71,10 +73,12 @@ public class PotSoupObj : PickableObj
 
     private void CreateProgressBar(FoodData foodData)
     {
+        _cookingState = CookingState.Raw;
         _timeMax += foodData.timeCooking;
         if(_progressBar == null)
         {
             _progressBar = ProgressBarManager.Instance.CreateProgressBar(_positionHoldFood, _timeMax, 0, false);
+            _progressBar.OnCompleted = OnCookingComplete;
         }
         else
         {
@@ -84,5 +88,33 @@ public class PotSoupObj : PickableObj
 
     }    
 
+    private void OnCookingComplete()
+    {
+        _cookingState = CookingState.Cooked;
+        StartCoroutine(WaitTimeToFire());
+    }   
+    
+    private IEnumerator WaitTimeToFire()
+    {
+        float time = 0;
+        while(time < _timeFire)
+        {
+            time += Time.deltaTime;
+            if(_cookingState != CookingState.Cooked) yield break;
+            yield return null;
+        }    
+        _cookingState = CookingState.Bruned;
+        if(_station is CookingStationSoup stationSoup)
+        {
+            stationSoup.ActiveFire(true);
+        }    
+    }    
 
+}
+
+public enum CookingState
+{
+    Raw,
+    Cooked,
+    Bruned,
 }
