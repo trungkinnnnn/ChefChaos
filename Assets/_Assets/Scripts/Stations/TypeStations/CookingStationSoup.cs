@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CookingStationSoup : BaseStation
 {
-    [SerializeField] GameObject _fire;
+    [SerializeField] GameObject _fireCooked;
+    [SerializeField] GameObject _fireBruned;
     [SerializeField] GameObject _pickUpPrefabs;
     [SerializeField] bool _spawner = false;
 
@@ -24,8 +25,21 @@ public class CookingStationSoup : BaseStation
         }
     }
 
-    public void ActiveFire(bool value)
-    { 
-        _fire.SetActive(value); 
+    // ============ Service =============
+
+    public override void SetPickableObj(PickableObj obj)
+    {
+        base.SetPickableObj(obj);
+        if(obj == null) ActiveFireCooked(false);
+    }
+
+    public void ActiveFireBruned(bool value)
+    {
+        _fireBruned.SetActive(value); 
+    }
+
+    public void ActiveFireCooked(bool value)
+    {
+        _fireCooked.SetActive(value);
     }
 }

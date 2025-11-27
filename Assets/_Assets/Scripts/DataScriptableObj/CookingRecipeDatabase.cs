@@ -14,6 +14,7 @@ public class CookingRecipe
     public int id;
     public string disName;
     public GameObject resultPrefab;
+    public ObjType type;
     public List<IngredientRequiment> ingredients;
 }
 

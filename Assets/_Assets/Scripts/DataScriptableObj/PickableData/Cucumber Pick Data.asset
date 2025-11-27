@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90832e1e2e4555b4fb80cc8fb4ebf2a0, type: 3}
   m_Name: Cucumber Pick Data
   m_EditorClassIdentifier: 
-  name: Cucumber
-  sprite: {fileID: 21300000, guid: c8425ea6768bc9446ab545b23f530f86, type: 2}
+  nameObj: 
   materialDefault: {fileID: 2100000, guid: b0dc27c6c0a52d1488acc20f4d74f20a, type: 2}
   materialHighlight: {fileID: 2100000, guid: 0efa0d4dfd88a9748b04ac11486f3a20, type: 2}
-  typeObj: 3
+  typeObj: 4

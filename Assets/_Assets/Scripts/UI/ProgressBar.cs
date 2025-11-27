@@ -11,6 +11,7 @@ public class ProgressBar : MonoBehaviour
     private Coroutine _CurrentCoroutine;
     private float _timeStart = 0;
     private bool _canDestroy;
+    private bool _stopCooking = false;  
 
     public Action OnCompleted;
 
@@ -19,18 +20,22 @@ public class ProgressBar : MonoBehaviour
         if (_imageFill != null) _imageFill.fillAmount = 1;
     }
 
-    public void Init(float timeEnd, float timeStart = 0, bool value = true)
+    public void Init(float timeEnd, bool value = true)
     {
         _canDestroy = value;
         _timeStart = 0;
-        _CurrentCoroutine = StartCoroutine(WaitForSecondFillOut(timeEnd, timeStart));
+        _CurrentCoroutine = StartCoroutine(WaitForSecondFillOut(timeEnd));
     }    
 
-    private IEnumerator WaitForSecondFillOut(float timeEnd, float timeStart = 0)
+    private IEnumerator WaitForSecondFillOut(float timeEnd)
     {
-        _timeStart = timeStart;
         while(_timeStart < timeEnd)
         {
+            if(_stopCooking)
+            {
+                gameObject.SetActive(false);
+                yield break;
+            }
             _timeStart += Time.deltaTime;
             _imageFill.fillAmount = Mathf.Lerp(0, 1, _timeStart / timeEnd);
             yield return null;
@@ -44,11 +49,11 @@ public class ProgressBar : MonoBehaviour
 
     public void UpdateProgessBar (float timeEnd)
     {
+        _stopCooking = false;
         gameObject.SetActive(true);
         StopCoroutine(_CurrentCoroutine);
-        _CurrentCoroutine = StartCoroutine(WaitForSecondFillOut(timeEnd, _timeStart));
+        _CurrentCoroutine = StartCoroutine(WaitForSecondFillOut(timeEnd));
     }
-
 
     // =============== Service =================
     public void DespawnerProgressBar()
@@ -61,4 +66,6 @@ public class ProgressBar : MonoBehaviour
         _timeStart = 0;
         gameObject.SetActive(false);
     }    
+
+    public void StopCooking() => _stopCooking = true;
 }

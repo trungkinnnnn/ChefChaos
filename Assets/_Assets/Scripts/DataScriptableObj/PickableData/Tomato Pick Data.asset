@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Tomato Pick Data
   m_EditorClassIdentifier: 
   nameObj: 
-  sprite: {fileID: 21300000, guid: b6d9f2d1cff756840a5ccaf5702ab5c4, type: 2}
   materialDefault: {fileID: 2100000, guid: b0dc27c6c0a52d1488acc20f4d74f20a, type: 2}
   materialHighlight: {fileID: 2100000, guid: 0efa0d4dfd88a9748b04ac11486f3a20, type: 2}
-  typeObj: 3
+  typeObj: 4

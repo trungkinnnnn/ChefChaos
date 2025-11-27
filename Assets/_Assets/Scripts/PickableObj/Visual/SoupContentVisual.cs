@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PotContentVisual : MonoBehaviour
+public class SoupContentVisual : MonoBehaviour
 {
+    [SerializeField] GameObject _smoke;
     [SerializeField] List<Visual> _visualData = new();
     private Dictionary<FoodType, GameObject> _visuals = new();
 
@@ -19,12 +20,14 @@ public class PotContentVisual : MonoBehaviour
         {
             visual.visualObj.SetActive(false);
             _visuals[visual.type] = visual.visualObj;
-        }    
+        }
+        _smoke.SetActive(false);
     }    
 
     public void OnVisual(FoodType type)
     {
-        if(_visuals.ContainsKey(type))
+        _smoke.SetActive(true);
+        if (_visuals.ContainsKey(type))
         {
             _visuals[type].SetActive(true);
         }    
@@ -33,7 +36,8 @@ public class PotContentVisual : MonoBehaviour
 
     public void ResetVisuals()
     {
-        foreach(var visual in _visuals.Values)
+        _smoke.SetActive(false);
+        foreach (var visual in _visuals.Values)
         {
             visual.SetActive(false);
         }    

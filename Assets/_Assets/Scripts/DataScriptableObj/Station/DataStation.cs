@@ -24,6 +24,7 @@ public enum ObjType
     All,
     Pot,
     Plate,
+    PlateSoup,
     Food,
     Porp,
 }

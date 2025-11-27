@@ -33,7 +33,9 @@ public class CookingRecipeGroup : MonoBehaviour
         }    
     }    
 
-    private void InitRecipeProgress()
+
+    // Init
+    public void InitRecipeProgress()
     {
         _activeRecipes.Clear();
         foreach(var recipe in _cookingRecipeData.recipes)
@@ -42,6 +44,8 @@ public class CookingRecipeGroup : MonoBehaviour
         }    
     }    
 
+
+    // Choose ingrediets id follow foodType
     private HashSet<int> GetValidRecipeIDs(FoodType foodType)
     {
         if(!_Lookup.TryGetValue(foodType, out var ingredients)) return null;
@@ -54,6 +58,8 @@ public class CookingRecipeGroup : MonoBehaviour
         return ids;
     }
 
+
+    // Add Food valid
     private bool ApplyFoodToValid(FoodType foodType, HashSet<int> ids)
     {
         bool added = false;
@@ -68,6 +74,7 @@ public class CookingRecipeGroup : MonoBehaviour
         return added;
     }
 
+    // Remove RecipeProgress
     private void FilterActiveRecipes(HashSet<int> ids)
     {
         List<RecipeProgress> toRemoveProgress = new();

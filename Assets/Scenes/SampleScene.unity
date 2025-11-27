@@ -3370,6 +3370,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9188408447693609105, guid: 9566e6137df45e84b9840b45e20c4e80, type: 3}
   m_PrefabInstance: {fileID: 397402456}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &398290731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7257915365372230988, guid: 8522780baed96ad4190441edd2f82960, type: 3}
+  m_PrefabInstance: {fileID: 2001200676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &400665064
 GameObject:
   m_ObjectHideFlags: 0
@@ -4942,7 +4947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7672286450880003810, guid: 3a40c3342b248814aa2c54cff4719389, type: 3}
       propertyPath: _spawner
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7672286450880003810, guid: 3a40c3342b248814aa2c54cff4719389, type: 3}
       propertyPath: _pickUpPrefabs
@@ -14908,6 +14913,14 @@ PrefabInstance:
       propertyPath: _spawner
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4837197557503416582, guid: 8522780baed96ad4190441edd2f82960, type: 3}
+      propertyPath: _fireBruned
+      value: 
+      objectReference: {fileID: 1958730747}
+    - target: {fileID: 4837197557503416582, guid: 8522780baed96ad4190441edd2f82960, type: 3}
+      propertyPath: _fireCooked
+      value: 
+      objectReference: {fileID: 398290731}
     - target: {fileID: 4837197557503416582, guid: 8522780baed96ad4190441edd2f82960, type: 3}
       propertyPath: _stationType
       value: 1

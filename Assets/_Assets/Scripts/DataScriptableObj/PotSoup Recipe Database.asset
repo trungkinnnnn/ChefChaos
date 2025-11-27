@@ -16,19 +16,26 @@ MonoBehaviour:
   - id: 0
     disName: Soup
     resultPrefab: {fileID: 0}
+    type: 3
     ingredients:
     - id: 0
       foodType: 13
       amount: 1
       isRequied: 1
-      timeCook: 5
     - id: 0
       foodType: 17
       amount: 3
       isRequied: 0
-      timeCook: 5
     - id: 0
       foodType: 15
       amount: 3
       isRequied: 0
-      timeCook: 5
+  - id: 1
+    disName: RiceCooking
+    resultPrefab: {fileID: 0}
+    type: 2
+    ingredients:
+    - id: 0
+      foodType: 20
+      amount: 1
+      isRequied: 1

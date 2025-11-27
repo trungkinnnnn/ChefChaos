@@ -1,9 +1,10 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections.Generic;
 
 public class PickableObj : MonoBehaviour, ISelectable
 {
-    [SerializeField] PickableData _pickableData;
+    [SerializeField] protected PickableData _pickableData;
 
     private Collider _collider;
     private Renderer[] _renderers;
@@ -59,12 +60,18 @@ public class PickableObj : MonoBehaviour, ISelectable
         if(station == null)
         {
             _station.SetPickableObj(null);
-            _station = station;
-        }else
+            ChangeStationValue(station);
+        }
+        else
         {
             station.SetPickableObj(this);
-            _station = station;
+            ChangeStationValue(station);
         }
+    }
+
+    protected virtual void ChangeStationValue(BaseStation station)
+    {
+        _station = station;
     }
 
     //
@@ -97,6 +104,8 @@ public class PickableObj : MonoBehaviour, ISelectable
 
     // ================ Service ===================
     public PickableData GetDataPickableObj() => _pickableData;
+
+    public virtual bool HandheldReceiveCooked(List<FoodType> foodTypes, ObjType type) { return false; } 
 
 
 }
