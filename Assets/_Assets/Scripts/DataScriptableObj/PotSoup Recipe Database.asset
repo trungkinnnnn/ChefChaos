@@ -20,8 +20,8 @@ MonoBehaviour:
     ingredients:
     - id: 0
       foodType: 13
-      amount: 1
-      isRequied: 1
+      amount: 3
+      isRequied: 0
     - id: 0
       foodType: 17
       amount: 3
@@ -30,6 +30,7 @@ MonoBehaviour:
       foodType: 15
       amount: 3
       isRequied: 0
+    maxTotalFood: 3
   - id: 1
     disName: RiceCooking
     resultPrefab: {fileID: 0}
@@ -39,3 +40,4 @@ MonoBehaviour:
       foodType: 20
       amount: 1
       isRequied: 1
+    maxTotalFood: 1

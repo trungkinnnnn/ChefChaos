@@ -16,6 +16,7 @@ MonoBehaviour:
   - id: 0
     disName: Salat
     resultPrefab: {fileID: 0}
+    type: 0
     ingredients:
     - id: 0
       foodType: 11
@@ -29,9 +30,11 @@ MonoBehaviour:
       foodType: 7
       amount: 1
       isRequied: 1
+    maxTotalFood: 0
   - id: 1
     disName: Hamberger
     resultPrefab: {fileID: 0}
+    type: 0
     ingredients:
     - id: 1
       foodType: 23
@@ -49,9 +52,11 @@ MonoBehaviour:
       foodType: 9
       amount: 1
       isRequied: 0
+    maxTotalFood: 0
   - id: 2
     disName: Hamberger
     resultPrefab: {fileID: 0}
+    type: 0
     ingredients:
     - id: 2
       foodType: 23
@@ -69,3 +74,4 @@ MonoBehaviour:
       foodType: 9
       amount: 1
       isRequied: 0
+    maxTotalFood: 0

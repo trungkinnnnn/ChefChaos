@@ -37,5 +37,5 @@ public enum FoodType
     Rice,
     RiceCook,
     RiceBurntCook,
-    Bun,
+    Bread,
 }

@@ -175,8 +175,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4090179607001913}
+  - component: {fileID: 5510175889565569438}
+  - component: {fileID: 4701255570328555305}
   m_Layer: 7
-  m_Name: Bun
+  m_Name: Bread
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,3 +201,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &5510175889565569438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764359682633554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de53200f55a84e4c9e1bd2aacf55b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickableData: {fileID: 11400000, guid: 34cc59ad758ee514bbb17b645c27fa6c, type: 2}
+  _foodData: {fileID: 11400000, guid: 151cef038760c9e45bfa3c9c6f76996d, type: 2}
+--- !u!65 &4701255570328555305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764359682633554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.2, z: 1.3}
+  m_Center: {x: 0, y: 0.08, z: 0}

@@ -28,7 +28,7 @@ public class ProgressBar : MonoBehaviour
     }    
 
     private IEnumerator WaitForSecondFillOut(float timeEnd)
-    {
+    { 
         while(_timeStart < timeEnd)
         {
             if(_stopCooking)
@@ -49,9 +49,10 @@ public class ProgressBar : MonoBehaviour
 
     public void UpdateProgessBar (float timeEnd)
     {
+        if(_timeStart >= timeEnd) return;
         _stopCooking = false;
         gameObject.SetActive(true);
-        StopCoroutine(_CurrentCoroutine);
+        if (_CurrentCoroutine != null) StopCoroutine(_CurrentCoroutine);
         _CurrentCoroutine = StartCoroutine(WaitForSecondFillOut(timeEnd));
     }
 

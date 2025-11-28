@@ -14,6 +14,13 @@ public class FoodObj : PickableObj
         if(_animator != null)_animator.SetTrigger(_HAS_ANI_TRIGGER_CUTTING);
     }
 
+    public override void DoSomeThing()
+    {
+        base.DoSomeThing();
+        var tryAddFood = _player.GetPickableObj().GetComponent<ITryAddFood>();
+        if(tryAddFood == null ) return;
+        tryAddFood.TryAddFood(this);
+    }
 
     // =================== Service ===================
     public FoodData GetDataFood() => _foodData; 

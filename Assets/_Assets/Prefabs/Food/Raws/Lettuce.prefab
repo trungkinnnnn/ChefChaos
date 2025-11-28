@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4754337540888220}
+  - component: {fileID: 3298614755998642796}
+  - component: {fileID: 4849917771746671756}
   m_Layer: 7
   m_Name: Lettuce
   m_TagString: Untagged
@@ -32,6 +34,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!65 &3298614755998642796
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247388315340321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 0.2, z: 1.3}
+  m_Center: {x: 0, y: 0.08, z: 0}
+--- !u!114 &4849917771746671756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247388315340321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de53200f55a84e4c9e1bd2aacf55b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickableData: {fileID: 0}
+  _foodData: {fileID: 0}
 --- !u!1 &1951076244333077
 GameObject:
   m_ObjectHideFlags: 0

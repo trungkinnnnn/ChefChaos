@@ -21,19 +21,18 @@ public class SoupContentVisual : MonoBehaviour
             visual.visualObj.SetActive(false);
             _visuals[visual.type] = visual.visualObj;
         }
-        _smoke.SetActive(false);
     }    
+
+    // ============= Service ================
 
     public void OnVisual(FoodType type)
     {
-        _smoke.SetActive(true);
         if (_visuals.ContainsKey(type))
         {
             _visuals[type].SetActive(true);
         }    
     } 
         
-
     public void ResetVisuals()
     {
         _smoke.SetActive(false);
@@ -43,7 +42,10 @@ public class SoupContentVisual : MonoBehaviour
         }    
     }    
 
-
+    public void ActiveSmoke(bool value)
+    {
+        _smoke.SetActive(value);
+    }    
 
 }
 

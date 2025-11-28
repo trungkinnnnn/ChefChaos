@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
-public class PotSoupObj : PickableObj
+public class PotSoupObj : PickableObj, ITryAddFood
 {
     [SerializeField] Transform _positionHoldFood; 
     [SerializeField] IngredientUI _ingredientUI;
@@ -16,6 +13,7 @@ public class PotSoupObj : PickableObj
     private ProgressBar _progressBar; 
 
     private CookingState _cookingState = CookingState.Non;
+    private PotHeatState _heatState = PotHeatState.OnStove;
 
     private int _maxFoodAmount = 3;
     private int _foodAmount = 0;
@@ -35,8 +33,8 @@ public class PotSoupObj : PickableObj
     public override void DoSomeThing()
     {
         base.DoSomeThing();
-        var pickableObj = _player.GetPickableObj();
 
+        var pickableObj = _player.GetPickableObj();
         if(IsBruned()) return;
 
         TryAddFood(pickableObj);
@@ -49,28 +47,27 @@ public class PotSoupObj : PickableObj
     protected override void ChangeStationValue(BaseStation station)
     {
         base.ChangeStationValue(station);
-        if (_foodAmount <= 0) return;
+
+        bool onStove = station is CookingStationSoup;
+        _heatState = onStove ? PotHeatState.OnStove : PotHeatState.OffStove;
         
-        if (station is CookingStationSoup)
-        {
-            CreateOrUpdateCookingProgressBar();
-            SetFireCook(true);
-        }
-        else 
+        if(!onStove)
         {
             StopCookingIfNeeded();
-        }   
+            return;
+        }
+
+        if (_foodAmount <= 0) return;
+        StartCoroutine(WaitAndBurn());
+        CreateOrUpdateCookingProgressBar();
+        SetFireAndSmokeCook(true); 
     }
 
-    private bool IsBruned()
-    {
-        if(_cookingState == CookingState.Bruned) return true;
-        return false;
-    }
+    private bool IsBruned() => _cookingState == CookingState.Burned;
 
     // ================= Input Logic (Add Food) ==================
-
-    private void TryAddFood(PickableObj pickableObj)
+  
+    public void TryAddFood(PickableObj pickableObj)   // ====== Interface ======
     {
         if (pickableObj is not FoodObj food) return;
         if(_foodAmount >= _maxFoodAmount) return;
@@ -90,10 +87,11 @@ public class PotSoupObj : PickableObj
         _timeMax += foodData.timeCooking;
         _addFoodValids.Add((foodData.foodType, foodData.sprite));
         AddIngredientVisual(pickableObj, foodData);
-
+        _cookingState = CookingState.Cooking;
         if (_station is CookingStationSoup cook)
         {
             cook.ActiveFireCooked(true);
+            _soupVisual.ActiveSmoke(true);
             CreateOrUpdateCookingProgressBar();
         }
 
@@ -109,7 +107,7 @@ public class PotSoupObj : PickableObj
     private void MoveFoodToPot(PickableObj obj)
     {
         obj.PickUpObj(_positionHoldFood, _station);
-        _player.SetPickUpObj(null);
+        if(_heatState == PotHeatState.OnStove) _player.SetPickUpObj(null);
         StartCoroutine(WaitToDespawn(obj));
     }
 
@@ -122,7 +120,6 @@ public class PotSoupObj : PickableObj
     // ================ Cooking Progess ==================
     private void CreateOrUpdateCookingProgressBar()
     {   
-        _cookingState = CookingState.Cooking;
         if (_progressBar == null)
         {
             _progressBar = ProgressBarManager.Instance.CreateProgressBar(_positionHoldFood, _timeMax, false);
@@ -138,7 +135,6 @@ public class PotSoupObj : PickableObj
     private void StopCookingIfNeeded()
     {
         if(_cookingState != CookingState.Cooking) return;
-        _cookingState = CookingState.Non;
         _progressBar?.StopCooking();
     }
 
@@ -150,11 +146,12 @@ public class PotSoupObj : PickableObj
 
     private IEnumerator WaitAndBurn()
     {
+        if (_cookingState != CookingState.Cooked) yield break;
         float time = 0;
         while(time < _timeFire)
         {
             time += Time.deltaTime;
-            if(_cookingState != CookingState.Cooked) yield break;
+            if(_heatState != PotHeatState.OnStove || _cookingState != CookingState.Cooked) yield break;
             yield return null;
         }
         BurnSoup();
@@ -162,7 +159,7 @@ public class PotSoupObj : PickableObj
 
     private void BurnSoup()
     {
-        _cookingState = CookingState.Bruned;
+        _cookingState = CookingState.Burned;
         if(_station is CookingStationSoup cookingStationSoup)
         {
             cookingStationSoup.ActiveFireBruned(true);
@@ -180,11 +177,12 @@ public class PotSoupObj : PickableObj
         }
     }
 
-    private void SetFireCook(bool value)
+    private void SetFireAndSmokeCook(bool value)
     {
-        if (_station is CookingStationSoup cookingStationSoup)
+        if (_station is CookingStationSoup cookingStationSoup && _foodAmount > 0)
         {
-            cookingStationSoup.ActiveFireCooked(value);
+            cookingStationSoup.ActiveFireCooked(value);  
+            _soupVisual.ActiveSmoke(value);
         }
     }
 
@@ -205,21 +203,17 @@ public class PotSoupObj : PickableObj
         _cookingRecipeCompleted = null;
 
         _addFoodValids.Clear();
-        SetFireCook(false);
+        SetFireAndSmokeCook(false);
     }
 
     public (List<(FoodType, Sprite)>, ObjType) GetListFoodValid()
     {
-        if (_cookingState != CookingState.Cooked || _cookingRecipeCompleted == null) return (null, _cookingRecipeCompleted.type);
+        if (_cookingState != CookingState.Cooked || _cookingRecipeCompleted == null) return (null, ObjType.All);
         return (_addFoodValids, _cookingRecipeCompleted.type);
     }
 
 }
 
-public enum CookingState
-{
-    Non,
-    Cooking,
-    Cooked,
-    Bruned,
-}
+
+public enum CookingState { Non, Cooking, Cooked, Burned }
+public enum PotHeatState { OnStove, OffStove }

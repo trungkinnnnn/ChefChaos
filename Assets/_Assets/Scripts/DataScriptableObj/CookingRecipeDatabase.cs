@@ -16,6 +16,7 @@ public class CookingRecipe
     public GameObject resultPrefab;
     public ObjType type;
     public List<IngredientRequiment> ingredients;
+    public int maxTotalFood;
 }
 
 [System.Serializable]

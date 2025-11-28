@@ -1292,7 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickableData: {fileID: 11400000, guid: df2566b018aa39a4b9e726247f50bd78, type: 2}
-  _foodData: {fileID: 0}
+  _foodData: {fileID: 11400000, guid: c3238d49c91e6874888a2c3471905bb4, type: 2}
 --- !u!1 &5076796105820890320
 GameObject:
   m_ObjectHideFlags: 0
