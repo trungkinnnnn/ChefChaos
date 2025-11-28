@@ -20,7 +20,7 @@ public class IngredientUI : MonoBehaviour
         transform.rotation = _initRotaion;
     }
 
-    public void AddFood(Sprite sprite)
+    public void AddSpriteFood(Sprite sprite)
     {
         foreach(var image  in _imageShowFoodType)
         {

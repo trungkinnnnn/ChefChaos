@@ -10,7 +10,7 @@ public class PotSoupObj : PickableObj
     [SerializeField] Transform _positionHoldFood; 
     [SerializeField] IngredientUI _ingredientUI;
 
-    private List<FoodType> _addFoodTypes = new();
+    private List<(FoodType, Sprite)> _addFoodValids = new();
     private CookingRecipeGroup _recipeGroup;
     private SoupContentVisual _soupVisual;
     private ProgressBar _progressBar; 
@@ -88,7 +88,7 @@ public class PotSoupObj : PickableObj
     {
         _foodAmount += 1;
         _timeMax += foodData.timeCooking;
-        _addFoodTypes.Add(foodData.foodType);
+        _addFoodValids.Add((foodData.foodType, foodData.sprite));
         AddIngredientVisual(pickableObj, foodData);
 
         if (_station is CookingStationSoup cook)
@@ -103,7 +103,7 @@ public class PotSoupObj : PickableObj
     {
         MoveFoodToPot(pickableObj);
         _soupVisual.OnVisual(foodData.foodType);
-        _ingredientUI.AddFood(foodData.sprite);
+        _ingredientUI.AddSpriteFood(foodData.sprite);
     }
 
     private void MoveFoodToPot(PickableObj obj)
@@ -174,7 +174,7 @@ public class PotSoupObj : PickableObj
     private void TryTransferSoupToPlate(PickableObj pickableObj)
     {
         if (_cookingState != CookingState.Cooked || _cookingRecipeCompleted == null) return;
-        if (pickableObj.HandheldReceiveCooked(_addFoodTypes, _cookingRecipeCompleted.type))
+        if (pickableObj.HandheldReceiveCooked(_addFoodValids, _cookingRecipeCompleted.type))
         {
             ResetPotSoup();
         }
@@ -204,9 +204,16 @@ public class PotSoupObj : PickableObj
         _recipeGroup.InitRecipeProgress();
         _cookingRecipeCompleted = null;
 
-        _addFoodTypes.Clear();
+        _addFoodValids.Clear();
         SetFireCook(false);
     }
+
+    public (List<(FoodType, Sprite)>, ObjType) GetListFoodValid()
+    {
+        if (_cookingState != CookingState.Cooked || _cookingRecipeCompleted == null) return (null, _cookingRecipeCompleted.type);
+        return (_addFoodValids, _cookingRecipeCompleted.type);
+    }
+
 }
 
 public enum CookingState

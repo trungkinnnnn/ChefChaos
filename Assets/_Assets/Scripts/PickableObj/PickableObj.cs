@@ -105,7 +105,7 @@ public class PickableObj : MonoBehaviour, ISelectable
     // ================ Service ===================
     public PickableData GetDataPickableObj() => _pickableData;
 
-    public virtual bool HandheldReceiveCooked(List<FoodType> foodTypes, ObjType type) { return false; } 
+    public virtual bool HandheldReceiveCooked(List<(FoodType, Sprite)> foodTypes, ObjType type) { return false; } 
 
 
 }
