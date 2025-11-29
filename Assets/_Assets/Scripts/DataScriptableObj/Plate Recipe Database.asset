@@ -15,8 +15,8 @@ MonoBehaviour:
   recipes:
   - id: 0
     disName: Salat
-    resultPrefab: {fileID: 0}
-    type: 0
+    resultPrefab: {fileID: 1996430957005834792, guid: 4a4ccf640d1b55c4cb6c91637eb576fe, type: 3}
+    type: 2
     ingredients:
     - id: 0
       foodType: 11
@@ -30,11 +30,11 @@ MonoBehaviour:
       foodType: 7
       amount: 1
       isRequied: 1
-    maxTotalFood: 0
+    maxTotalFood: 3
   - id: 1
     disName: Hamberger
-    resultPrefab: {fileID: 0}
-    type: 0
+    resultPrefab: {fileID: 1764359682633554, guid: effa42b4a54897f49b7ef4797cbef64d, type: 3}
+    type: 2
     ingredients:
     - id: 1
       foodType: 23
@@ -52,11 +52,15 @@ MonoBehaviour:
       foodType: 9
       amount: 1
       isRequied: 0
-    maxTotalFood: 0
+    - id: 1
+      foodType: 11
+      amount: 1
+      isRequied: 0
+    maxTotalFood: 5
   - id: 2
     disName: Hamberger
-    resultPrefab: {fileID: 0}
-    type: 0
+    resultPrefab: {fileID: 1764359682633554, guid: effa42b4a54897f49b7ef4797cbef64d, type: 3}
+    type: 2
     ingredients:
     - id: 2
       foodType: 23
@@ -74,4 +78,8 @@ MonoBehaviour:
       foodType: 9
       amount: 1
       isRequied: 0
-    maxTotalFood: 0
+    - id: 2
+      foodType: 11
+      amount: 1
+      isRequied: 0
+    maxTotalFood: 5

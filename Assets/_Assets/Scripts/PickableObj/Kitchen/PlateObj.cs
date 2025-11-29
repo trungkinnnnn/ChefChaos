@@ -1,8 +1,108 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class PlateObj : PickableObj
+public class PlateObj : PickableObj, ITryAddFood
 {
-    
+    [SerializeField] Transform _positionHoldFood;
+    [SerializeField] IngredientUI _ingredientUI;
+
+    private CookingRecipeGroup _recipeGroup;
+
+    private List<(FoodType, GameObject)> _addFoodValids = new();
+    private CookingRecipe _cookingRecipeCompleted;
+
+    protected override void Start()
+    {
+        base.Start();
+        _recipeGroup = GetComponent<CookingRecipeGroup>();
+    }
+
+    public override void DoSomeThing()
+    {
+        base.DoSomeThing();
+        var pickableObj = _player.GetPickableObj();
+        TryAddFood(pickableObj);
+    }
+
+    // ==================== Input Logic (Add Food) ====================
+
+    public void TryAddFood(PickableObj pickableObj)   // ====== Interface ======
+    {
+        if (pickableObj is not FoodObj food) return;
+
+        var foodData = food.GetDataFood();
+        if (!_recipeGroup.IsValidFood(foodData.foodType)) return;
+
+        var (addSucessfully, cookingRecipe) = _recipeGroup.AddFood(foodData.foodType);
+
+        if (addSucessfully) AddFoodToPlate(pickableObj, foodData);
+        if (cookingRecipe != null)
+        {
+            _cookingRecipeCompleted = cookingRecipe;
+            FillFoodComlelted();
+        }
+    }
+
+    private void AddFoodToPlate(PickableObj pickableObj, FoodData foodData)
+    {
+        _addFoodValids.Add((foodData.foodType, pickableObj.gameObject));
+        AddIngredientVisual(pickableObj, foodData);
+    }
+
+    private void AddIngredientVisual(PickableObj pickableObj, FoodData foodData)
+    {
+        MoveFoodToPot(pickableObj);
+        _ingredientUI.AddSpriteFood(foodData.sprite);
+    }
+
+   
+    private void MoveFoodToPot(PickableObj obj)
+    {
+        obj.PickUpObj(_positionHoldFood, null);
+        if (_player == null) return;
+        if (_player.GetPickableObj() is FoodObj) _player.SetPickUpObj(null);            
+    }
+
+    private IEnumerator WaitToDespawn(PickableObj obj, float time = 0.2f)
+    {
+        yield return new WaitForSeconds(time);
+        PoolManager.Instance.Despawner(obj.gameObject);
+    }
+
+    // ================= Output Logic (Fill FoodCompleted) =================
+
+    private void FillFoodComlelted()
+    {
+        if (_cookingRecipeCompleted.resultPrefab == null) return;
+        CreateFoodPrefab(_cookingRecipeCompleted.resultPrefab);
+        DespanwerFoodValid();
+    }
+
+    private void CreateFoodPrefab(GameObject prefabs)
+    {
+        PoolManager.Instance.Spawner(prefabs, _positionHoldFood.position, Quaternion.identity, _positionHoldFood);
+    }
+
+    private void DespanwerFoodValid()
+    {
+        foreach(var food in _addFoodValids)
+        {
+            PoolManager.Instance.Despawner(food.Item2);
+        }
+    }
+
+    // ================= Service ===============
+
+    public void ResetPlate()
+    {
+        _ingredientUI.ResetImages();
+
+        _recipeGroup.InitRecipeProgress();
+        _cookingRecipeCompleted = null;
+
+        _addFoodValids.Clear();
+    }
+
 }

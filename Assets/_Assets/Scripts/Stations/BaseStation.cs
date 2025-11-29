@@ -34,6 +34,7 @@ public class BaseStation : MonoBehaviour, ISelectable
         {
             if(objType.type == ObjType.All || objType.type == type) return true;
         }
+        Debug.Log("false");
         return false;
     }
 

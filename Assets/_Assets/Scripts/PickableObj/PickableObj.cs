@@ -21,7 +21,6 @@ public class PickableObj : MonoBehaviour, ISelectable
     {   
         _player = player;
         SetPickableObjStation(station);
-
     }    
 
     private void Selected(bool value)
@@ -59,7 +58,7 @@ public class PickableObj : MonoBehaviour, ISelectable
     {
         if(station == null)
         {
-            _station.SetPickableObj(null);
+            _station?.SetPickableObj(null);
             ChangeStationValue(station);
         }
         else

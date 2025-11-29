@@ -65,6 +65,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickableData: {fileID: 11400000, guid: 4afc24f0c1128144f8a002e2d78d5704, type: 2}
+  _positionHoldFood: {fileID: 8794400771331237554}
+  _ingredientUI: {fileID: 1631863661276663883}
 --- !u!114 &8423133038110052547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7349,6 +7351,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b2df92fb2020e34b9959fb0fe6bc925, type: 3}
+--- !u!114 &1631863661276663883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7752006359925968367, guid: 8b2df92fb2020e34b9959fb0fe6bc925, type: 3}
+  m_PrefabInstance: {fileID: 9021031029409275300}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4254ba5a1aa79e44caf67112a91e62b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4556181266049055636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4759158377229313584, guid: 8b2df92fb2020e34b9959fb0fe6bc925, type: 3}

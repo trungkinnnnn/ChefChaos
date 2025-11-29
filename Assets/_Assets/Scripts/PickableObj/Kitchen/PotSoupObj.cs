@@ -189,6 +189,7 @@ public class PotSoupObj : PickableObj, ITryAddFood
     // ================ Service ===================
     public void ResetPotSoup()
     {
+        SetFireAndSmokeCook(false);
         _ingredientUI.ResetImages();
         _soupVisual.ResetVisuals();
 
@@ -203,7 +204,7 @@ public class PotSoupObj : PickableObj, ITryAddFood
         _cookingRecipeCompleted = null;
 
         _addFoodValids.Clear();
-        SetFireAndSmokeCook(false);
+        
     }
 
     public (List<(FoodType, Sprite)>, ObjType) GetListFoodValid()

@@ -16,4 +16,4 @@ MonoBehaviour:
   canCook: 1
   sprite: {fileID: 21300000, guid: 3606a2db3e13fa34cb82cb2c0e5d910f, type: 2}
   foodType: 4
-  timeCooking: 0
+  timeCooking: 5
