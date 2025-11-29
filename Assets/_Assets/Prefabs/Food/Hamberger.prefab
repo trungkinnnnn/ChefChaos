@@ -175,6 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4090179607001913}
+  - component: {fileID: 3522706832687383382}
   m_Layer: 7
   m_Name: Hamberger
   m_TagString: Untagged
@@ -200,6 +201,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &3522706832687383382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764359682633554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c416275125a7e4694087d7923826c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _foodCompleted:
+    foodList:
+    - Type: 23
+      foodObj:
+      - {fileID: 1011349663512181}
+      - {fileID: 1536215370037168}
+    - Type: 3
+      foodObj:
+      - {fileID: 5919381369177352612}
+    - Type: 4
+      foodObj:
+      - {fileID: 5693615787372786582}
+    - Type: 13
+      foodObj:
+      - {fileID: 263933576297243273}
+    - Type: 11
+      foodObj:
+      - {fileID: 592116375111800480}
+    - Type: 9
+      foodObj:
+      - {fileID: 8444942431576309340}
 --- !u!1 &263933576297243273
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3864109355482514405}
   - component: {fileID: 3864109355482521161}
   m_Layer: 0
-  m_Name: Food_Sushi_001
+  m_Name: Food_Sushi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

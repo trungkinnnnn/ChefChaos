@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -12,6 +13,7 @@ public class PlateObj : PickableObj, ITryAddFood
 
     private List<(FoodType, GameObject)> _addFoodValids = new();
     private CookingRecipe _cookingRecipeCompleted;
+    private FoodCompleted _foodCompleted;
 
     protected override void Start()
     {
@@ -76,13 +78,26 @@ public class PlateObj : PickableObj, ITryAddFood
     private void FillFoodComlelted()
     {
         if (_cookingRecipeCompleted.resultPrefab == null) return;
-        CreateFoodPrefab(_cookingRecipeCompleted.resultPrefab);
+        CreateFoodPrefabOrUpdate(_cookingRecipeCompleted.resultPrefab);
         DespanwerFoodValid();
     }
 
-    private void CreateFoodPrefab(GameObject prefabs)
+    private void CreateFoodPrefabOrUpdate(GameObject prefabs)
     {
-        PoolManager.Instance.Spawner(prefabs, _positionHoldFood.position, Quaternion.identity, _positionHoldFood);
+        if(_foodCompleted == null)
+        {
+            var obj = PoolManager.Instance.Spawner(prefabs, _positionHoldFood.position, Quaternion.identity, _positionHoldFood);
+            if (obj.TryGetComponent<FoodCompleted>(out FoodCompleted foodCompleted))
+            {
+                var types = _addFoodValids.Select(x => x.Item1).Distinct().ToList();
+                foodCompleted.Init(types);
+                _foodCompleted = foodCompleted;
+            }
+        }else
+        {
+            _foodCompleted.UpdateFoodType(_addFoodValids[^1].Item1);
+        }
+
     }
 
     private void DespanwerFoodValid()
