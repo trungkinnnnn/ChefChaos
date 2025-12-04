@@ -30,11 +30,14 @@ public class OrderUI : MonoBehaviour
 
     // Animator
     private static int _HAS_ANI_ISTIMEOUT = Animator.StringToHash("isTimeOut");
+    private static int _HAS_ANI_ISDESRTOY = Animator.StringToHash("isDestroy");
     private Animator _ani;
+
+    private OrderManager _manager;
 
     private void Awake()
     {
-        _ani = GetComponent<Animator>();
+        _ani = GetComponentInChildren<Animator>();
         _ani.enabled = false;
         SetUpColor();
     }
@@ -51,12 +54,13 @@ public class OrderUI : MonoBehaviour
         ColorUtility.TryParseHtmlString(_hexEnd, out cEnd);
     }    
 
-    public void Init(FoodRandom foodRandom)
+    public void Init(FoodRandom foodRandom, OrderManager manager)
     {
         SetUp();
         ShowOnOrder(foodRandom);
         StartCoroutine(TimeNeedCookdDone(foodRandom));
         _ani.enabled = true;
+        _manager = manager;
     }
     private void SetUp()
     {
@@ -149,9 +153,17 @@ public class OrderUI : MonoBehaviour
             MakeColor(t);
             PlayAniamtion(t);
             yield return null;
-        }    
+        }       
+        StartCoroutine(WaitTimeDestroy());
+    }
+
+    private IEnumerator WaitTimeDestroy(float duration = 1f)
+    {
+        _ani.SetTrigger(_HAS_ANI_ISDESRTOY);
+        yield return new WaitForSeconds(duration);
+        _manager.RemoveOrderForList(this);
         PoolManager.Instance.Despawner(gameObject);
-    }    
+    }
 
     private void MakeColor(float time)
     {
@@ -172,6 +184,7 @@ public class OrderUI : MonoBehaviour
         //_ani.enabled = true;
         _ani.SetBool(_HAS_ANI_ISTIMEOUT, true);
     }    
+
 
 
 
