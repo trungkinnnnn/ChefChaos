@@ -181,7 +181,6 @@ public class OrderUI : MonoBehaviour
     private void PlayAniamtion(float t)
     {
         if(t < 0.8f) return;
-        //_ani.enabled = true;
         _ani.SetBool(_HAS_ANI_ISTIMEOUT, true);
     }    
 
