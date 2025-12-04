@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FoodIcon
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: bd4db6af41218d346a2cf5b4f4360211, type: 3}
+    - {fileID: 2800000, guid: ee61395d1e26af840844f9ba73f24b78, type: 3}
+    - {fileID: 2800000, guid: 36017fcafb2ec8f49afd2ed736a17a62, type: 3}
+    - {fileID: 2800000, guid: f416c916292aef545935a3219c954275, type: 3}
+    - {fileID: 2800000, guid: 6e37093c50382d34c8c9450a22cba502, type: 3}
+    - {fileID: 2800000, guid: 283326f5d281e7f47809f2dc1f18fb14, type: 3}
+    - {fileID: 2800000, guid: fda0b7c6e13c697438f71313bb722cd1, type: 3}
+    - {fileID: 2800000, guid: 4af479431d9d33a4ca29629a580da8d5, type: 3}
+    - {fileID: 2800000, guid: 01445574e6665ff40985b4b4295722c3, type: 3}
+    - {fileID: 2800000, guid: d63f894179f4dc34b916aebfe32e6f25, type: 3}
+    - {fileID: 2800000, guid: ca21678bb9f0b4e4ca1fb33ef73b07a8, type: 3}
+    - {fileID: 2800000, guid: 142c752534526974f9a262afd8f1f667, type: 3}
+    - {fileID: 2800000, guid: 8a3a9d84bebd398419a4d4430eb2926b, type: 3}
+    - {fileID: 2800000, guid: db00e449fa30c2c439ae719144d4fb10, type: 3}
+    - {fileID: 2800000, guid: 70827bb8178c4d14da6877bb95e2477d, type: 3}
+    - {fileID: 2800000, guid: 9dd0d9e94550d714cb9a3c4c00ce50c2, type: 3}
+    - {fileID: 2800000, guid: 5f437d3e7a6074e489cce4db630b6823, type: 3}
+    - {fileID: 2800000, guid: 69600b555fdb25d49b07cf001a3cc197, type: 3}
+    - {fileID: 2800000, guid: 6bab4b0cd29fd154b971847b5e94c5b7, type: 3}
+    - {fileID: 2800000, guid: b6f30f68728e1044ba162d93b42d8501, type: 3}
+    - {fileID: 2800000, guid: f75bc49eed04efd4d8e6271e8e837a7e, type: 3}
+    - {fileID: 2800000, guid: a5a913266bee2dd4b987075c02c77d63, type: 3}
+    - {fileID: 2800000, guid: b3642ee40762f4f4cb7032d9eb779576, type: 3}
+    - {fileID: 2800000, guid: 898af01824a8e154498e004d7f0b4304, type: 3}
+    - {fileID: 2800000, guid: f411857de1eb1a2448183be345472b04, type: 3}
+    - {fileID: 2800000, guid: cc70593e5a92f494b85a47a66867760f, type: 3}
+    - {fileID: 2800000, guid: 93bff4952c4021b4b9a0e8de0f402747, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: d63f894179f4dc34b916aebfe32e6f25, type: 3}
+  - {fileID: 21300000, guid: 4af479431d9d33a4ca29629a580da8d5, type: 3}
+  - {fileID: 21300000, guid: 01445574e6665ff40985b4b4295722c3, type: 3}
+  - {fileID: 21300000, guid: 8a3a9d84bebd398419a4d4430eb2926b, type: 3}
+  - {fileID: 21300000, guid: b3642ee40762f4f4cb7032d9eb779576, type: 3}
+  - {fileID: 21300000, guid: 142c752534526974f9a262afd8f1f667, type: 3}
+  - {fileID: 21300000, guid: 69600b555fdb25d49b07cf001a3cc197, type: 3}
+  - {fileID: 21300000, guid: 93bff4952c4021b4b9a0e8de0f402747, type: 3}
+  - {fileID: 21300000, guid: 283326f5d281e7f47809f2dc1f18fb14, type: 3}
+  - {fileID: 21300000, guid: f416c916292aef545935a3219c954275, type: 3}
+  - {fileID: 21300000, guid: a5a913266bee2dd4b987075c02c77d63, type: 3}
+  - {fileID: 21300000, guid: fda0b7c6e13c697438f71313bb722cd1, type: 3}
+  - {fileID: 21300000, guid: 898af01824a8e154498e004d7f0b4304, type: 3}
+  - {fileID: 21300000, guid: b6f30f68728e1044ba162d93b42d8501, type: 3}
+  - {fileID: 21300000, guid: 70827bb8178c4d14da6877bb95e2477d, type: 3}
+  - {fileID: 21300000, guid: db00e449fa30c2c439ae719144d4fb10, type: 3}
+  - {fileID: 21300000, guid: 9dd0d9e94550d714cb9a3c4c00ce50c2, type: 3}
+  - {fileID: 21300000, guid: 36017fcafb2ec8f49afd2ed736a17a62, type: 3}
+  - {fileID: 21300000, guid: ca21678bb9f0b4e4ca1fb33ef73b07a8, type: 3}
+  - {fileID: 21300000, guid: 6bab4b0cd29fd154b971847b5e94c5b7, type: 3}
+  - {fileID: 21300000, guid: 6e37093c50382d34c8c9450a22cba502, type: 3}
+  - {fileID: 21300000, guid: ee61395d1e26af840844f9ba73f24b78, type: 3}
+  - {fileID: 21300000, guid: f411857de1eb1a2448183be345472b04, type: 3}
+  - {fileID: 21300000, guid: cc70593e5a92f494b85a47a66867760f, type: 3}
+  - {fileID: 21300000, guid: 5f437d3e7a6074e489cce4db630b6823, type: 3}
+  - {fileID: 21300000, guid: f75bc49eed04efd4d8e6271e8e837a7e, type: 3}
+  - {fileID: 21300000, guid: bd4db6af41218d346a2cf5b4f4360211, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Tomatoes-icon-scene
+  - Onion-icon-scene
+  - Rice-icon-scene
+  - ProgressBar-Back
+  - Order-Box-Multiple
+  - ProgressBar-Fill_0
+  - Sushi-icon
+  - OrderProgress-Background-4
+  - Lettuce-icon-scene
+  - Cucumber-icon-scene
+  - FryingPan-icon
+  - Nori-icon-scene
+  - Order-Box-Small
+  - Complete-Order-Ui
+  - Soup-Mushroom-icon
+  - Salad-icon
+  - Soup-Onion-icon
+  - Bread-icon-scene
+  - Mushroom-icon-scene
+  - Burger-icon
+  - Fish-icon-scene
+  - Beef-icon-scene
+  - Order-Box-Large
+  - OrderProgress-Background-3
+  - Soup-Tomates-icon
+  - Stewpot-icon
+  - Cheese-icon-scene
+  m_RenderDataMap: {}
+  m_Tag: FoodIcon
+  m_IsVariant: 0

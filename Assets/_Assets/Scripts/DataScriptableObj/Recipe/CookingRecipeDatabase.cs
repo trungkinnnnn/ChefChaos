@@ -13,10 +13,12 @@ public class CookingRecipe
 {
     public int id;
     public string disName;
-    public GameObject resultPrefab;
+    public Sprite sprite;
+    public GameObject resultPrefab; 
     public ObjType type;
     public List<IngredientRequiment> ingredients;
     public int maxTotalFood;
+    public float timeCookDone = 5f;
 }
 
 [System.Serializable]
@@ -24,6 +26,7 @@ public class IngredientRequiment
 {
     public int id;  
     public FoodType foodType;
+    public Sprite foodSprite;
     public int amount;
     public bool isRequied;
 }

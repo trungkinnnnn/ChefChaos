@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02da8132a1b356442a4820cb47ed32d9, type: 3}
-  m_Name: Meat DoneCook Data
+  m_Script: {fileID: 11500000, guid: 492b4a1c944d766468f6ae093655275b, type: 3}
+  m_Name: Type Cook Not Show
   m_EditorClassIdentifier: 
-  canCut: 0
-  canCook: 1
-  sprite: {fileID: 21300000, guid: 3606a2db3e13fa34cb82cb2c0e5d910f, type: 2}
-  foodType: 3
-  timeCooking: 5
+  icons:
+  - foodType: 23
+    _spriteCook: {fileID: 0}

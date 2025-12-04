@@ -21,7 +21,7 @@ MonoBehaviour:
     - id: 0
       foodType: 11
       amount: 1
-      isRequied: 1
+      isRequied: 0
     - id: 0
       foodType: 13
       amount: 1
