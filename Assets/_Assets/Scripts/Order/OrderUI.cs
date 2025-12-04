@@ -22,15 +22,26 @@ public class OrderUI : MonoBehaviour
     [SerializeField] Image _imageBoxSoup;
     [SerializeField] List<Image> _imageBoxOther;
 
+    // Color
     private string _hexStart = "#25FF09";
     private string _hexMid = "#FFF709";
     private string _hexEnd = "#FF3409";
-
     Color cStart, cMid, cEnd;
 
-    private void Start()
+    // Animator
+    private static int _HAS_ANI_ISTIMEOUT = Animator.StringToHash("isTimeOut");
+    private Animator _ani;
+
+    private void Awake()
     {
+        _ani = GetComponent<Animator>();
+        _ani.enabled = false;
         SetUpColor();
+    }
+
+    private void OnDisable()
+    {
+        _ani.enabled = false;
     }
 
     private void SetUpColor()
@@ -45,6 +56,7 @@ public class OrderUI : MonoBehaviour
         SetUp();
         ShowOnOrder(foodRandom);
         StartCoroutine(TimeNeedCookdDone(foodRandom));
+        _ani.enabled = true;
     }
     private void SetUp()
     {
@@ -135,6 +147,7 @@ public class OrderUI : MonoBehaviour
             float t = time / foodRandom.timeCookDone;
             _imageFillBar.fillAmount = Mathf.Lerp(1, 0, t);
             MakeColor(t);
+            PlayAniamtion(t);
             yield return null;
         }    
         PoolManager.Instance.Despawner(gameObject);
@@ -151,6 +164,13 @@ public class OrderUI : MonoBehaviour
             float t = (time - 0.5f) / 0.5f;
             _imageFillBar.color = Color.Lerp(cMid, cEnd, t);
         }    
+    }    
+
+    private void PlayAniamtion(float t)
+    {
+        if(t < 0.8f) return;
+        //_ani.enabled = true;
+        _ani.SetBool(_HAS_ANI_ISTIMEOUT, true);
     }    
 
 

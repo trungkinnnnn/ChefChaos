@@ -15,8 +15,8 @@ MonoBehaviour:
   recipes:
   - id: 0
     disName: Salat
-    resultPrefab: {fileID: 1996430957005834792, guid: 4a4ccf640d1b55c4cb6c91637eb576fe, type: 3}
     sprite: {fileID: 21300000, guid: 6160b484da1894a4f8dc1cf09c1f4645, type: 2}
+    resultPrefab: {fileID: 1996430957005834792, guid: 4a4ccf640d1b55c4cb6c91637eb576fe, type: 3}
     type: 2
     ingredients:
     - id: 0
@@ -35,10 +35,11 @@ MonoBehaviour:
       amount: 1
       isRequied: 1
     maxTotalFood: 3
+    timeCookDone: 30
   - id: 1
     disName: Hamberger
-    resultPrefab: {fileID: 1764359682633554, guid: effa42b4a54897f49b7ef4797cbef64d, type: 3}
     sprite: {fileID: 21300000, guid: 6af48737308a89748ba8f9e851006235, type: 2}
+    resultPrefab: {fileID: 1764359682633554, guid: effa42b4a54897f49b7ef4797cbef64d, type: 3}
     type: 2
     ingredients:
     - id: 1
@@ -67,10 +68,11 @@ MonoBehaviour:
       amount: 1
       isRequied: 0
     maxTotalFood: 5
+    timeCookDone: 30
   - id: 3
     disName: SoupOnion
-    resultPrefab: {fileID: 0}
     sprite: {fileID: 21300000, guid: 5139fb00312c20747a2cd874545b8219, type: 2}
+    resultPrefab: {fileID: 0}
     type: 3
     ingredients:
     - id: 3
@@ -79,10 +81,11 @@ MonoBehaviour:
       amount: 3
       isRequied: 1
     maxTotalFood: 3
+    timeCookDone: 30
   - id: 4
     disName: SoupTomato
-    resultPrefab: {fileID: 0}
     sprite: {fileID: 21300000, guid: 6f3ae0a862b21994d84ea8c0789af660, type: 2}
+    resultPrefab: {fileID: 0}
     type: 3
     ingredients:
     - id: 4
@@ -91,10 +94,11 @@ MonoBehaviour:
       amount: 3
       isRequied: 1
     maxTotalFood: 3
+    timeCookDone: 30
   - id: 5
     disName: SoupMushroom
-    resultPrefab: {fileID: 0}
     sprite: {fileID: 21300000, guid: 6f3ae0a862b21994d84ea8c0789af660, type: 2}
+    resultPrefab: {fileID: 0}
     type: 3
     ingredients:
     - id: 3
@@ -103,3 +107,4 @@ MonoBehaviour:
       amount: 3
       isRequied: 1
     maxTotalFood: 3
+    timeCookDone: 30

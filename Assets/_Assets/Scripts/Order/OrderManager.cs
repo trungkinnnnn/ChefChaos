@@ -19,13 +19,13 @@ public class OrderManager : MonoBehaviour
     private void Update()
     {
         if(Time.time < _timeWait) return;
-        _timeWait = Time.time + 5f;
+        _timeWait = Time.time + 30f;
         StartCoroutine(WaitSecondSpanwOrder());
     }
 
     private IEnumerator WaitSecondSpanwOrder()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         FoodRandom foodRandom = _orderSpanwer.RandomIngredientFood();
         OrderUI orderUI = CreateOrderUI();
         orderUI.Init(foodRandom);
@@ -33,7 +33,8 @@ public class OrderManager : MonoBehaviour
 
     private OrderUI CreateOrderUI()
     {
-        var obj = PoolManager.Instance.Spawner(_orderUIPrefab, _orderTransform.transform.position, Quaternion.identity, _orderTransform);
+        var obj = PoolManager.Instance.Spawner(_orderUIPrefab, Vector3.zero, Quaternion.identity);
+        obj.transform.SetParent(_orderTransform,false);
         if(obj.TryGetComponent<OrderUI>(out OrderUI orderUI)) return orderUI;
         return null;
     }    
