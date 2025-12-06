@@ -4832,6 +4832,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickableData: {fileID: 11400000, guid: 60b4be2dc8e20d14286af5583faf80cb, type: 2}
+  _plateClean: {fileID: 1312173023017306}
+  _plateDirty: {fileID: 1678207288101820}
   _ingredientUI: {fileID: 7381968827904129025}
 --- !u!114 &-7213760174565394462
 MonoBehaviour:

@@ -562,6 +562,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1314533943}
     m_Modifications:
+    - target: {fileID: 2989815510691796934, guid: 1bae63b15c39db8449086e28d1be6716, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989815510691796934, guid: 1bae63b15c39db8449086e28d1be6716, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989815510691796934, guid: 1bae63b15c39db8449086e28d1be6716, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6614303944343822418, guid: 1bae63b15c39db8449086e28d1be6716, type: 3}
       propertyPath: m_Name
       value: ServiceStation_002_Out
@@ -614,6 +626,10 @@ PrefabInstance:
       propertyPath: _stationType
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7005385091421039379, guid: 1bae63b15c39db8449086e28d1be6716, type: 3}
+      propertyPath: _positionSpawn
+      value: 
+      objectReference: {fileID: 668592616}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bae63b15c39db8449086e28d1be6716, type: 3}
 --- !u!1001 &74492416
@@ -5553,6 +5569,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7689311363063439790, guid: 56f469b747043c94c83885d158dfc29f, type: 3}
   m_PrefabInstance: {fileID: 652629124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &668592616 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2989815510691796934, guid: 1bae63b15c39db8449086e28d1be6716, type: 3}
+  m_PrefabInstance: {fileID: 72787902}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &691537046
 PrefabInstance:

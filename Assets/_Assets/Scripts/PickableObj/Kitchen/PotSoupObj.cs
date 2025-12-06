@@ -168,10 +168,12 @@ public class PotSoupObj : PickableObj, ITryAddFood
 
     // ================= Output Logic (Transfer Soup) ================
 
-    private void TryTransferSoupToPlate(PickableObj pickableObj)
+    private List<(FoodType, Sprite)> CopyListFoodValids() => new List<(FoodType, Sprite)>(_addFoodValids);
+
+    public void TryTransferSoupToPlate(PickableObj pickableObj)
     {
         if (_cookingState != CookingState.Cooked || _cookingRecipeCompleted == null) return;
-        if (pickableObj.HandheldReceiveCooked(_addFoodValids, _cookingRecipeCompleted.type))
+        if (pickableObj.HandheldReceiveCooked(CopyListFoodValids(), _cookingRecipeCompleted.type))
         {
             ResetPotSoup();
         }
@@ -205,12 +207,6 @@ public class PotSoupObj : PickableObj, ITryAddFood
 
         _addFoodValids.Clear();
         
-    }
-
-    public (List<(FoodType, Sprite)>, ObjType) GetListFoodValid()
-    {
-        if (_cookingState != CookingState.Cooked || _cookingRecipeCompleted == null) return (null, ObjType.All);
-        return (_addFoodValids, _cookingRecipeCompleted.type);
     }
 
 }

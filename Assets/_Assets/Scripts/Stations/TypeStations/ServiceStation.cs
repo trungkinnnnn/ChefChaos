@@ -4,17 +4,20 @@ using System.Linq;
 using UnityEngine;
 
 public class ServiceStation : BaseStation
-{
+{ 
+    [SerializeField] Transform _positionSpawn;
+    private float _timeSpawnPlate = 3f;
+
     protected override void PickableObj(PickableObj obj)
     {
         if(obj is not IPlate plate) return;
         if(plate.GetStatePlate() == PlateState.Dirty) return;
-        
         List<FoodType> foodTypes = plate.GetFoodTypes();
-        if(foodTypes == null) return;
+        if(foodTypes == null) return; 
         base.PickableObj(obj);
 
-        TryOrderMatch(foodTypes);
+        StartCoroutine(DespawnPlateAndCreateWaitSeconds(obj));
+        bool isMatch = TryOrderMatch(foodTypes);  
     }
 
     private bool TryOrderMatch(List<FoodType> food)
@@ -24,12 +27,18 @@ public class ServiceStation : BaseStation
         foreach(OrderUI order in orders)
         {
             bool isMatch = CompareFoodAccuracy(order.GetFoods(), food);
-            if(isMatch) return true;  
+            if(isMatch)
+            {
+                order.OrderCompleted();
+                Debug.Log("true");
+                return true;
+            }    
+           
         }  
         return false;
     }    
 
-    public bool CompareFoodAccuracy(List<FoodType> foodOders, List<FoodType> foodPlates)
+    private bool CompareFoodAccuracy(List<FoodType> foodOders, List<FoodType> foodPlates)
     {
         var countA = foodOders.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());   
         var countB = foodPlates.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
@@ -42,6 +51,20 @@ public class ServiceStation : BaseStation
            if(aCount != bCount) return false;
         }    
         return true;
+    }    
+
+    private IEnumerator DespawnPlateAndCreateWaitSeconds(PickableObj obj)
+    {
+        yield return new WaitForSeconds(1f);
+        obj.gameObject.SetActive(false);
+        if(obj is IPlate plate)
+        {
+            plate.ResetPlate();
+            plate.SetDrityPlate();
+        }    
+        yield return new WaitForSeconds(_timeSpawnPlate);
+        obj.transform.position = _positionSpawn.position;
+        obj.gameObject.SetActive(true);
     }    
 
 }

@@ -8,8 +8,8 @@ public class OrderUI : MonoBehaviour
 {
     [SerializeField] TypeCook _dataTypeCook;
     [SerializeField] TypeCook _listFoodNotShow;
-    [SerializeField] GameObject _ingerdientsObj; // DOTwent move
-    [SerializeField] GameObject _FoodCompletedObj; // DOTwent move
+    [SerializeField] GameObject _ingerdientsObj; 
+    [SerializeField] GameObject _FoodCompletedObj; 
     [SerializeField] Image _imageFoodOrder;
     [SerializeField] Image _imageFillBar;
 
@@ -31,9 +31,12 @@ public class OrderUI : MonoBehaviour
     // Animator
     private static int _HAS_ANI_ISTIMEOUT = Animator.StringToHash("isTimeOut");
     private static int _HAS_ANI_ISDESRTOY = Animator.StringToHash("isDestroy");
+    private static int _HAS_ANI_ISCOMPLETED = Animator.StringToHash("isCompleted");
     private Animator _ani;
     private OrderManager _manager;
     private FoodRandom _foodRandom;
+
+    private bool _isCompleted = false;
 
     private void Awake()
     {
@@ -56,15 +59,16 @@ public class OrderUI : MonoBehaviour
 
     public void Init(FoodRandom foodRandom, OrderManager manager)
     {
+        _ani.enabled = true;
+        _manager = manager;
         _foodRandom = foodRandom;
         SetUp();
         ShowOnOrder(foodRandom);
         StartCoroutine(TimeNeedCookdDone(foodRandom));
-        _ani.enabled = true;
-        _manager = manager;
     }
     private void SetUp()
     {
+        _isCompleted = false;
         _FoodCompletedObj.SetActive(false);
         _imageBoxSoup.gameObject.SetActive(false);
         foreach (var food in _imageBoxOther) food.gameObject.SetActive(false);
@@ -153,14 +157,15 @@ public class OrderUI : MonoBehaviour
             _imageFillBar.fillAmount = Mathf.Lerp(1, 0, t);
             MakeColor(t);
             PlayAniamtion(t);
+            if(_isCompleted) yield break;
             yield return null;
         }       
-        StartCoroutine(WaitTimeDestroy());
+        StartCoroutine(WaitTimeDestroy(_HAS_ANI_ISDESRTOY));
     }
 
-    private IEnumerator WaitTimeDestroy(float duration = 1f)
+    private IEnumerator WaitTimeDestroy(int ani, float duration = 1f) 
     {
-        _ani.SetTrigger(_HAS_ANI_ISDESRTOY);
+        _ani.SetTrigger(ani);
         yield return new WaitForSeconds(duration);
         _manager.RemoveOrderForList(this);
         PoolManager.Instance.Despawner(gameObject);
@@ -196,5 +201,11 @@ public class OrderUI : MonoBehaviour
         return foods;
     }
             
+    public void OrderCompleted()
+    {
+        _isCompleted = true;
+        _FoodCompletedObj.SetActive(true);
+        StartCoroutine(WaitTimeDestroy(_HAS_ANI_ISCOMPLETED, 1.5f));
+    }
 
 }

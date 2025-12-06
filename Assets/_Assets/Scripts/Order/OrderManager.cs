@@ -18,9 +18,9 @@ public class OrderManager : MonoBehaviour
     private List<OrderUI> _orders = new();
     private int _orderCount = 0;
     private int _orderMax = 3;
+    private float _timeSpawnOrder = 4f;
 
     private OrderSpanwer _orderSpanwer;
-    private float _timeWait = 0;
 
     private void Awake()
     {
@@ -32,23 +32,24 @@ public class OrderManager : MonoBehaviour
     private void Start()
     {
         _orderSpanwer = new OrderSpanwer(_recipeDatabase);
+        StartCoroutine(OrderSpawnLoop());
     }
 
-    private void Update()
+    private IEnumerator OrderSpawnLoop()
     {
-        if(Time.time < _timeWait || _orderCount == _orderMax) return;
-        _timeWait = Time.time + 4f;
-        StartCoroutine(WaitSecondSpanwOrder());
-    }
+        while (true)
+        {
+            if(_orderCount < _orderMax)
+            {
+                FoodRandom foodRandom = _orderSpanwer.RandomIngredientFood();
+                var obj = CreateOrderUI(foodRandom);
 
-    private IEnumerator WaitSecondSpanwOrder()
-    {
-        yield return new WaitForSeconds(5f);
-        FoodRandom foodRandom = _orderSpanwer.RandomIngredientFood();
-        var obj = CreateOrderUI(foodRandom);
-        MoveInScreen(obj);
-        yield return new WaitForSeconds(1.5f);
-        RefreshPosition();
+                MoveInScreen(obj);
+                yield return new WaitForSeconds(1.5f);
+                RefreshPosition();
+            }    
+            yield return new WaitForSeconds(_timeSpawnOrder);
+        }    
     }    
 
     private GameObject CreateOrderUI(FoodRandom foodRandom)

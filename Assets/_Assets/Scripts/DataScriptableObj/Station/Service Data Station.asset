@@ -17,3 +17,4 @@ MonoBehaviour:
   materialHighlight: {fileID: 2100000, guid: 0efa0d4dfd88a9748b04ac11486f3a20, type: 2}
   placeTypes:
   - type: 2
+  - type: 3

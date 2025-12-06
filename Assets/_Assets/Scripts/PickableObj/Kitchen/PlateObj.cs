@@ -6,6 +6,9 @@ using UnityEngine.UIElements;
 
 public class PlateObj : PickableObj, ITryAddFood, IPlate
 {
+    [SerializeField] GameObject _plateClean;
+    [SerializeField] GameObject _plateDirty;
+
     [SerializeField] Transform _positionHoldFood;
     [SerializeField] IngredientUI _ingredientUI;
 
@@ -21,11 +24,6 @@ public class PlateObj : PickableObj, ITryAddFood, IPlate
     {
         base.Start();
         _recipeGroup = GetComponent<CookingRecipeGroup>();
-    }
-
-    public void InitPlateDirty()
-    {
-        _statePlate = PlateState.Dirty;
     }
 
     public override void DoSomeThing()
@@ -103,30 +101,35 @@ public class PlateObj : PickableObj, ITryAddFood, IPlate
 
     private void DespanwerFoodValid()
     {
-        foreach(var food in _addFoodValids)
-        {
-            PoolManager.Instance.Despawner(food.Item2);
-        }
+        if(_addFoodValids == null || _addFoodValids.Count <= 0) return; 
+        foreach(var food in _addFoodValids) PoolManager.Instance.Despawner(food.Item2);
     }
 
-    // ================= Service ===============
+    private void DespawnerFoodCompleted()
+    {
+        _foodCompleted?.ResetFood();
+        PoolManager.Instance.Despawner(_foodCompleted?.gameObject);
+        _foodCompleted = null;
+    }
 
-    public PlateState GetStatePlate() => _statePlate; // ==== Interface (IPlate) =========
+    // ==== Interface (IPlate) =========
+
+    public PlateState GetStatePlate() => _statePlate; 
     
-    public List<FoodType> GetFoodTypes() // ==== Interface (IPlate) =========
+    public List<FoodType> GetFoodTypes() 
     {
         if(_addFoodValids == null || _addFoodValids.Count <= 0) return null;
+
         List<FoodType> foods = new();
-        foreach(var food in _addFoodValids)
-        {
-            foods.Add(food.Item1);
-            Debug.Log(food.Item1);
-        }
+        foreach(var food in _addFoodValids) foods.Add(food.Item1);
+
         return foods;
     }
 
-    public void ResetPlate()
+    public void ResetPlate() 
     {
+        DespawnerFoodCompleted();
+        DespanwerFoodValid();
         _ingredientUI.ResetImages();
 
         _recipeGroup.InitRecipeProgress();
@@ -134,9 +137,17 @@ public class PlateObj : PickableObj, ITryAddFood, IPlate
 
         _addFoodValids.Clear();
         _statePlate = PlateState.Clean;  
-    }
 
-    
+        _plateClean.gameObject.SetActive(true);
+        _plateDirty.gameObject.SetActive(false);
+       
+    }
+    public void SetDrityPlate()
+    {
+        _statePlate = PlateState.Dirty;
+        _plateClean.gameObject.SetActive(false);
+        _plateDirty.gameObject.SetActive(true);
+    }
 
 }
 
