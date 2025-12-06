@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlateObj : PickableObj, ITryAddFood
+public class PlateObj : PickableObj, ITryAddFood, IPlate
 {
     [SerializeField] Transform _positionHoldFood;
     [SerializeField] IngredientUI _ingredientUI;
@@ -15,10 +15,17 @@ public class PlateObj : PickableObj, ITryAddFood
     private CookingRecipe _cookingRecipeCompleted;
     private FoodCompleted _foodCompleted;
 
+    private PlateState _statePlate = PlateState.Clean;
+
     protected override void Start()
     {
         base.Start();
         _recipeGroup = GetComponent<CookingRecipeGroup>();
+    }
+
+    public void InitPlateDirty()
+    {
+        _statePlate = PlateState.Dirty;
     }
 
     public override void DoSomeThing()
@@ -26,12 +33,13 @@ public class PlateObj : PickableObj, ITryAddFood
         base.DoSomeThing();
         var pickableObj = _player.GetPickableObj();
         TryAddFood(pickableObj);
-    }
+    }  
 
     // ==================== Input Logic (Add Food) ====================
 
-    public void TryAddFood(PickableObj pickableObj)   // ====== Interface ======
+    public void TryAddFood(PickableObj pickableObj)   // ====== Interface (ITryAddFood) ======
     {
+        if (_statePlate == PlateState.Dirty) return;
         if (pickableObj is not FoodObj food) return;
 
         var foodData = food.GetDataFood();
@@ -39,7 +47,7 @@ public class PlateObj : PickableObj, ITryAddFood
 
         var (addSucessfully, cookingRecipe) = _recipeGroup.AddFood(foodData.foodType);
 
-        if (addSucessfully) AddFoodToPlate(pickableObj, foodData);
+        if (addSucessfully) AddFoodToPlate(pickableObj, foodData);   
         if (cookingRecipe != null)
         {
             _cookingRecipeCompleted = cookingRecipe;
@@ -58,19 +66,12 @@ public class PlateObj : PickableObj, ITryAddFood
         MoveFoodToPot(pickableObj);
         _ingredientUI.AddSpriteFood(foodData.sprite);
     }
-
    
     private void MoveFoodToPot(PickableObj obj)
     {
         obj.PickUpObj(_positionHoldFood, null);
         if (_player == null) return;
         if (_player.GetPickableObj() is FoodObj) _player.SetPickUpObj(null);            
-    }
-
-    private IEnumerator WaitToDespawn(PickableObj obj, float time = 0.2f)
-    {
-        yield return new WaitForSeconds(time);
-        PoolManager.Instance.Despawner(obj.gameObject);
     }
 
     // ================= Output Logic (Fill FoodCompleted) =================
@@ -110,6 +111,20 @@ public class PlateObj : PickableObj, ITryAddFood
 
     // ================= Service ===============
 
+    public PlateState GetStatePlate() => _statePlate; // ==== Interface (IPlate) =========
+    
+    public List<FoodType> GetFoodTypes() // ==== Interface (IPlate) =========
+    {
+        if(_addFoodValids == null || _addFoodValids.Count <= 0) return null;
+        List<FoodType> foods = new();
+        foreach(var food in _addFoodValids)
+        {
+            foods.Add(food.Item1);
+            Debug.Log(food.Item1);
+        }
+        return foods;
+    }
+
     public void ResetPlate()
     {
         _ingredientUI.ResetImages();
@@ -118,6 +133,16 @@ public class PlateObj : PickableObj, ITryAddFood
         _cookingRecipeCompleted = null;
 
         _addFoodValids.Clear();
+        _statePlate = PlateState.Clean;  
     }
 
+    
+
+}
+
+
+public enum PlateState
+{
+    Clean,
+    Dirty
 }

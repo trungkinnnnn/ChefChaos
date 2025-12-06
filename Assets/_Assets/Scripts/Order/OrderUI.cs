@@ -32,8 +32,8 @@ public class OrderUI : MonoBehaviour
     private static int _HAS_ANI_ISTIMEOUT = Animator.StringToHash("isTimeOut");
     private static int _HAS_ANI_ISDESRTOY = Animator.StringToHash("isDestroy");
     private Animator _ani;
-
     private OrderManager _manager;
+    private FoodRandom _foodRandom;
 
     private void Awake()
     {
@@ -56,6 +56,7 @@ public class OrderUI : MonoBehaviour
 
     public void Init(FoodRandom foodRandom, OrderManager manager)
     {
+        _foodRandom = foodRandom;
         SetUp();
         ShowOnOrder(foodRandom);
         StartCoroutine(TimeNeedCookdDone(foodRandom));
@@ -184,7 +185,16 @@ public class OrderUI : MonoBehaviour
         _ani.SetBool(_HAS_ANI_ISTIMEOUT, true);
     }    
 
-
-
+    // =========== Service =============
+    public List<FoodType> GetFoods()
+    {
+        List<FoodType> foods = new();
+        foreach(IngredientRandom ingredient in _foodRandom.ingredients)
+        {
+            for(int i = 0; i < ingredient.amount; i++) foods.Add(ingredient.foodType);
+        }
+        return foods;
+    }
+            
 
 }

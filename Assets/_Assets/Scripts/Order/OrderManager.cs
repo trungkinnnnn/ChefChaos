@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class OrderManager : MonoBehaviour
 {
+    public static OrderManager Instance;
+
     [SerializeField] CookingRecipeDatabase _recipeDatabase;
     [SerializeField] GameObject _orderUIPrefab;
     [SerializeField] Transform _orderParent;
@@ -19,10 +21,17 @@ public class OrderManager : MonoBehaviour
 
     private OrderSpanwer _orderSpanwer;
     private float _timeWait = 0;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
     private void Start()
     {
         _orderSpanwer = new OrderSpanwer(_recipeDatabase);
-        //StartCoroutine(WaitSecondSpanwOrder());
     }
 
     private void Update()
@@ -82,5 +91,11 @@ public class OrderManager : MonoBehaviour
         _orderCount -= 1;
         RefreshPosition();
     }    
+
+    public List<OrderUI> GetOrders()
+    {
+        if (_orders == null || _orders.Count <= 0) return null;
+        return _orders;
+    }
 
 }
