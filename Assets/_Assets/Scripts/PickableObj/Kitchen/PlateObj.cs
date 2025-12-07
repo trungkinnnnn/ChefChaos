@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlateObj : PickableObj, ITryAddFood, IPlate
+public class PlateObj : PickableObj, ITryAddFood, IPlate, IPlateContent
 {
     [SerializeField] GameObject _plateClean;
     [SerializeField] GameObject _plateDirty;

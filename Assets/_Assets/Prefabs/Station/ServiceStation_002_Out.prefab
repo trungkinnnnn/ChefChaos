@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3194620304785378184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.92, y: 0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -127,7 +127,8 @@ MonoBehaviour:
   _dataStation: {fileID: 11400000, guid: 94ea11688e20aa245858fcc7c3f6c21a, type: 2}
   _transformHoldFood: {fileID: 6614303944343815761}
   _stationType: 4
-  _positionSpawn: {fileID: 0}
+  _plateHiddenPrefab: {fileID: 4775520230814812199, guid: ceccc875363058547932e5ac0a4ad762, type: 3}
+  _positionSpawn: {fileID: 2989815510691796934}
 --- !u!1 &6614303944343824329
 GameObject:
   m_ObjectHideFlags: 0

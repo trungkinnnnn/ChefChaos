@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlateSoupObj : PickableObj, IPlate
+public class PlateSoupObj : PickableObj, IPlate, IPlateContent
 {
     [SerializeField] GameObject _plateClean;
     [SerializeField] GameObject _plateDirty;

@@ -25,6 +25,7 @@ public class PickableObj : MonoBehaviour, ISelectable
 
     private void Selected(bool value)
     {
+        if(_pickableData == null) return;
         if (_renderers == null || _renderers.Length <= 0) return;
 
         foreach (Renderer renderer in _renderers)
@@ -48,7 +49,7 @@ public class PickableObj : MonoBehaviour, ISelectable
             this.transform.localRotation = Quaternion.identity;
         });
 
-        _collider.enabled = station != null;
+        ActiveCollider(station != null);
         SetPickableObjStation(station);
 
         return this;    
@@ -73,11 +74,8 @@ public class PickableObj : MonoBehaviour, ISelectable
         _station = station;
     }
 
-    //
-    // ================== Interface ===================
-    //
 
-    // ================== ISelectable =================
+    // ================== Interface (ISelectable) =================
 
     public Transform GetSelectableTransform() => transform;
 
@@ -91,7 +89,6 @@ public class PickableObj : MonoBehaviour, ISelectable
     {
         _player = player;
         Selected(true);
-        //Debug.Log(_pickableData.name);
     }
 
     public virtual void DoSomeThing()
@@ -106,5 +103,9 @@ public class PickableObj : MonoBehaviour, ISelectable
 
     public virtual bool HandheldReceiveCooked(List<(FoodType, Sprite)> foodTypes, ObjType type) { return false; } 
 
+    public void ActiveCollider(bool value)
+    {
+        _collider.enabled = value;
+    }    
 
 }
