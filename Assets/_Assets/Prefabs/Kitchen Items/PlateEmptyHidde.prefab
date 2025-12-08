@@ -59,8 +59,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickableData: {fileID: 11400000, guid: 4afc24f0c1128144f8a002e2d78d5704, type: 2}
-  _listPlateInfos:
-  - type: 2
-    size: 0.05
-  - type: 3
-    size: 0.23
+  _plateInfo: {fileID: 11400000, guid: e409206d974992445bdb1f2c11638c67, type: 2}

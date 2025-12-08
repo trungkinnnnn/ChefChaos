@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class PlateEmptyHidde : PickableObj, IPlateHidden
 {
-    [SerializeField] List<PlateInfo> _listPlateInfos = new();
+    [SerializeField] PlateInfo _plateInfo;
     private List<PickableObj> _objs = new();
-    private float _totalY = 0;
-
-    private Vector3 _originalPosition;
+    private float _currentHeight = 0;
 
     protected override void Start()
     {
         base.Start();
-        _originalPosition = transform.position;
+        ActiveCollider(false);
     }
 
     private float TakeSizeObj(PickableObj obj)
     {
         ObjType type = obj.GetDataPickableObj().typeObj;
-        foreach (PlateInfo info in _listPlateInfos)
+        foreach (InfoData info in _plateInfo.Infos)
         {
             if (info.type == type) return info.size;
         }    
@@ -28,32 +26,33 @@ public class PlateEmptyHidde : PickableObj, IPlateHidden
 
     private void SetPositionPlate(PickableObj obj, float size)
     {
+        obj.ActiveCollider(false);
         obj.transform.SetParent(transform, false);
-        obj.transform.localPosition = new Vector3(0, _totalY, 0);
-        _totalY += size;
+        obj.transform.localPosition = new Vector3(0, _currentHeight, 0);
+        _currentHeight += size;
     }
 
     // =============== Service ===============
     public void TryAddPlate(PickableObj plate)
     {
-        plate.ActiveCollider(false);
-        gameObject.SetActive(true);
+        ActiveCollider(true);
         float size = TakeSizeObj(plate);
         if (size == 0) return;
         SetPositionPlate(plate, size);
         _objs.Add(plate);
     }
 
+    // ====== Interface (IPlateHidden) =======
+    public List<PickableObj> GetPickableObjs() => new List<PickableObj>(_objs);
+
+    public float GetTotalY() => _currentHeight;
     public void ResetPlateHidden()
     {
+        ActiveCollider(false);
+        _objs.Clear();
+        _currentHeight = 0;
+        PoolManager.Instance.Despawner(gameObject);
+    }
 
-    }    
 
-}
-
-[System.Serializable]
-public class PlateInfo
-{
-    public ObjType type;
-    public float size;
 }

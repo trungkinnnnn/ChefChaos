@@ -122,7 +122,7 @@ public class PotSoupObj : PickableObj, ITryAddFood
     {   
         if (_progressBar == null)
         {
-            _progressBar = ProgressBarManager.Instance.CreateProgressBar(_positionHoldFood, _timeMax, false);
+            _progressBar = ProgressBarManager.Instance.CreateProgressBar(_positionHoldFood, _timeMax, 1f, false);
             _progressBar.OnCompleted = HandleCookingDone;
         }
         else

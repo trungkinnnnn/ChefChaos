@@ -17,16 +17,18 @@ public class ServiceStation : BaseStation
 
     private void CreatPlateHidden()
     {
-        var obj = Instantiate(_plateHiddenPrefab, _positionSpawn.position, Quaternion.identity, _positionSpawn);
+        var obj = PoolManager.Instance.Spawner(_plateHiddenPrefab, _positionSpawn.position, Quaternion.identity, _positionSpawn);
         _plateHidden = obj?.GetComponent<PlateEmptyHidde>();
-        obj.SetActive(false);
+        _plateHidden.Init(null, this);
     }    
 
     protected override void PickableObj(PickableObj obj)
     {
         if(obj is not IPlate plate || obj is not IPlateContent plateContent) return;
         if(plate.GetStatePlate() == PlateState.Dirty) return;
+
         List<FoodType> foodTypes = plateContent.GetFoodTypes();
+
         if(foodTypes == null || foodTypes.Count == 0) return; 
         base.PickableObj(obj);
 
@@ -44,10 +46,8 @@ public class ServiceStation : BaseStation
             if(isMatch)
             {
                 order.OrderCompleted();
-                Debug.Log("true");
                 return true;
             }    
-           
         }  
         return false;
     }    
@@ -79,6 +79,13 @@ public class ServiceStation : BaseStation
         yield return new WaitForSeconds(_timeSpawnPlate);
         _plateHidden.TryAddPlate(obj);
         obj.gameObject.SetActive(true);
-    }    
+    }
 
+    // ============= Service ===============
+
+    public override void SetPickableObj(PickableObj obj)
+    {
+        if (obj != null) return;
+        CreatPlateHidden();
+    }
 }

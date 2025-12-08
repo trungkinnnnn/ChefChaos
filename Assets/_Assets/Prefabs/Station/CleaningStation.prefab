@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &329470310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329470311}
+  m_Layer: 6
+  m_Name: PositionMoveOnPlate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &329470311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329470310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.514, y: 0.631, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1486104166064788986}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &430616449003823023
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1486104166064810450}
   m_Layer: 6
-  m_Name: PortableObjectPosition
+  m_Name: SpawnPositioh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14210,7 +14241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1486104166064789903
 Transform:
   m_ObjectHideFlags: 0
@@ -18800,6 +18831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1486104166064788986}
   - component: {fileID: 4175401925633243010}
+  - component: {fileID: 6725928115396082304}
   - component: {fileID: 5623662934555428123}
   - component: {fileID: 5131109522583010172}
   - component: {fileID: 5474027916106941334}
@@ -18826,6 +18858,7 @@ Transform:
   - {fileID: 1486104166064810450}
   - {fileID: 1486104166064789903}
   - {fileID: 3924592180261113612}
+  - {fileID: 329470311}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -18842,10 +18875,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataStation: {fileID: 11400000, guid: d36b534a4696b254a9f02ed49031081f, type: 2}
-  _transformHoldFood: {fileID: 1486104166064810450}
+  _transformHoldFood: {fileID: 329470311}
   _stationType: 4
-  _positionMovePlate: {fileID: 0}
-  _onWarter: {fileID: 0}
+  _onWarter: {fileID: 1486104166064795442}
+--- !u!114 &6725928115396082304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486104166064797403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bbb7fada2e25b4bad13ea327a2c0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plateInfo: {fileID: 11400000, guid: e409206d974992445bdb1f2c11638c67, type: 2}
+  _cleanStackRoot: {fileID: 1486104166064810450}
 --- !u!65 &5623662934555428123
 BoxCollider:
   m_ObjectHideFlags: 0

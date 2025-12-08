@@ -76,7 +76,6 @@ public class BaseStation : MonoBehaviour, ISelectable
 
     // ================== Service ==========================
 
-    public Transform GetTransformHoldFood() => _transformHoldFood;
     public virtual void SetPickableObj(PickableObj obj) => _pickableObj = obj;  
 
 }

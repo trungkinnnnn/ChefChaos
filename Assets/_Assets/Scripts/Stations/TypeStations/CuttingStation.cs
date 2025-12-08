@@ -36,7 +36,7 @@ public class CuttingStation : BaseStation
         PoolManager.Instance.Despawner(obj.gameObject);
         ProgressBarManager.Instance.CreateProgressBar(_transformHoldFood, rule.processTime);
 
-        _player.GetAnimationController().SetTriggerAnimationCutting(rule.processTime + _timeWait);
+        _player.GetAnimationController().PlayAnimationCutting(rule.processTime + _timeWait);
 
         SpawnObjSlice(rule);
     }

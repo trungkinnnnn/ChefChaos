@@ -103,9 +103,6 @@ public class PickableObj : MonoBehaviour, ISelectable
 
     public virtual bool HandheldReceiveCooked(List<(FoodType, Sprite)> foodTypes, ObjType type) { return false; } 
 
-    public void ActiveCollider(bool value)
-    {
-        _collider.enabled = value;
-    }    
+    public void ActiveCollider(bool value) => _collider.enabled = value;  
 
 }
