@@ -71,7 +71,6 @@ public class CleanPlateStackController : MonoBehaviour
         {
             plate.gameObject.SetActive(true);
             plate.ActiveCollider(true);
-            Debug.Log("OnPlate");
         }
     }
 

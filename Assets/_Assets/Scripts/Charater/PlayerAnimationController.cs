@@ -72,6 +72,11 @@ public class PlayerAnimationController : MonoBehaviour
         StartCoroutine(WaitTimeWasing(time));
     }
 
+    public void PlayAnimationGrabage(float time)
+    {
+        _animator.SetTrigger(_HAS_ANI_TRIGGER_ISGRABAGE);
+        StartCoroutine(WaitTimeLockInput(time));
+    }
    
 
 }

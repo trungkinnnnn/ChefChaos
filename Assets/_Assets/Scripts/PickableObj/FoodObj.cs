@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class FoodObj : PickableObj
+public class FoodObj : PickableObj, ITrash
 {
     private static int _HAS_ANI_TRIGGER_CUTTING = Animator.StringToHash("isCutting");
 
@@ -22,10 +22,14 @@ public class FoodObj : PickableObj
         tryAddFood.TryAddFood(this);
     }
 
+    // =========== Interface (ITrash) =============
+    public bool CanTrash() => true;
+    public void TrashFood() => PoolManager.Instance.Despawner(gameObject);
+
     // =================== Service ===================
-    public FoodData GetDataFood() => _foodData; 
+    public FoodData GetDataFood() => _foodData;
 
-
+   
 }
 
 

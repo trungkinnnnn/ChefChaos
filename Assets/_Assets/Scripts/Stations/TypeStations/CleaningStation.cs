@@ -56,7 +56,6 @@ public class CleaningStation : BaseStation
     {
         if(obj != null) return;
         _cleanStack.HandleRemoveCleanPlate();
-        Debug.Log("remove plate");
     }
 
 }

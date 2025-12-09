@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PotSoupObj : PickableObj, ITryAddFood
+public class PotSoupObj : PickableObj, ITryAddFood, ITrash
 {
     [SerializeField] Transform _positionHoldFood; 
     [SerializeField] IngredientUI _ingredientUI;
@@ -67,7 +67,7 @@ public class PotSoupObj : PickableObj, ITryAddFood
 
     // ================= Input Logic (Add Food) ==================
   
-    public void TryAddFood(PickableObj pickableObj)   // ====== Interface ======
+    public void TryAddFood(PickableObj pickableObj)   // ====== Interface (ITryAddFood) ======
     {
         if (pickableObj is not FoodObj food) return;
         if(_foodAmount >= _maxFoodAmount) return;
@@ -188,6 +188,18 @@ public class PotSoupObj : PickableObj, ITryAddFood
         }
     }
 
+    // ======== Interface (Itrash) =========
+
+    public bool CanTrash()
+    {
+        return !(_addFoodValids == null || _addFoodValids.Count == 0);
+    }
+    public void TrashFood()
+    {
+        
+        ResetPotSoup();
+    }
+
     // ================ Service ===================
     public void ResetPotSoup()
     {
@@ -206,9 +218,7 @@ public class PotSoupObj : PickableObj, ITryAddFood
         _cookingRecipeCompleted = null;
 
         _addFoodValids.Clear();
-        
     }
-
 }
 
 

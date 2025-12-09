@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlateObj : PickableObj, ITryAddFood, IPlate, IPlateContent
+public class PlateObj : PickableObj, ITryAddFood, IPlate, IPlateContent, ITrash
 {
     [SerializeField] GameObject _plateClean;
     [SerializeField] GameObject _plateDirty;
@@ -115,16 +115,6 @@ public class PlateObj : PickableObj, ITryAddFood, IPlate, IPlateContent
     // ==== Interface (IPlate) =========
 
     public PlateState GetStatePlate() => _statePlate; 
-    
-    public List<FoodType> GetFoodTypes() 
-    {
-        if(_addFoodValids == null || _addFoodValids.Count <= 0) return null;
-
-        List<FoodType> foods = new();
-        foreach(var food in _addFoodValids) foods.Add(food.Item1);
-
-        return foods;
-    }
 
     public void ResetPlate() 
     {
@@ -149,6 +139,29 @@ public class PlateObj : PickableObj, ITryAddFood, IPlate, IPlateContent
         _plateDirty.gameObject.SetActive(true);
     }
 
+    // =========== Interface (IPlateContent) ============
+    public List<FoodType> GetFoodTypes()
+    {
+        if (_addFoodValids == null || _addFoodValids.Count <= 0) return null;
+
+        List<FoodType> foods = new();
+        foreach (var food in _addFoodValids) foods.Add(food.Item1);
+
+        return foods;
+    }
+
+    // =========== Interface (ITrash)
+
+    public bool CanTrash()
+    {
+        return !(_addFoodValids == null || _addFoodValids.Count == 0);
+    }
+
+    public void TrashFood()
+    {
+        if(_addFoodValids == null || _addFoodValids.Count == 0) return;
+        ResetPlate();
+    }
 }
 
 

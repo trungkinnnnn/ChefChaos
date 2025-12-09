@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlateSoupObj : PickableObj, IPlate, IPlateContent
+public class PlateSoupObj : PickableObj, IPlate, IPlateContent, ITrash
 {
     [SerializeField] GameObject _plateClean;
     [SerializeField] GameObject _plateDirty;
@@ -36,19 +36,9 @@ public class PlateSoupObj : PickableObj, IPlate, IPlateContent
         }
     }
 
-    // ==== Interface (IPlate) =========
+    // ======== Interface (IPlate) =========
 
     public PlateState GetStatePlate() => _state; 
-
-    public List<FoodType> GetFoodTypes() 
-    {
-        if (_foodTypes == null || _foodTypes.Count <= 0) return null;
-
-        List<FoodType> foods = new();
-        foreach (var food in _foodTypes) foods.Add(food.Item1);
-
-        return foods;
-    }
 
     public void ResetPlate() 
     {
@@ -67,6 +57,29 @@ public class PlateSoupObj : PickableObj, IPlate, IPlateContent
         _plateDirty.SetActive(true);
     }
 
+    // ========== Interface (IPlateContent) =============
+    public List<FoodType> GetFoodTypes()
+    {
+        if (_foodTypes == null || _foodTypes.Count <= 0) return null;
+
+        List<FoodType> foods = new();
+        foreach (var food in _foodTypes) foods.Add(food.Item1);
+
+        return foods;
+    }
+
+    // ========== Interface (ITrash) =================
+
+    public bool CanTrash()
+    {
+        return !(_foodTypes == null || _foodTypes.Count == 0);
+    }
+
+    public void TrashFood()
+    {
+        ResetPlate();
+    }
+
     // =================== Service ===================
     public override bool HandheldReceiveCooked(List<(FoodType, Sprite)> foodTypes, ObjType type)
     {
@@ -78,5 +91,5 @@ public class PlateSoupObj : PickableObj, IPlate, IPlateContent
         return true;
     }
 
-   
+
 }
