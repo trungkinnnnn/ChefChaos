@@ -15,8 +15,8 @@ GameObject:
   m_Name: Station_Cooking_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2505038701228375999
 Transform:
@@ -4905,6 +4905,7 @@ GameObject:
   - component: {fileID: 2505038701228374044}
   - component: {fileID: 8128140757551267925}
   - component: {fileID: 7923073637516023011}
+  - component: {fileID: 6736767625885489315}
   m_Layer: 6
   m_Name: CookingStation_002
   m_TagString: Untagged
@@ -4959,9 +4960,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataStation: {fileID: 11400000, guid: a9aa62d5cc1cad041b7f554dada06445, type: 2}
   _transformHoldFood: {fileID: 2505038701228368905}
-  _stationType: 1
   _smokeCooking: {fileID: 2505038701228364822}
   _fire: {fileID: 2505038701228361367}
+--- !u!114 &6736767625885489315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2505038701228362936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3107c4e6f8c9dd7448ef389cfcc0ea01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _processRecipeDatabase: {fileID: 11400000, guid: 93012aebcf47ecc479ddb49d58588883, type: 2}
 --- !u!1 &2505038701228364822
 GameObject:
   m_ObjectHideFlags: 0

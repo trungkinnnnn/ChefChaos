@@ -16,7 +16,7 @@ public class PlateEmptyHidde : PickableObj, IPlateHidden
 
     private float TakeSizeObj(PickableObj obj)
     {
-        ObjType type = obj.GetDataPickableObj().typeObj;
+        KitchenType type = obj.GetDataPickableObj().typeObj;
         foreach (InfoData info in _plateInfo.Infos)
         {
             if (info.type == type) return info.size;

@@ -15,7 +15,7 @@ public class CookingRecipe
     public string disName;
     public Sprite sprite;
     public GameObject resultPrefab; 
-    public ObjType type;
+    public KitchenType type;
     public List<IngredientRequiment> ingredients;
     public int maxTotalFood;
     public float timeCookDone = 5f;

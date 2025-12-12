@@ -10,8 +10,3 @@ public interface ISelectable
     Transform GetSelectableTransform();
     void DoSomeThing();
 }
-
-public interface ICutting
-{
-    bool CanCutting();
-}

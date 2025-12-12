@@ -15,8 +15,8 @@ GameObject:
   m_Name: Station_Empty_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &265514323641920366
 Transform:
@@ -176,5 +176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataStation: {fileID: 11400000, guid: 68d3d412095197f4db0d566a1e7359bc, type: 2}
   _transformHoldFood: {fileID: 265514323641899379}
+  _stationType: 0
   _pickUpPrefabs: {fileID: 1289631298093464, guid: 700c77b90c757af4bb3cff4dc0b2046d, type: 3}
   _spawner: 0

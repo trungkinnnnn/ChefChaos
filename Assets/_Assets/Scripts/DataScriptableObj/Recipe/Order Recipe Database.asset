@@ -35,7 +35,7 @@ MonoBehaviour:
       amount: 1
       isRequied: 1
     maxTotalFood: 3
-    timeCookDone: 30
+    timeCookDone: 60
   - id: 1
     disName: Hamberger
     sprite: {fileID: 21300000, guid: 6af48737308a89748ba8f9e851006235, type: 2}
@@ -68,43 +68,4 @@ MonoBehaviour:
       amount: 1
       isRequied: 0
     maxTotalFood: 5
-    timeCookDone: 30
-  - id: 3
-    disName: SoupOnion
-    sprite: {fileID: 21300000, guid: 5139fb00312c20747a2cd874545b8219, type: 2}
-    resultPrefab: {fileID: 0}
-    type: 3
-    ingredients:
-    - id: 3
-      foodType: 15
-      foodSprite: {fileID: 21300000, guid: 101845abb0494e8409bdefe54f3c9bbb, type: 2}
-      amount: 3
-      isRequied: 1
-    maxTotalFood: 3
-    timeCookDone: 30
-  - id: 4
-    disName: SoupTomato
-    sprite: {fileID: 21300000, guid: 6f3ae0a862b21994d84ea8c0789af660, type: 2}
-    resultPrefab: {fileID: 0}
-    type: 3
-    ingredients:
-    - id: 4
-      foodType: 13
-      foodSprite: {fileID: 21300000, guid: b6d9f2d1cff756840a5ccaf5702ab5c4, type: 2}
-      amount: 3
-      isRequied: 1
-    maxTotalFood: 3
-    timeCookDone: 30
-  - id: 5
-    disName: SoupMushroom
-    sprite: {fileID: 21300000, guid: 6f3ae0a862b21994d84ea8c0789af660, type: 2}
-    resultPrefab: {fileID: 0}
-    type: 3
-    ingredients:
-    - id: 3
-      foodType: 17
-      foodSprite: {fileID: 21300000, guid: ca21678bb9f0b4e4ca1fb33ef73b07a8, type: 3}
-      amount: 3
-      isRequied: 1
-    maxTotalFood: 3
-    timeCookDone: 30
+    timeCookDone: 60

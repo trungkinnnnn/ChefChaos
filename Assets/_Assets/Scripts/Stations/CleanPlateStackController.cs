@@ -50,7 +50,7 @@ public class CleanPlateStackController : MonoBehaviour
 
     private float TakeHeightPlate(PickableObj obj)
     {
-        ObjType type = obj.GetDataPickableObj().typeObj;
+        KitchenType type = obj.GetDataPickableObj().typeObj;
         foreach(InfoData info in _plateInfo.Infos)
         {
             if(info.type == type) return info.size;

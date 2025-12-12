@@ -14,8 +14,8 @@ GameObject:
   m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8626210996776580107
 Transform:
@@ -100,8 +100,8 @@ GameObject:
   m_Name: Station_Foodbox_001_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5280986052732645259
 Transform:
@@ -281,9 +281,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5c9ac53200a4e46909ca6464f9a939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dataStation: {fileID: 11400000, guid: 4d2c430ea0a707042956eb9f3a0afb1c, type: 2}
+  _dataStation: {fileID: 11400000, guid: 55af7454c05e7ad438275ec668a11dfd, type: 2}
   _transformHoldFood: {fileID: 5280986052732648041}
-  _foodPrefab: {fileID: 1023264624810293, guid: 9c208eda406af56498cf9d1dfc7eb141, type: 3}
+  _foodPrefab: {fileID: 2844786287115877981, guid: b135a282612e24046a876cfe34040618, type: 3}
 --- !u!1 &5280986052732642303
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,8 +299,8 @@ GameObject:
   m_Name: Station_Foodbox_001_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5280986052732648503
 Transform:

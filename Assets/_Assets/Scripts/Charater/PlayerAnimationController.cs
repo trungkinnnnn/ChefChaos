@@ -13,12 +13,12 @@ public class PlayerAnimationController : MonoBehaviour
     private static int _HAS_ANI_TRIGGER_ISGRABAGE = Animator.StringToHash("isGrabage");
     private static int _HAS_ANI_TRIGGER_ISCUTTING = Animator.StringToHash("isCutting");
 
-    private PlayerMovement _playerMovement;
+    private IMovement _movment;
     private Animator _animator;
 
     private void Start()
     {
-        _playerMovement = GetComponent<PlayerMovement>();
+        _movment = GetComponent<IMovement>();
         _animator = GetComponentInChildren<Animator>();
     }
 
@@ -29,7 +29,7 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void UpdateAniRunning()
     {
-        SetBoolAnimation(_HAS_ANI_BOOL_ISRUNNING, _playerMovement.IsMoving());
+        SetBoolAnimation(_HAS_ANI_BOOL_ISRUNNING, _movment.IsMoving());
     }    
 
     private void SetBoolAnimation(int ani, bool value)
@@ -49,9 +49,9 @@ public class PlayerAnimationController : MonoBehaviour
 
     private IEnumerator WaitTimeLockInput(float time)
     {
-        _playerMovement.LockInput(true);
+        _movment.LockInput(true);
         yield return new WaitForSeconds(time);
-        _playerMovement.LockInput(false);
+        _movment.LockInput(false);
     }
 
 

@@ -18,18 +18,18 @@ public class PlayerInteraction : MonoBehaviour
     private PickableObj _pickObj;
 
     private PlayerAnimationController _playerAnimationController;
-    private PlayerMovement _playerMovement;
+    private IMovement _movement;
     private bool _handleDoingObj = false;   
     private void Start()
     {
-        _playerMovement = GetComponent<PlayerMovement>();
+        _movement = GetComponent<IMovement>();
         _playerAnimationController = GetComponent<PlayerAnimationController>();
     }
 
     private void Update()
     {
 
-        if (_playerMovement.IsMoving())
+        if (_movement.IsMoving())
         {
             HandleSelectedStation();
             _handleDoingObj = true;

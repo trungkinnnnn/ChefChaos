@@ -5,19 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/ProcessRecipeDatabase")]
 public class ProcessRecipeDatabase : ScriptableObject
 {
-    public List<ProcessGroup> processGroups;
-}
-
-[System.Serializable]
-public class ProcessGroup
-{
-    public StationType stationType;
-    public List<ProcessRule> processRules;  
+    public List<ProcessRule> processRules;
 }
 
 [System.Serializable]
 public class ProcessRule    
 {
+    public StationType stationType;
     public FoodType inputType;
     public FoodType outputType;
     public float processTime;
@@ -26,9 +20,19 @@ public class ProcessRule
 
 public enum StationType
 {
-    Slice,
-    Fry,
-    Box,
-    trash,
-    Empty
+    EmptyStation, 
+    CookingStation,
+    CookingSoupStation,
+    SliceStation,
+    CleanStation,
+    GarbageStation,
+    ServiceStation,
+    BoxStatonCucumber,
+    BoxStationBread,
+    BoxStationCheese,
+    BoxStationLettuce,
+    BoxStationMeat,
+    BoxStationOnion,
+    BoxStationTomato,
+    BoxStationMusroom
 }

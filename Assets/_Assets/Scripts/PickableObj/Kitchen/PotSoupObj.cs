@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PotSoupObj : PickableObj, ITryAddFood, ITrash
+public class PotSoupObj : PickableObj, ITryAddFood, ITrash, IKitchen
 {
     [SerializeField] Transform _positionHoldFood; 
     [SerializeField] IngredientUI _ingredientUI;
@@ -190,15 +190,15 @@ public class PotSoupObj : PickableObj, ITryAddFood, ITrash
 
     // ======== Interface (Itrash) =========
 
-    public bool CanTrash()
-    {
-        return !(_addFoodValids == null || _addFoodValids.Count == 0);
-    }
-    public void TrashFood()
-    {
-        
-        ResetPotSoup();
-    }
+    public bool CanTrash() => !(_addFoodValids == null || _addFoodValids.Count == 0);
+    public void TrashFood() => ResetPotSoup();
+
+
+    // ======== Interface (IKitchen) =============
+
+    public PickableObj GetPickableObj() => this;
+
+    public KitchenType GetKitchenType() => _pickableData.typeObj;
 
     // ================ Service ===================
     public void ResetPotSoup()
@@ -219,6 +219,7 @@ public class PotSoupObj : PickableObj, ITryAddFood, ITrash
 
         _addFoodValids.Clear();
     }
+
 }
 
 

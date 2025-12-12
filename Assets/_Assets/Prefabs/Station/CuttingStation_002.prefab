@@ -15,8 +15,8 @@ GameObject:
   m_Name: Station_Cutting_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4008536244297017173
 Transform:
@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4008536244297028701}
   - component: {fileID: 7684810539126819741}
+  - component: {fileID: 49145719637085903}
   - component: {fileID: 1420133278358968036}
   m_Layer: 6
   m_Name: CuttingStation_002
@@ -133,8 +134,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataStation: {fileID: 11400000, guid: 27bd1d197cce4a34e9b05e614045fa86, type: 2}
   _transformHoldFood: {fileID: 4008536244297029718}
-  _stationType: 0
   _knife: {fileID: 4008536244297036737}
+--- !u!114 &49145719637085903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008536244297032079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3107c4e6f8c9dd7448ef389cfcc0ea01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _processRecipeDatabase: {fileID: 11400000, guid: 836e9e2ef5fa6b640ba1eac5b38368a2, type: 2}
 --- !u!65 &1420133278358968036
 BoxCollider:
   m_ObjectHideFlags: 0

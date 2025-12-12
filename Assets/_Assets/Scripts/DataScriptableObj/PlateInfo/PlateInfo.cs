@@ -11,6 +11,6 @@ public class PlateInfo : ScriptableObject
 [System.Serializable]
 public class InfoData
 {
-    public ObjType type;
+    public KitchenType type;
     public float size;
 }

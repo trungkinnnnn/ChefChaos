@@ -6,12 +6,19 @@ public class CookingStation : BaseStation
 {
     [SerializeField] GameObject _smokeCooking;
     [SerializeField] GameObject _fire;
+    private StationRecipeManager _stationRecipe;
     private ProgressBar _progressBarCurrent;
     private float _timeWait = 0.2f;
     private float _timeFireOn = 5f;
     private bool _isCooking = false;    
     private bool _isSpanwer = false;// Check obj spawner or pickup => Skip base.PickableObj    
 
+
+    protected override void Start()
+    {
+        base.Start();
+        _stationRecipe = GetComponent<StationRecipeManager>();
+    }
     private bool CheckTypeFood(FoodData data)
     {
         return data.canCook;
@@ -21,7 +28,7 @@ public class CookingStation : BaseStation
     {
         if (obj is FoodObj foodObj && CheckTypeFood(foodObj.GetDataFood()))
         {
-            ProcessRule rule = RecipeManager.Instance.GetProcessRule(_stationType, foodObj.GetDataFood().foodType);
+            ProcessRule rule = _stationRecipe.GetProcessRule(foodObj.GetDataFood().foodType);
             if (rule == null) return;
             if(!_isSpanwer) base.PickableObj(obj);
             StartCooking(foodObj, rule); 

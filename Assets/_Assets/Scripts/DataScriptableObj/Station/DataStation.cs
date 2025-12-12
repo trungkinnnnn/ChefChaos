@@ -9,17 +9,18 @@ public class DataStation : ScriptableObject
     public string nameStation;
     public Material materialDefault;
     public Material materialHighlight;
-    public List<PlaceType> placeTypes;
+    public StationType stationType;
+    public List<KitchenValid> kitchenValids;
 }
     
 [Serializable]
-public class PlaceType
+public class KitchenValid
 {
-    public ObjType type;
+    public KitchenType type;
 }
 
 
-public enum ObjType
+public enum KitchenType
 {
     All,
     Pot,

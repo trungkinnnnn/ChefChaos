@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataStation: {fileID: 11400000, guid: 68d3d412095197f4db0d566a1e7359bc, type: 2}
+  _transformHoldFood: {fileID: 0}
+  _stationType: 0
 --- !u!65 &7970657438334509537
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107,8 +109,8 @@ GameObject:
   m_Name: Station_Empty_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1540707571414602125
 Transform:

@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlateObj : PickableObj, ITryAddFood, IPlate, IPlateContent, ITrash
+public class PlateObj : PickableObj, ITryAddFood, IPlate, IPlateContent, ITrash, IKitchen
 {
     [SerializeField] GameObject _plateClean;
     [SerializeField] GameObject _plateDirty;
@@ -150,18 +150,17 @@ public class PlateObj : PickableObj, ITryAddFood, IPlate, IPlateContent, ITrash
         return foods;
     }
 
-    // =========== Interface (ITrash)
+    // =========== Interface (ITrash) ===========
 
-    public bool CanTrash()
-    {
-        return !(_addFoodValids == null || _addFoodValids.Count == 0);
-    }
+    public bool CanTrash() => !(_addFoodValids == null || _addFoodValids.Count == 0);
+    public void TrashFood() => ResetPlate();
 
-    public void TrashFood()
-    {
-        if(_addFoodValids == null || _addFoodValids.Count == 0) return;
-        ResetPlate();
-    }
+
+    // ======== Interface (IKitchen) =============
+    public PickableObj GetPickableObj() => this;
+
+    public KitchenType GetKitchenType() => _pickableData.typeObj;
+
 }
 
 

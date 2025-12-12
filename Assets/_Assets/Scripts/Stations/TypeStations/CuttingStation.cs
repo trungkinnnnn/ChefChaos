@@ -6,7 +6,14 @@ using UnityEngine;
 public class CuttingStation : BaseStation
 {
     [SerializeField] GameObject _knife;
+    private StationRecipeManager _stationRecipe;
     private float _timeWait = 0.2f;
+
+    protected override void Start()
+    {
+        base.Start();
+        _stationRecipe = GetComponent<StationRecipeManager>();
+    }
     private bool CheckTypeFood(FoodData data)
     {
         return data.canCut;
@@ -16,7 +23,7 @@ public class CuttingStation : BaseStation
     {
         if(obj is FoodObj foodObj && CheckTypeFood(foodObj.GetDataFood()))
         {
-            ProcessRule rule = RecipeManager.Instance.GetProcessRule(_stationType, foodObj.GetDataFood().foodType);
+            ProcessRule rule = _stationRecipe.GetProcessRule(foodObj.GetDataFood().foodType);
             if (rule == null) return;
             base.PickableObj(obj);
             SliceFood(foodObj, rule);

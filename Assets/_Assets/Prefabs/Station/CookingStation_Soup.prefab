@@ -4863,6 +4863,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataStation: {fileID: 11400000, guid: 067b7661c30541d4194436869cff76e9, type: 2}
   _transformHoldFood: {fileID: 7257915365372218833}
+  _stationType: 0
+  _fireCooked: {fileID: 0}
+  _fireBruned: {fileID: 0}
   _pickUpPrefabs: {fileID: 0}
   _spawner: 0
 --- !u!65 &6924631103703233012
@@ -16515,8 +16518,8 @@ GameObject:
   m_Name: Station_Cooking_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7257915365372215914
 Transform:

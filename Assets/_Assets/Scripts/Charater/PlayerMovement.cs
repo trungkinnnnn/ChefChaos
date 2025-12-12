@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IMovement
 {
     [SerializeField] FixedJoystick _joystick;
     [SerializeField] float _movementSpeed;
@@ -26,15 +26,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    // ============= Service ================
-    public bool IsMoving()   
-    {
-        return _joystick.Vertical != 0 || _joystick.Horizontal != 0;;
-    }    
+    // ============= Interface (IMovement) ================
+    public bool IsMoving() => _joystick.Vertical != 0 || _joystick.Horizontal != 0;      
 
-    public void LockInput(bool value)
-    {
-        _lockInput = value;
-    }    
+    public void LockInput(bool value) => _lockInput = value;   
 
 }

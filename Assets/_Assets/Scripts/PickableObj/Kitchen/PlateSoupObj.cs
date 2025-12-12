@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlateSoupObj : PickableObj, IPlate, IPlateContent, ITrash
+public class PlateSoupObj : PickableObj, IPlate, IPlateContent, ITrash, IKitchen
 {
     [SerializeField] GameObject _plateClean;
     [SerializeField] GameObject _plateDirty;
@@ -70,18 +70,19 @@ public class PlateSoupObj : PickableObj, IPlate, IPlateContent, ITrash
 
     // ========== Interface (ITrash) =================
 
-    public bool CanTrash()
-    {
-        return !(_foodTypes == null || _foodTypes.Count == 0);
-    }
+    public bool CanTrash() => !(_foodTypes == null || _foodTypes.Count == 0);
+    public void TrashFood() => ResetPlate();
 
-    public void TrashFood()
-    {
-        ResetPlate();
-    }
+
+
+    // ======== Interface (IKitchen) =============
+
+    public PickableObj GetPickableObj() => this;
+
+    public KitchenType GetKitchenType() => _pickableData.typeObj;
 
     // =================== Service ===================
-    public override bool HandheldReceiveCooked(List<(FoodType, Sprite)> foodTypes, ObjType type)
+    public override bool HandheldReceiveCooked(List<(FoodType, Sprite)> foodTypes, KitchenType type)
     {
         if(_state == PlateState.Dirty) return false;
         if(_pickableData.typeObj != type || _foodTypes.Count > 0) return false;
@@ -90,6 +91,5 @@ public class PlateSoupObj : PickableObj, IPlate, IPlateContent, ITrash
         OnIngredientUI();
         return true;
     }
-
 
 }

@@ -15,6 +15,8 @@ public class PickableObj : MonoBehaviour, ISelectable
     {
         _renderers = GetComponentsInChildren<Renderer>(true);
         _collider = GetComponent<Collider>();
+
+        if(this is IKitchen kitchen) MapManager.Instance.AddIKitchen(kitchen);
     }
 
     public void Init(PlayerInteraction player = null, BaseStation station = null)
@@ -101,7 +103,7 @@ public class PickableObj : MonoBehaviour, ISelectable
     // ================ Service ===================
     public PickableData GetDataPickableObj() => _pickableData;
 
-    public virtual bool HandheldReceiveCooked(List<(FoodType, Sprite)> foodTypes, ObjType type) { return false; } 
+    public virtual bool HandheldReceiveCooked(List<(FoodType, Sprite)> foodTypes, KitchenType type) { return false; } 
 
     public void ActiveCollider(bool value) => _collider.enabled = value;  
 

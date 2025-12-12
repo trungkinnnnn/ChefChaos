@@ -8,5 +8,5 @@ public class PickableData : ScriptableObject
     public string nameObj;
     public Material materialDefault;
     public Material materialHighlight;
-    public ObjType typeObj;
+    public KitchenType typeObj;
 }

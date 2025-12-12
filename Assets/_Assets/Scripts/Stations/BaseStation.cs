@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseStation : MonoBehaviour, ISelectable
+public class BaseStation : MonoBehaviour, ISelectable, IStation
 {
-    [SerializeField] DataStation _dataStation;
+    [SerializeField] protected DataStation _dataStation;
     [SerializeField] protected Transform _transformHoldFood;
-    [SerializeField] protected StationType _stationType;
 
     private MeshRenderer[] _meshRenderer;
     protected PlayerInteraction _player;
@@ -15,6 +14,8 @@ public class BaseStation : MonoBehaviour, ISelectable
     protected virtual void Start()
     {
         _meshRenderer = GetComponentsInChildren<MeshRenderer>();
+
+        if(this is IStation station) MapManager.Instance.AddIStation(station);  
     }
 
     private void Selected(bool value)
@@ -28,11 +29,11 @@ public class BaseStation : MonoBehaviour, ISelectable
         }
     }
 
-    private bool CheckTypePickUpObj(ObjType type)
+    private bool CheckTypePickUpObj(KitchenType type)
     {
-        foreach(PlaceType objType in _dataStation.placeTypes)
+        foreach(KitchenValid objType in _dataStation.kitchenValids)
         {
-            if(objType.type == ObjType.All || objType.type == type) return true;
+            if(objType.type == KitchenType.All || objType.type == type) return true;
         }
         Debug.Log("false");
         return false;
@@ -43,20 +44,14 @@ public class BaseStation : MonoBehaviour, ISelectable
         obj.PickUpObj(_transformHoldFood, this);
         _player.SetPickUpObj(null);
         OnDeselectable();
-    }    
+    }
 
-
-    //
-    // ================== Interface ==========================
-    //
-
-    // ================== ISelectable ========================
+    // ================== Interface (ISelectable) ========================
 
     public virtual void OnSelectable(PlayerInteraction player = null)
     {
         _player = player;
         Selected(true);
-        //Debug.Log(_dataStation.name);
     }
 
     public virtual void OnDeselectable()
@@ -74,8 +69,15 @@ public class BaseStation : MonoBehaviour, ISelectable
 
     public Transform GetSelectableTransform() => transform;
 
+    // ============= Interface (IStation) ================
+    public BaseStation GetBaseStation() => this;
+
+    public StationType GetTypeStation() => _dataStation.stationType;
+
+
     // ================== Service ==========================
 
-    public virtual void SetPickableObj(PickableObj obj) => _pickableObj = obj;  
+    public virtual void SetPickableObj(PickableObj obj) => _pickableObj = obj;
+
 
 }

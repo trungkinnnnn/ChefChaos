@@ -16,8 +16,8 @@ GameObject:
   m_Name: Station_Cleaning_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &257718769215208287
 Transform:
@@ -233,6 +233,7 @@ MonoBehaviour:
   _dataStation: {fileID: 11400000, guid: d36b534a4696b254a9f02ed49031081f, type: 2}
   _transformHoldFood: {fileID: 0}
   _stationType: 0
+  _onWarter: {fileID: 0}
 --- !u!1 &257718769215198244
 GameObject:
   m_ObjectHideFlags: 0
