@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,7 +10,7 @@ public class BotMovement : MonoBehaviour, IMovement
     [SerializeField] Transform _targetPosition2;
     private NavMeshAgent _agent;
     private bool _isMoving = false;
-
+    private bool _isCanSelected = false;    
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -19,20 +20,12 @@ public class BotMovement : MonoBehaviour, IMovement
 
     private void Update()
     {
-        if (!_isMoving) return;
+        if (!_isMoving || _isCanSelected) return;
         if(!_agent.pathPending && _agent.remainingDistance <= _agent.stoppingDistance)
         {
             EndMoving();
         }    
-
-    }
-
-    private void StartMoving(Transform targetPostion)
-    {
-        _isMoving = true;
-        _agent.isStopped = false;
-        _agent.SetDestination(targetPostion.position);
-    }    
+    } 
 
     private void EndMoving()
     {
@@ -44,6 +37,12 @@ public class BotMovement : MonoBehaviour, IMovement
     {
         yield return new WaitForSeconds(5f);
         StartMoving(_targetPosition2);
+        yield return new WaitForSeconds(6f);
+        Debug.Log("Start 2");
+        StartMoving(_targetPosition2);
+        _isCanSelected = true;
+        yield return new WaitForSeconds(0.01f);
+        _isCanSelected = false;
     }
 
     // =========== Interface (IMovement) ============
@@ -51,4 +50,11 @@ public class BotMovement : MonoBehaviour, IMovement
 
     public void LockInput(bool value) { }
 
+    // =============== Service ================
+    public void StartMoving(Transform targetPostion)
+    {
+        _isMoving = true;
+        _agent.isStopped = false;
+        _agent.SetDestination(targetPostion.position);
+    }
 }

@@ -99,4 +99,6 @@ public class OrderManager : MonoBehaviour
         return _orders;
     }
 
+    // Testing for bot task planner
+    public OrderUI GetOrderFirst() => _orders[0];   
 }

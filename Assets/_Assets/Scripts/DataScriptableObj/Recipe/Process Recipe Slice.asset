@@ -33,3 +33,13 @@ MonoBehaviour:
     outputType: 13
     processTime: 1.5
     resultPrefabs: {fileID: 9123832758987226504, guid: 85217dce83024de4c98656ed9ed643a7, type: 3}
+  - stationType: 3
+    inputType: 10
+    outputType: 11
+    processTime: 1.5
+    resultPrefabs: {fileID: 5076691516220541640, guid: e4706dfd049f54c4998fb81ce4f56a86, type: 3}
+  - stationType: 3
+    inputType: 8
+    outputType: 9
+    processTime: 1.5
+    resultPrefabs: {fileID: 7995084307631034053, guid: de03ff1df3fd0c9489c8ebc91de0c318, type: 3}

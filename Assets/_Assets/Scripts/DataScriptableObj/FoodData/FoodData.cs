@@ -38,4 +38,5 @@ public enum FoodType
     RiceCook,
     RiceBurntCook,
     Bread,
+    Non,
 }
