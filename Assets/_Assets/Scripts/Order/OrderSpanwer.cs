@@ -66,14 +66,14 @@ public class OrderSpanwer
 public class FoodRandom
 {
     public Sprite spriteFood;
-    public KitchenType ObjType;
+    public KitchenType kitchenType;
     public List<IngredientRandom> ingredients;
     public float timeCookDone;
     
     public FoodRandom(Sprite spriteFood, KitchenType ObjType, List<IngredientRandom> ingredients, float timeCookDone)
     {
         this.spriteFood = spriteFood;
-        this.ObjType = ObjType;
+        this.kitchenType = ObjType;
         this.ingredients = ingredients;
         this.timeCookDone = timeCookDone;   
     }

@@ -32,13 +32,25 @@ public class FoodMapManager : MonoBehaviour
         {
             _processRules[processRule.outputType] = processRule;
         }    
-    }    
+    }
+
+    private List<ProcessRule> GetProcessRule(FoodType foodTypes, List<ProcessRule> processRules)
+    {
+        if (!_processRules.ContainsKey(foodTypes))
+        {
+            processRules.Reverse();
+            return processRules;
+        }
+
+        processRules.Add(_processRules[foodTypes]);
+        return GetProcessRule(_processRules[foodTypes].inputType, processRules);
+    }
+
 
     // ================ Service ===================
-    public ProcessRule GetInfoFoodMaps(FoodType foodTypes)
+    public List<ProcessRule> BuildProcessRules(FoodType foodTypes)
     {
-        if (_processRules.ContainsKey(foodTypes)) return _processRules[foodTypes];
-        return null;
-    }    
+        return GetProcessRule(foodTypes, new List<ProcessRule>());
+    }
 
 }

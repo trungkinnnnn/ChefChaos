@@ -74,9 +74,8 @@ public class PlateSoupObj : PickableObj, IPlate, IPlateContent, ITrash, IKitchen
     public void TrashFood() => ResetPlate();
 
 
-
     // ======== Interface (IKitchen) =============
-
+    public bool IsEmpty() => _foodTypes == null || _foodTypes.Count == 0;
     public PickableObj GetPickableObj() => this;
 
     public KitchenType GetKitchenType() => _pickableData.typeObj;

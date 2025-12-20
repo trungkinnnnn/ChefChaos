@@ -195,7 +195,7 @@ public class PotSoupObj : PickableObj, ITryAddFood, ITrash, IKitchen
 
 
     // ======== Interface (IKitchen) =============
-
+    public bool IsEmpty() => _addFoodValids == null || _addFoodValids.Count == 0;
     public PickableObj GetPickableObj() => this;
 
     public KitchenType GetKitchenType() => _pickableData.typeObj;

@@ -157,6 +157,7 @@ public class PlateObj : PickableObj, ITryAddFood, IPlate, IPlateContent, ITrash,
 
 
     // ======== Interface (IKitchen) =============
+    public bool IsEmpty() => _addFoodValids == null || _addFoodValids.Count == 0;
     public PickableObj GetPickableObj() => this;
 
     public KitchenType GetKitchenType() => _pickableData.typeObj;

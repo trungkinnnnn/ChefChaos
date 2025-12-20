@@ -70,6 +70,8 @@ public class BaseStation : MonoBehaviour, ISelectable, IStation
     public Transform GetSelectableTransform() => transform;
 
     // ============= Interface (IStation) ================
+
+    public bool IsEmpty() => _pickableObj == null;
     public BaseStation GetBaseStation() => this;
 
     public StationType GetTypeStation() => _dataStation.stationType;

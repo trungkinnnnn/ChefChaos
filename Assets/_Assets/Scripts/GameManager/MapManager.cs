@@ -37,13 +37,39 @@ public class MapManager : MonoBehaviour
         _kitchens[type].Add(kitchen);
     }    
 
-    private IEnumerator ShowInfoStation()
+
+
+    // ================ Service ================
+    public IKitchen GetKitchenEmpty(KitchenType type)
     {
-        yield return new WaitForSeconds(2f);
-        foreach(var key in _stations.Keys)
+        if (!_kitchens.ContainsKey(type)) return null; 
+        var kitchens = _kitchens[type];
+
+        foreach(var kitchen in kitchens)
         {
-            Debug.Log($"{key} + {_stations[key].Count}");
-        }
+            if (kitchen.IsEmpty()) return kitchen;
+        } 
+        return null;
     }
+
+    public List<IStation> GetTransformStationEmpty(StationType type)
+    {
+        if (!_stations.ContainsKey(type)) return null;
+        var stations = _stations[type];
+
+        List<IStation> stationValids = new List<IStation>();
+
+        foreach (var station in stations)
+        {
+            if (station.IsEmpty()) stationValids.Add(station);
+        }
+        return stationValids;
+    }
+
+    public List<IStation> GetStationWithType(StationType type)
+    {
+        if (!_stations.ContainsKey(type)) return null;
+        return _stations[type];
+    }  
 
 }

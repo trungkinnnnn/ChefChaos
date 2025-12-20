@@ -6,16 +6,12 @@ using UnityEngine.AI;
 
 public class BotMovement : MonoBehaviour, IMovement
 {
-    [SerializeField] Transform _targetPosition;
-    [SerializeField] Transform _targetPosition2;
     private NavMeshAgent _agent;
     private bool _isMoving = false;
     private bool _isCanSelected = false;    
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
-        StartMoving(_targetPosition);
-        StartCoroutine(WaitTimeSecond());
     }
 
     private void Update()
@@ -33,15 +29,11 @@ public class BotMovement : MonoBehaviour, IMovement
         _agent.isStopped = true;
     }
 
-    private IEnumerator WaitTimeSecond()
+    private IEnumerator DelayArrivalCheck()
     {
-        yield return new WaitForSeconds(5f);
-        StartMoving(_targetPosition2);
-        yield return new WaitForSeconds(6f);
-        Debug.Log("Start 2");
-        StartMoving(_targetPosition2);
+        _isMoving = true;
         _isCanSelected = true;
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.005f);
         _isCanSelected = false;
     }
 
@@ -53,8 +45,8 @@ public class BotMovement : MonoBehaviour, IMovement
     // =============== Service ================
     public void StartMoving(Transform targetPostion)
     {
-        _isMoving = true;
         _agent.isStopped = false;
         _agent.SetDestination(targetPostion.position);
+        StartCoroutine(DelayArrivalCheck());
     }
 }

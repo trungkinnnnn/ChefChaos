@@ -79,7 +79,7 @@ public class OrderUI : MonoBehaviour
     {
         _imageFoodOrder.gameObject.SetActive(true);
         _imageFoodOrder.sprite = foodRandom.spriteFood;
-        if (foodRandom.ObjType == KitchenType.PlateSoup) OneTypeFood(foodRandom);
+        if (foodRandom.kitchenType == KitchenType.PlateSoup) OneTypeFood(foodRandom);
         else MultiTypeFood(foodRandom);
 
     }    
@@ -191,6 +191,8 @@ public class OrderUI : MonoBehaviour
     }    
 
     // =========== Service =============
+
+    public KitchenType GetKitchenType() => _foodRandom.kitchenType;
     public List<FoodType> GetFoods()
     {
         List<FoodType> foods = new();

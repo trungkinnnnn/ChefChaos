@@ -34,5 +34,6 @@ public enum StationType
     BoxStationMeat,
     BoxStationOnion,
     BoxStationTomato,
-    BoxStationMusroom
+    BoxStationMusroom,
+    Non
 }
