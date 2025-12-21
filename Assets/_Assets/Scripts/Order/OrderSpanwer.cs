@@ -19,7 +19,8 @@ public class OrderSpanwer
 
     private int RandomFoodOrder()
     {
-        int index = 0;  
+        int index = 0;
+        if (_recipeDatabase.recipes.Count == 1) return index;
         do
         {
             index = Random.Range(0, _recipeDatabase.recipes.Count);

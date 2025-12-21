@@ -24,7 +24,7 @@ public class BotTaskPlanner : MonoBehaviour
         _foodTypes = orderUI.GetFoods();
         _kichentType = orderUI.GetKitchenType();
         CreateListStep();
-        Print();
+        //Print();
 
         _excuteTask.StartActionStep(_steps, _kichentType);
     }
@@ -82,11 +82,11 @@ public class BotTaskPlanner : MonoBehaviour
 
         BotStep botStep = new BotStep(stepTask, stationType, foodType,kitchenType, time);
         _steps.Add(botStep);
-    }    
+    }
 
     private void Print()
     {
-        foreach(var step in _steps)
+        foreach (var step in _steps)
         {
             Debug.Log($"{step.stepTask} + {step.targetStation} + {step.requiredFood} + {step.kitchenType} + {step.timeCooking} // ");
         }

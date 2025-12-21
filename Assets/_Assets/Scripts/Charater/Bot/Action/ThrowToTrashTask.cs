@@ -17,6 +17,7 @@ public class ThrowToTrashTask : ValidateTask
 
     protected override IEnumerator ExecuteAction(BotContext context)
     {
+        Debug.Log("Excute throwTotrash");
         context.Movement.StartMoving(_stationTarget.GetSelectableTransform());
         yield return new WaitUntil(() => !context.Movement.IsMoving());
         yield return new WaitForSeconds(_timeWait); 

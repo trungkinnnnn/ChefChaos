@@ -15,13 +15,18 @@ public class PickupKitchenTask : ValidateTask
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
     {
+
+        Debug.Log("Excute PickKitchen");
+
+        if (!context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Failed("Holding somthing");
+
         _kitchenTarget = context.KitchenTarget;
-        if(_kitchenTarget != null && _kitchenTarget.GetKitchenType() == _kitchenType) return TaskExecutionResult.Success();
+        if(_kitchenTarget != null && _kitchenTarget.GetKitchenType() == _kitchenType) return TaskExecutionResult.Success("Check precoditions true");
       
         _kitchenTarget = context.FindKitchenEmpty(_kitchenType);
         if (_kitchenTarget == null) return TaskExecutionResult.Failed($"No {_kitchenType} empty");
 
-        return TaskExecutionResult.Success();
+        return TaskExecutionResult.Success("Check precoditions true");
     }
 
     protected override IEnumerator ExecuteAction(BotContext context)

@@ -14,12 +14,12 @@ public abstract class ValidateTask : IBotTask
 
     public IEnumerator Execute(BotContext context, float timeDelay = 0.5f)
     {
-        while(currentRetry < maxRetries)
+        while (currentRetry < maxRetries)
         {
-
             var precheck = CheckPreconditions(context);
             if(precheck.Result == TaskResult.Failed)
             {
+                Debug.Log("PickFalid");
                 yield return HandlePreconditionFailure(context, precheck);
                 currentRetry++;
                 continue;
@@ -28,7 +28,7 @@ public abstract class ValidateTask : IBotTask
             yield return ExecuteAction(context);
             yield return new WaitForSeconds(timeDelay);
 
-            var validation =  ValidateResult(context);
+            var validation = ValidateResult(context);
             if(validation.Result == TaskResult.Success)
             {
                 //Debug.Log("Success");
@@ -42,6 +42,7 @@ public abstract class ValidateTask : IBotTask
             } else
             {
                 Debug.Log("Failed");
+                currentRetry++;
                 yield break;
             }    
                 

@@ -9,7 +9,8 @@ public class TaskExecutionResult
     public TaskExecutionResult(TaskResult result, string msg)
     {
         Result = result;
-        if(result != TaskResult.Success) Debug.Log(msg);
+        if (result != TaskResult.Success) Debug.Log(msg);
+
     }
 
     public static TaskExecutionResult Success(string msg = "") => new TaskExecutionResult(TaskResult.Success, msg);

@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class StartTask : ValidateTask
+public class StartTask
 {
     private KitchenType _kitchenTarget;
     public StartTask (KitchenType kitchenTarget)
@@ -11,13 +9,7 @@ public class StartTask : ValidateTask
         _kitchenTarget = kitchenTarget;
     }
 
-    protected override TaskExecutionResult CheckPreconditions(BotContext context)
-    {
-        if (!context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Failed("Still holding somthing");
-        return TaskExecutionResult.Success();
-    }
-
-    protected override IEnumerator ExecuteAction(BotContext context)
+    public IEnumerator Execute(BotContext context, float timeDelay = 0.5f)
     {
         PickupKitchenTask pickupKitchen = new PickupKitchenTask(_kitchenTarget);
         DropKitchenTask drop;
@@ -30,12 +22,7 @@ public class StartTask : ValidateTask
         }
 
         yield return pickupKitchen.Execute(context);
+        yield return new WaitForSeconds(timeDelay);
         yield return drop.Execute(context);
-    }
-
-    protected override TaskExecutionResult ValidateResult(BotContext context)
-    {
-        if (context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Success();
-        return TaskExecutionResult.Retry("Faild drop kitchen");
     }
 }

@@ -17,6 +17,7 @@ public class ProcessAtStationTask : ValidateTask
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
     {
+        Debug.Log("Excute Process");
         if (context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Failed("Not hold anything");
         var pick = context.Interaction.GetPickableObj();
         if (pick is not FoodObj) return TaskExecutionResult.Failed("Holding not food");

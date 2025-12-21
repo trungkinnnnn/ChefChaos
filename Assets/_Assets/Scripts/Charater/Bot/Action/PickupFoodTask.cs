@@ -14,7 +14,8 @@ public class PickupFoodTask : ValidateTask
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
     {
-        if (!context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Retry("Bot is hoding something");
+        Debug.Log("Excute PickFood");
+        if (!context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Failed("Bot is hoding something");
         _stationTarget = context.FindStationOne(_step.targetStation);
         if (_stationTarget == null) return TaskExecutionResult.Failed("Can find station " + _step.targetStation);
 
