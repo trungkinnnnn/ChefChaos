@@ -12,7 +12,7 @@ public abstract class ValidateTask : IBotTask
         this.maxRetries = maxRetries; 
     }
 
-    public IEnumerator Execute(BotContext context)
+    public IEnumerator Execute(BotContext context, float timeDelay = 0.5f)
     {
         while(currentRetry < maxRetries)
         {
@@ -21,15 +21,17 @@ public abstract class ValidateTask : IBotTask
             if(precheck.Result == TaskResult.Failed)
             {
                 yield return HandlePreconditionFailure(context, precheck);
+                currentRetry++;
                 continue;
             }
 
             yield return ExecuteAction(context);
+            yield return new WaitForSeconds(timeDelay);
 
             var validation =  ValidateResult(context);
             if(validation.Result == TaskResult.Success)
             {
-                Debug.Log("Success");
+                //Debug.Log("Success");
                 yield break;
             }
             else if(validation.Result == TaskResult.Retry)
@@ -53,7 +55,21 @@ public abstract class ValidateTask : IBotTask
 
     protected virtual IEnumerator HandlePreconditionFailure(BotContext context, TaskExecutionResult result)
     {
-        yield return new WaitForSeconds(0.5f);
+        if(context.Interaction.CheckNullPickUpObj()) yield break;
+
+        DropKitchenTask drop = new DropKitchenTask(StationType.EmptyStation, StationType.EmptyStation);
+        ThrowToTrashTask trashTask = new ThrowToTrashTask();
+        var pick = context.Interaction.GetPickableObj();
+        if (pick is not IKitchen kitchen)
+        {
+            yield return trashTask.Execute(context);
+            yield break;
+        }
+        else
+        {
+            yield return drop.Execute(context);
+            yield break;
+        }
     }
 
     protected virtual IEnumerator HandleValidationFailure(BotContext context, TaskExecutionResult result)

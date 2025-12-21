@@ -6,20 +6,21 @@ public class BotContext
 {
     public BotMovement Movement { get; }
     public PlayerInteraction Interaction { get; }
-    public Transform transform { get; }
+    public Transform Transform { get; }
 
-    public IKitchen _kitchenTarget { get; private set; }
+    public IKitchen KitchenTarget { get; private set; }
     public BotContext (BotMovement movement, PlayerInteraction interaction, Transform transform)
     {
         Movement = movement;
         Interaction = interaction;
-        this.transform = transform;
+        Transform = transform;
     }
 
     public IStation FindStationNear(StationType stationDrop, StationType stationNear)
     {
         Transform transformStationNear = FindStationOne(stationNear).GetSelectableTransform();
         List<IStation> stations = MapManager.Instance.GetTransformStationEmpty(stationDrop);
+        if (stations == null || stations.Count == 0) return null;
         if(stations.Count == 1) return stations[0];
 
         IStation nearest = stations[0];    
@@ -45,9 +46,16 @@ public class BotContext
 
     public IKitchen FindKitchenEmpty(KitchenType type)
     {
-        _kitchenTarget = MapManager.Instance.GetKitchenEmpty(type);
-        if (_kitchenTarget == null) return null;
-        return _kitchenTarget;
+        KitchenTarget = MapManager.Instance.GetKitchenEmpty(type);
+        if (KitchenTarget == null) return null;
+        return KitchenTarget;
+    }
+
+    public IKitchen FindKitchenOne(KitchenType type)
+    {
+        var kitchen = MapManager.Instance.GetKitchenOne(type);
+        if (kitchen == null) return null;
+        return kitchen;
     }
 
 }

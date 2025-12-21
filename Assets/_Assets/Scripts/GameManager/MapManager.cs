@@ -52,6 +52,12 @@ public class MapManager : MonoBehaviour
         return null;
     }
 
+    public IKitchen GetKitchenOne(KitchenType kitchenType)
+    {
+        if (!_kitchens.ContainsKey(kitchenType)) return null;
+        return _kitchens[kitchenType][0];
+    }
+
     public List<IStation> GetTransformStationEmpty(StationType type)
     {
         if (!_stations.ContainsKey(type)) return null;

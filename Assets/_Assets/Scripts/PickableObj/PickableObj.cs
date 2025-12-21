@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class PickableObj : MonoBehaviour, ISelectable
 {
@@ -10,6 +11,12 @@ public class PickableObj : MonoBehaviour, ISelectable
     private Renderer[] _renderers;
     protected PlayerInteraction _player;
     protected BaseStation _station;
+
+    protected virtual void OnEnable()
+    {
+        if(_collider != null) ActiveCollider(true);
+    }    
+        
 
     protected virtual void Start()
     {

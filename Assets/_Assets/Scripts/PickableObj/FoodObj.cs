@@ -8,8 +8,9 @@ public class FoodObj : PickableObj, ITrash
     [SerializeField] FoodData _foodData;
     private Animator _animator;
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         if(_animator == null) _animator = GetComponent<Animator>();
         if(_animator != null)_animator.SetTrigger(_HAS_ANI_TRIGGER_CUTTING);
     }

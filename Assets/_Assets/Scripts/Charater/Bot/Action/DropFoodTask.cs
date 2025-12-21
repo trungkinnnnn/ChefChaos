@@ -2,22 +2,20 @@ using System.Collections;
 using UnityEngine;
 
 
-public class DropIngredientTask : ValidateTask
+public class DropFoodTask : ValidateTask
 {
-    private FoodType _typeFood;
-    private float _timeDelay;
+    private BotStep _step;
 
-    public DropIngredientTask(FoodType typeFood, float timeDelay = 0.2f)
+    public DropFoodTask(BotStep step)
     {
-        _timeDelay = timeDelay;
-        _typeFood = typeFood;
+        _step = step;
     }
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
     {
         if (context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Failed("Holding Empty");
         var pickup = context.Interaction.GetPickableObj();
-        if(pickup is FoodObj food && food.GetDataFood().foodType == _typeFood)
+        if(pickup is FoodObj food && food.GetDataFood().foodType == _step.requiredFood)
         {
             return TaskExecutionResult.Success();
         }
@@ -26,10 +24,9 @@ public class DropIngredientTask : ValidateTask
 
     protected override IEnumerator ExecuteAction(BotContext context)
     {
-        IKitchen kitchenTarget = context._kitchenTarget;
+        IKitchen kitchenTarget = context.KitchenTarget;
         context.Movement.StartMoving(kitchenTarget.GetSelectableTransform());
         yield return new WaitUntil(() => !context.Movement.IsMoving());
-        yield return new WaitForSeconds(_timeDelay);
     }
 
     protected override TaskExecutionResult ValidateResult(BotContext context)

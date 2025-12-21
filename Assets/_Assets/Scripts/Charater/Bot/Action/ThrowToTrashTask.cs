@@ -27,6 +27,6 @@ public class ThrowToTrashTask : ValidateTask
         if(context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Success();
         var pickup = context.Interaction.GetPickableObj();
         if (pickup is IKitchen kitchen && kitchen.IsEmpty()) return TaskExecutionResult.Success();
-        return TaskExecutionResult.Failed("Faild to throw to trash");
+        return TaskExecutionResult.Retry("Faild to throw to trash");
     }
 }

@@ -3255,6 +3255,8 @@ GameObject:
   - component: {fileID: 9133665725557073417}
   - component: {fileID: 9133665725557073409}
   - component: {fileID: 7649870192818446281}
+  - component: {fileID: 523997588}
+  - component: {fileID: 523997596}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Untagged
@@ -3289,8 +3291,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3054325250223903029}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 12
+  m_Drag: 8
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -3324,8 +3326,8 @@ NavMeshAgent:
   m_Speed: 2
   m_Acceleration: 12
   avoidancePriority: 50
-  m_AngularSpeed: 270
-  m_StoppingDistance: 0.7
+  m_AngularSpeed: 400
+  m_StoppingDistance: 0.4
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -3375,8 +3377,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41cb4081416e03345be6cd0a1214921a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetPosition: {fileID: 0}
-  _targetPosition2: {fileID: 0}
+--- !u!114 &523997588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3054325250223903029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7e79529f2b445438dd3f954a87d386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &523997596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3054325250223903029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e57fa4d4fcaad2541a2227e47114c39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3054325250223903075
 GameObject:
   m_ObjectHideFlags: 0

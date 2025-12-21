@@ -6,16 +6,12 @@ using UnityEngine;
 public class ProcessAtStationTask : ValidateTask
 {
     private float _timeDelay;
-    private StationType _stationType;
-    private FoodType _outputFood;
-    private float _waitTime;
+    private BotStep _step;
     private IStation _stationTarget;
 
-    public ProcessAtStationTask(StationType stationType, FoodType outputFood,float waitTime, float timeDelay = 0.2f)
+    public ProcessAtStationTask(BotStep step, float timeDelay = 0.2f)
     {
-        _stationType = stationType;
-        _outputFood = outputFood;
-        _waitTime = waitTime;
+        _step = step;
         _timeDelay = timeDelay;
     }
 
@@ -25,7 +21,7 @@ public class ProcessAtStationTask : ValidateTask
         var pick = context.Interaction.GetPickableObj();
         if (pick is not FoodObj) return TaskExecutionResult.Failed("Holding not food");
 
-        _stationTarget = context.FindStationOne(_stationType);
+        _stationTarget = context.FindStationOne(_step.targetStation);
         if (_stationTarget == null) return TaskExecutionResult.Failed("Cant find station");
 
         return TaskExecutionResult.Success();
@@ -37,9 +33,9 @@ public class ProcessAtStationTask : ValidateTask
         yield return new WaitUntil(() => !context.Movement.IsMoving());
         yield return new WaitForSeconds(_timeDelay);
 
-        if(_waitTime > 0)
+        if(_step.timeCooking > 0)
         {
-            yield return new WaitForSeconds(_waitTime);
+            yield return new WaitForSeconds(_step.timeCooking);
 
             context.Movement.StartMoving(_stationTarget.GetSelectableTransform());
             yield return new WaitUntil(() => !context.Movement.IsMoving());
@@ -53,7 +49,7 @@ public class ProcessAtStationTask : ValidateTask
         if (context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Retry("Faild to pick item");
 
         var pickup = context.Interaction.GetPickableObj();
-        if (pickup is not FoodObj food || food.GetDataFood().foodType != _outputFood)
+        if (pickup is not FoodObj food || food.GetDataFood().foodType != _step.requiredFood)
             return TaskExecutionResult.Retry("Wrong item");
 
         return TaskExecutionResult.Success();

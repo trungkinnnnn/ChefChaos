@@ -2,5 +2,5 @@
 
 public interface IBotTask
 {
-    IEnumerator Execute(BotContext context);
+    IEnumerator Execute(BotContext context, float timeDelay = 0.5f);
 }

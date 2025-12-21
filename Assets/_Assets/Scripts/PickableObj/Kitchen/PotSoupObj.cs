@@ -107,7 +107,7 @@ public class PotSoupObj : PickableObj, ITryAddFood, ITrash, IKitchen
     private void MoveFoodToPot(PickableObj obj)
     {
         obj.PickUpObj(_positionHoldFood, _station);
-        if(_heatState == PotHeatState.OnStove) _player.SetPickUpObj(null);
+        if (_player != null && _player.GetPickableObj() != this) _player.SetPickUpObj(null);
         StartCoroutine(WaitToDespawn(obj));
     }
 
