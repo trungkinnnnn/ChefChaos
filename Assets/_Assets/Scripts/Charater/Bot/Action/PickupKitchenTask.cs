@@ -15,9 +15,6 @@ public class PickupKitchenTask : ValidateTask
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
     {
-
-        Debug.Log("Excute PickKitchen");
-
         if (!context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Failed("Holding somthing");
 
         _kitchenTarget = context.KitchenTarget;

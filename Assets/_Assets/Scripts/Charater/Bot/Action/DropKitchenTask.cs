@@ -17,7 +17,6 @@ public class DropKitchenTask : ValidateTask
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
     {
-        Debug.Log("Excute dropKitchen");
         _stationTarget = context.FindStationNear(_stationDrop, _stationNear);
         if (_stationTarget == null) return TaskExecutionResult.Failed($"No {_stationDrop} empty");
 

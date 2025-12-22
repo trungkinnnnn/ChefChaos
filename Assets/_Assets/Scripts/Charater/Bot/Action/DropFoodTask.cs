@@ -13,7 +13,6 @@ public class DropFoodTask : ValidateTask
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
     {
-        Debug.Log("Excute dropfood");
         if (context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Failed("Holding Empty");
         var pickup = context.Interaction.GetPickableObj();
         if(pickup is FoodObj food && food.GetDataFood().foodType == _step.requiredFood)

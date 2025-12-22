@@ -13,7 +13,6 @@ public class TakeSoupTask : ValidateTask
     }
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
     {
-        Debug.Log("Excute TakeSoupTask");
         if (context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Failed("Hoding nothing");
         var pick = context.Interaction.GetPickableObj();
         if (pick is not IKitchen kitchen || kitchen.GetKitchenType() != _typeKitchenTake)

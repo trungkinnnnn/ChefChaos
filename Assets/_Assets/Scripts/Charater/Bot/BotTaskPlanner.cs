@@ -86,6 +86,7 @@ public class BotTaskPlanner : MonoBehaviour
 
     private void Print()
     {
+        Debug.Log("step count" +  _steps.Count);
         foreach (var step in _steps)
         {
             Debug.Log($"{step.stepTask} + {step.targetStation} + {step.requiredFood} + {step.kitchenType} + {step.timeCooking} // ");
