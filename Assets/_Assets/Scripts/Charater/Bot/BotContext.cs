@@ -6,14 +6,11 @@ public class BotContext
 {
     public BotMovement Movement { get; }
     public PlayerInteraction Interaction { get; }
-    public Transform Transform { get; }
-
     public IKitchen KitchenTarget { get; private set; }
-    public BotContext (BotMovement movement, PlayerInteraction interaction, Transform transform)
+    public BotContext (BotMovement movement, PlayerInteraction interaction)
     {
         Movement = movement;
         Interaction = interaction;
-        Transform = transform;
     }
 
     public IStation FindStationNear(StationType stationDrop, StationType stationNear)

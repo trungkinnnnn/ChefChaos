@@ -16,3 +16,12 @@
     }
 
 }
+
+public enum StepTask
+{
+    PickUpFood,
+    ProcessAt,
+    DropFood,
+    StartTask,
+    EndTask
+}

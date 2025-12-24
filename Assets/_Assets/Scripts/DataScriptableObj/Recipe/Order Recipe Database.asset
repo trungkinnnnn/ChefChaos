@@ -69,3 +69,16 @@ MonoBehaviour:
       isRequied: 0
     maxTotalFood: 3
     timeCookDone: 70
+  - id: 2
+    disName: 
+    sprite: {fileID: 21300000, guid: 5f437d3e7a6074e489cce4db630b6823, type: 3}
+    resultPrefab: {fileID: 0}
+    type: 1
+    ingredients:
+    - id: 2
+      foodType: 13
+      foodSprite: {fileID: 21300000, guid: b6d9f2d1cff756840a5ccaf5702ab5c4, type: 2}
+      amount: 3
+      isRequied: 1
+    maxTotalFood: 3
+    timeCookDone: 70

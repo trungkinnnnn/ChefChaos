@@ -17902,6 +17902,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7649870192818446281, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}
+      propertyPath: _rotationSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7649870192818446281, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}
       propertyPath: _targetPosition
       value: 
       objectReference: {fileID: 1175956600}
@@ -17921,7 +17925,9 @@ PrefabInstance:
       propertyPath: m_StoppingDistance
       value: 0.4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 523997596, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}
+    - {fileID: 523997588, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}
 --- !u!1001 &5219803414073192568
 PrefabInstance:

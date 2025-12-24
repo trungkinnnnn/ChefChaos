@@ -1,34 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class BotExecuteTask : MonoBehaviour
+public class BotExecuteTaskOrder
 {
-    private float _timeDelay = 0.7f;
+    private float _timeDelay;
     private BotContext _botContext;
-
-    private BotMovement _movment;
-    private PlayerInteraction _interaction;
-    private void Start()
+    public BotExecuteTaskOrder(BotContext botContext, float timeDelay = 0.7f)
     {
-        _movment = GetComponent<BotMovement>();
-        _interaction = GetComponent<PlayerInteraction>();
-        _botContext = new BotContext(_movment, _interaction, transform);
+        _timeDelay = timeDelay;
+        _botContext = botContext;
     }
-
     private IEnumerator ExecuteStep(List<BotStep> steps, KitchenType kitchenType)
     {
         foreach (BotStep step in steps)
         {
             yield return HandleDoingTask(step, kitchenType);
-            //yield return new WaitForSeconds(_timeDelay);
         }
-    }    
+    }
 
     private IEnumerator HandleDoingTask(BotStep step, KitchenType kitchenType)
     {
-        switch(step.stepTask)
+        switch (step.stepTask)
         {
             case StepTask.StartTask:
                 StartTask startTask = new StartTask(kitchenType);
@@ -59,12 +52,10 @@ public class BotExecuteTask : MonoBehaviour
         }
     }
 
-
-
     // =============== Service ==============
-    public void StartActionStep(List<BotStep> steps, KitchenType kitchenType)
+    public IEnumerator StartActionStep(List<BotStep> steps, KitchenType kitchenType)
     {
-        StartCoroutine(ExecuteStep(steps, kitchenType));
-    }    
+        yield return ExecuteStep(steps, kitchenType);
+    }
 
 }
