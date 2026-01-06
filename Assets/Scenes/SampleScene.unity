@@ -105,7 +105,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.3
+    agentRadius: 0.25
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -113,7 +113,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.1
+    cellSize: 0.083333336
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -1351,7 +1351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6950210982124085738, guid: 3c4facfadfc0e5d40a5b87caaf7adb4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.719445
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 6950210982124085738, guid: 3c4facfadfc0e5d40a5b87caaf7adb4f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1359,7 +1359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6950210982124085738, guid: 3c4facfadfc0e5d40a5b87caaf7adb4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.370002
+      value: 10.33
       objectReference: {fileID: 0}
     - target: {fileID: 6950210982124085738, guid: 3c4facfadfc0e5d40a5b87caaf7adb4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15245,6 +15245,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7174175828396016166, guid: ce7acc49284b9f6429b562617043b6e4, type: 3}
   m_PrefabInstance: {fileID: 1845396793}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1856055928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3054325250223903029, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}
+  m_PrefabInstance: {fileID: 4632771117441913138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1856055937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856055928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed778953a9775ac46ae51b7e60a60c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1867642423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5698367904114391109, guid: 669996043a31eb640882d555c5189e49, type: 3}
@@ -17849,6 +17866,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bot
       objectReference: {fileID: 0}
+    - target: {fileID: 3054325250223903029, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3054325250223918842, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -17923,7 +17944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7649870192818446282, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}
       propertyPath: m_StoppingDistance
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 523997596, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}

@@ -7,16 +7,10 @@ public class PickableObj : MonoBehaviour, ISelectable
 {
     [SerializeField] protected PickableData _pickableData;
 
-    private Collider _collider;
+    protected Collider _collider;
     private Renderer[] _renderers;
     protected PlayerInteraction _player;
     protected BaseStation _station;
-
-    protected virtual void OnEnable()
-    {
-        if(_collider != null) ActiveCollider(true);
-    }    
-        
 
     protected virtual void Start()
     {

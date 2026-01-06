@@ -18,7 +18,7 @@ public class ServiceStation : BaseStation
     private void CreatPlateHidden()
     {
         var obj = PoolManager.Instance.Spawner(_plateHiddenPrefab, _positionSpawn.position, Quaternion.identity, _positionSpawn);
-        _plateHidden = obj?.GetComponent<PlateEmptyHidde>();
+        _plateHidden = obj.GetComponent<PlateEmptyHidde>();
         _plateHidden.Init(null, this);
     }    
 
@@ -71,14 +71,15 @@ public class ServiceStation : BaseStation
     {
         yield return new WaitForSeconds(1f);
         obj.gameObject.SetActive(false);
-        if(obj is IPlate plate)
+        yield return new WaitForSeconds(_timeSpawnPlate);
+        if (obj is IPlate plate)
         {
             plate.ResetPlate();
             plate.SetDrityPlate();
         }    
-        yield return new WaitForSeconds(_timeSpawnPlate);
         _plateHidden.TryAddPlate(obj);
         obj.gameObject.SetActive(true);
+        KitchenEventServices.EmitKitchenDirty(_plateHidden.gameObject);
     }
 
     // ============= Service ===============

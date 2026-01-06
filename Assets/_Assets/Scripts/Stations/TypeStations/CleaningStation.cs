@@ -6,7 +6,7 @@ public class CleaningStation : BaseStation
 {
     [SerializeField] GameObject _onWarter;
 
-    private float _warhDuration = 2.5f;
+    [SerializeField] float _warhDuration = 2.5f;
 
     private static int _HAS_ANI_TRIGGER_ISCLOSEWARTER = Animator.StringToHash("isCloseWarter");
     private static int _HAS_ANI_TRIGGER_ISOPENWARTER = Animator.StringToHash("isOpenWarter");
