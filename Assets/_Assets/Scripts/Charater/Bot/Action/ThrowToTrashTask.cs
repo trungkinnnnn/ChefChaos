@@ -6,6 +6,12 @@ public class ThrowToTrashTask : ValidateTask
 {
     private IStation _stationTarget;
     private float _timeWait = 2f;
+
+    public void Init()
+    {
+        currentRetry = 0;
+    }
+
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
     {
         if (context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Failed("Holding nothing");

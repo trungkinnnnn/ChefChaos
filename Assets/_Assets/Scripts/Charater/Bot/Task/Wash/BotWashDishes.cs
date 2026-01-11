@@ -1,7 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TigerForge;
+using UnityEngine;
 
 public class BotWashDishes : MonoBehaviour
 {
@@ -10,6 +9,9 @@ public class BotWashDishes : MonoBehaviour
 
     private BotContext _context;
     private BotExcuteTaskWash _taskWash;
+
+    private bool _hasPendingRequest;
+
     private void OnEnable()
     { 
         EventManager.StartListening(GameEventKeys.KitchenDirty, OnWashDishes);
@@ -25,9 +27,37 @@ public class BotWashDishes : MonoBehaviour
 
     private void OnWashDishes()
     {
+        if(_context.IsWork)
+        {
+            _hasPendingRequest = true;
+            return;
+        }
+
+        StartWash();
+    }
+
+    private void StartWash()
+    {
         var obj = EventManager.GetGameObject(GameEventKeys.KitchenDirty);
         var pickObj = obj.GetComponent<PickableObj>();
         if (pickObj == null) return;
-        StartCoroutine(_taskWash.StartActionStep(pickObj));
+
+        _context.IsWork = true;
+        StartCoroutine(WashFlow(pickObj));
+    }    
+
+
+    private IEnumerator WashFlow(PickableObj pickObj)
+    {
+        yield return _taskWash.StartActionStep(pickObj);
+
+        if(_hasPendingRequest)
+        {
+            _hasPendingRequest = false;
+            StartWash();
+        }
+
     }
+
+
 }

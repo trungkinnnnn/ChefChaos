@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BotOrder : MonoBehaviour
 {
     [SerializeField] BotTaskType _botTaskType;
+    [SerializeField] Sprite _spriteBot;
 
     private BotMovement _movement;
     private PlayerInteraction _interaction;
@@ -21,7 +23,7 @@ public class BotOrder : MonoBehaviour
         switch (_botTaskType)
         {
             case BotTaskType.DoOrder:
-                BotOrderTask botOrderTask = new BotOrderTask(_movement, _interaction);
+                BotOrderTask botOrderTask = new BotOrderTask(_movement, _interaction, _spriteBot);
                 yield return botOrderTask.DoTask();
                 break;
         }

@@ -9,10 +9,11 @@ public class ProcessAtStationTask : ValidateTask
     private BotStep _step;
     private IStation _stationTarget;
 
-    public ProcessAtStationTask(BotStep step, float timeDelay = 0.2f)
+    public void Init(BotStep step, float timeDelay = 0.2f)
     {
         _step = step;
         _timeDelay = timeDelay;
+        currentRetry = 0;
     }
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)

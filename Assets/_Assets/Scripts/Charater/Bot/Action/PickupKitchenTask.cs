@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PickupKitchenTask : ValidateTask
@@ -8,9 +7,10 @@ public class PickupKitchenTask : ValidateTask
 
     private IKitchen _kitchenTarget;
 
-    public PickupKitchenTask(KitchenType kitchenType)
+    public void Init(KitchenType kitchenType)
     {
         _kitchenType = kitchenType;
+        currentRetry = 0;
     }
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
@@ -47,7 +47,8 @@ public class PickupKitchenTask : ValidateTask
 
         if(pick is IKitchen kitchen)
         {
-            DropKitchenTask drop = new DropKitchenTask(StationType.EmptyStation, StationType.EmptyStation);
+            DropKitchenTask drop = new DropKitchenTask();
+            drop.Init(StationType.EmptyStation, StationType.EmptyStation);
             yield return drop.Execute(context);
         }
         else

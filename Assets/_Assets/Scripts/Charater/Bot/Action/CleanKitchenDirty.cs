@@ -6,9 +6,10 @@ public class CleanKitchenDirty : ValidateTask
     private PickableObj _kitchenDirty;
     private float _timeWarhDuration = 2.5f;
 
-    public CleanKitchenDirty(PickableObj kitchen)
+    public void Init(PickableObj kitchen)
     {
         _kitchenDirty = kitchen;
+        currentRetry = 0;
     }
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)

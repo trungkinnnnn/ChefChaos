@@ -58,8 +58,10 @@ public abstract class ValidateTask : IBotTask
     {
         if(context.Interaction.CheckNullPickUpObj()) yield break;
 
-        DropKitchenTask drop = new DropKitchenTask(StationType.EmptyStation, StationType.EmptyStation);
         ThrowToTrashTask trashTask = new ThrowToTrashTask();
+        DropKitchenTask drop = new DropKitchenTask();
+        drop.Init(StationType.EmptyStation, StationType.EmptyStation);
+        
         var pick = context.Interaction.GetPickableObj();
         if (pick is not IKitchen kitchen)
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BotTaskPlannerOrder
 {
@@ -17,6 +18,7 @@ public class BotTaskPlannerOrder
             AddBotStep(StationType.Non, foodType, kitchenType, 0);
         }
         AddBotStep(StationType.ServiceStation, FoodType.Non, kitchenType, 0);
+        Print();
         return _steps;
     }
 
@@ -73,10 +75,12 @@ public class BotTaskPlannerOrder
     }
 
     // ================ Service ================
-    public List<BotStep> StartCreatePlanner()
+    public List<BotStep> StartCreatePlanner(Sprite spriteBot)
     {
-        _steps = new();
-        OrderUI orderUI = OrderManager.Instance.GetOrderFirst();
+        _steps = new List<BotStep>();
+        OrderUI orderUI = OrderManager.Instance.GetOrderNotSelected();
+        if (orderUI == null) return null;
+        orderUI.SetSelectedByBot(spriteBot);
         var foodTypes = orderUI.GetFoods();
         _kitchenType = orderUI.GetKitchenType();
         return CreateListStep(foodTypes, _kitchenType);

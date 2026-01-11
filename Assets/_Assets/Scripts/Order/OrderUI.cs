@@ -33,6 +33,7 @@ public class OrderUI : MonoBehaviour
     private static int _HAS_ANI_ISDESRTOY = Animator.StringToHash("isDestroy");
     private static int _HAS_ANI_ISCOMPLETED = Animator.StringToHash("isCompleted");
     private Animator _ani;
+    private OrderSelected _selectedOrder;
     private OrderManager _manager;
     private FoodRandom _foodRandom;
 
@@ -40,6 +41,7 @@ public class OrderUI : MonoBehaviour
 
     private void Awake()
     {
+        _selectedOrder = GetComponent<OrderSelected>();
         _ani = GetComponentInChildren<Animator>();
         _ani.enabled = false;
         SetUpColor();
@@ -192,6 +194,8 @@ public class OrderUI : MonoBehaviour
 
     // =========== Service =============
 
+    public void SetSelectedByBot(Sprite spriteBot) => _selectedOrder.OnSelectedByBot(spriteBot);
+    public bool IsSelected() => _selectedOrder.IsSelected();
     public KitchenType GetKitchenType() => _foodRandom.kitchenType;
     public List<FoodType> GetFoods()
     {

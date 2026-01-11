@@ -3,11 +3,14 @@ using System.Collections;
 public class EndTask : ValidateTask
 {
     private KitchenType _typekitchenTake;
-    public EndTask(KitchenType kitchenTake)
+
+    public void Init(KitchenType kitchenTake)
     {
+        currentRetry = 0;
         _typekitchenTake = kitchenTake;
         if (kitchenTake != KitchenType.Plate) _typekitchenTake = KitchenType.PlateSoup;
     }
+
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
     {
         if (!context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Failed("Still Hoding something");
@@ -16,13 +19,16 @@ public class EndTask : ValidateTask
 
     protected override IEnumerator ExecuteAction(BotContext context)
     {
-        PickupKitchenTask pickupKitchenTask = new PickupKitchenTask(_typekitchenTake);
-        DropKitchenTask drop = new DropKitchenTask(StationType.ServiceStation, StationType.ServiceStation);
+        PickupKitchenTask pickupKitchenTask = new PickupKitchenTask();
+        DropKitchenTask drop = new DropKitchenTask();
+        pickupKitchenTask.Init(_typekitchenTake);
+        drop.Init(StationType.ServiceStation, StationType.ServiceStation);
 
         yield return pickupKitchenTask.Execute(context);
         if (_typekitchenTake != KitchenType.Plate)
         {
-            TakeSoupTask takeSoupTask = new TakeSoupTask(KitchenType.PlateSoup);
+            TakeSoupTask takeSoupTask = new TakeSoupTask();
+            takeSoupTask.Init(_typekitchenTake);
             yield return takeSoupTask.Execute(context);
         }
         yield return drop.Execute(context);

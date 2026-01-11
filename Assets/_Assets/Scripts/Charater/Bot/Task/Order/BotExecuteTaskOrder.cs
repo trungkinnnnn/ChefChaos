@@ -6,10 +6,12 @@ public class BotExecuteTaskOrder
 {
     private float _timeDelay;
     private BotContext _botContext;
+    private BotTaskCase _botTaskCase;
     public BotExecuteTaskOrder(BotContext botContext, float timeDelay = 0.7f)
     {
         _timeDelay = timeDelay;
         _botContext = botContext;
+        _botTaskCase = new BotTaskCase();
     }
     private IEnumerator ExecuteStep(List<BotStep> steps, KitchenType kitchenType)
     {
@@ -24,28 +26,28 @@ public class BotExecuteTaskOrder
         switch (step.stepTask)
         {
             case StepTask.StartTask:
-                StartTask startTask = new StartTask(kitchenType);
-                yield return startTask.Execute(_botContext, _timeDelay);
+                _botTaskCase.StartTask.Init(kitchenType);
+                yield return _botTaskCase.StartTask.Execute(_botContext, _timeDelay);
                 Debug.Log("Done StartTask");
                 break;
             case StepTask.EndTask:
-                EndTask endTask = new EndTask(kitchenType);
-                yield return endTask.Execute(_botContext, _timeDelay);
+                _botTaskCase.EndTask.Init(kitchenType);
+                yield return _botTaskCase.EndTask.Execute(_botContext, _timeDelay);
                 Debug.Log("Done EndTask");
                 break;
             case StepTask.PickUpFood:
-                PickupFoodTask pickFood = new PickupFoodTask(step);
-                yield return pickFood.Execute(_botContext, _timeDelay);
+                _botTaskCase.PickFood.Init(step);
+                yield return _botTaskCase.PickFood.Execute(_botContext, _timeDelay);
                 Debug.Log("Done PickUpFood");
                 break;
             case StepTask.DropFood:
-                DropFoodTask dropFood = new DropFoodTask(step);
-                yield return dropFood.Execute(_botContext, _timeDelay);
+                _botTaskCase.DropFood.Init(step);
+                yield return _botTaskCase.DropFood.Execute(_botContext, _timeDelay);
                 Debug.Log("Done DropFood");
                 break;
             case StepTask.ProcessAt:
-                ProcessAtStationTask processAt = new ProcessAtStationTask(step, _timeDelay);
-                yield return processAt.Execute(_botContext, _timeDelay);
+                _botTaskCase.ProcessAt.Init(step);
+                yield return _botTaskCase.ProcessAt.Execute(_botContext, _timeDelay);
                 Debug.Log("Done ProcessAt");
                 break;
 

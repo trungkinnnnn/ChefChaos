@@ -5,9 +5,10 @@ public class PickUpKitchenDirty : ValidateTask
 {
     private PickableObj _kitchenDrity;
 
-    public PickUpKitchenDirty(PickableObj kitchen)
+    public void Init(PickableObj kitchen)
     {
         _kitchenDrity = kitchen;
+        currentRetry = 0;
     }
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)

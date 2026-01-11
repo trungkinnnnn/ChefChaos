@@ -6,9 +6,10 @@ public class PickupFoodTask : ValidateTask
     private BotStep _step;
     private IStation _stationTarget;
 
-    public PickupFoodTask(BotStep step)
+    public void Init(BotStep step)
     {
-         _step = step;
+        _step = step;
+        currentRetry = 0;
     }
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)

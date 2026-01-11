@@ -7,10 +7,12 @@ public class TakeSoupTask : ValidateTask
     private KitchenType _typeKitchenTake;
     private IKitchen _potTarget;
 
-    public TakeSoupTask(KitchenType kitchenType)
+    public void Init(KitchenType kitchenType)
     {
         _typeKitchenTake = kitchenType;
+        currentRetry = 0;
     }
+
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
     {
         if (context.Interaction.CheckNullPickUpObj()) return TaskExecutionResult.Failed("Hoding nothing");
@@ -39,9 +41,13 @@ public class TakeSoupTask : ValidateTask
 
     protected override IEnumerator HandlePreconditionFailure(BotContext context, TaskExecutionResult result)
     {
-        PickupKitchenTask pickKitchen = new PickupKitchenTask(_typeKitchenTake);
-        DropKitchenTask drop = new DropKitchenTask(StationType.EmptyStation, StationType.EmptyStation);
+        PickupKitchenTask pickKitchen = new PickupKitchenTask();
+        DropKitchenTask drop = new DropKitchenTask();
         ThrowToTrashTask trashTask = new ThrowToTrashTask();
+
+        pickKitchen.Init(_typeKitchenTake);
+        drop.Init(StationType.EmptyStation, StationType.EmptyStation);
+        
 
         if (context.Interaction.CheckNullPickUpObj())
         {

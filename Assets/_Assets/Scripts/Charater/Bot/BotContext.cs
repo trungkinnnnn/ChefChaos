@@ -7,6 +7,9 @@ public class BotContext
     public BotMovement Movement { get; }
     public PlayerInteraction Interaction { get; }
     public IKitchen KitchenTarget { get; private set; }
+
+    public bool IsWork {  get; set; }
+
     public BotContext (BotMovement movement, PlayerInteraction interaction)
     {
         Movement = movement;

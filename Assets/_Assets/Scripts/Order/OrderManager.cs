@@ -100,5 +100,12 @@ public class OrderManager : MonoBehaviour
     }
 
     // Testing for bot task planner
-    public OrderUI GetOrderFirst() => _orders[0];   
+    public OrderUI GetOrderNotSelected()
+    {
+        foreach(OrderUI orderUI in _orders)
+        {
+            if(!orderUI.IsSelected()) return orderUI;
+        }
+        return null;
+    }
 }

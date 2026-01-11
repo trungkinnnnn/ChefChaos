@@ -9,10 +9,11 @@ public class DropKitchenTask : ValidateTask
 
     private IStation _stationTarget;
 
-    public DropKitchenTask(StationType stationDrop, StationType stationNear)
+    public void Init(StationType stationDrop, StationType stationNear)
     {
         _stationDrop = stationDrop;
         _stationNear = stationNear;
+        currentRetry = 0;
     }
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)

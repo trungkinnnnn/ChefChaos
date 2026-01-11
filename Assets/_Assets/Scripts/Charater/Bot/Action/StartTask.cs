@@ -1,12 +1,15 @@
 
 using System.Collections;
+using Unity.VisualScripting;
 
 public class StartTask : ValidateTask
 {
     private KitchenType _kitchenTarget;
-    public StartTask(KitchenType kitchenTarget)
+
+    public void Init(KitchenType kitchenTarget)
     {
         _kitchenTarget = kitchenTarget;
+        currentRetry = 0;
     }
 
     protected override TaskExecutionResult CheckPreconditions(BotContext context)
@@ -17,15 +20,18 @@ public class StartTask : ValidateTask
 
     protected override IEnumerator ExecuteAction(BotContext context)
     {
-        PickupKitchenTask pickupKitchen = new PickupKitchenTask(_kitchenTarget);
+        PickupKitchenTask pickupKitchen = new PickupKitchenTask();
+        pickupKitchen.Init(_kitchenTarget);
         DropKitchenTask drop;
         if (_kitchenTarget != KitchenType.Plate)
         {
-            drop = new DropKitchenTask(StationType.CookingSoupStation, StationType.CookingSoupStation);
+            drop = new DropKitchenTask();
+            drop.Init(StationType.CookingSoupStation, StationType.CookingSoupStation);
         }
         else
         {
-            drop = new DropKitchenTask(StationType.EmptyStation, StationType.SliceStation);
+            drop = new DropKitchenTask();
+            drop.Init(StationType.EmptyStation, StationType.SliceStation);
         }
 
         yield return pickupKitchen.Execute(context);
