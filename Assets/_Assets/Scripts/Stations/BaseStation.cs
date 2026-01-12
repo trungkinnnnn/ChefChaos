@@ -10,7 +10,7 @@ public class BaseStation : MonoBehaviour, ISelectable, IStation
     private MeshRenderer[] _meshRenderer;
     protected PlayerInteraction _player;
     protected PickableObj _pickableObj;
-
+    protected bool _isFire = false;
     protected virtual void Start()
     {
         _meshRenderer = GetComponentsInChildren<MeshRenderer>();
@@ -78,8 +78,9 @@ public class BaseStation : MonoBehaviour, ISelectable, IStation
 
 
     // ================== Service ==========================
-
+    public bool CheckFire() => _isFire;
     public virtual void SetPickableObj(PickableObj obj) => _pickableObj = obj;
+    public virtual void FireOff() { }
 
 
 }

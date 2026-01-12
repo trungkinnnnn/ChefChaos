@@ -6,12 +6,12 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     private static int _HAS_ANI_BOOL_ISSERVICE = Animator.StringToHash("isService");
-    private static int _HAS_ANI_BOOL_ISFIRE = Animator.StringToHash("isFire");
     private static int _HAS_ANI_BOOL_ISRUNNING = Animator.StringToHash("isRunning");
     private static int _HAS_ANI_BOOL_ISWASHINGDONE = Animator.StringToHash("isWasingDone");
     private static int _HAS_ANI_TRIGGER_ISWASHING = Animator.StringToHash("isWashing");
     private static int _HAS_ANI_TRIGGER_ISGRABAGE = Animator.StringToHash("isGrabage");
     private static int _HAS_ANI_TRIGGER_ISCUTTING = Animator.StringToHash("isCutting");
+    private static int _HAS_ANI_TRIGGER_ISFIRE = Animator.StringToHash("isFire");
 
     private IMovement _movment;
     private Animator _animator;
@@ -78,5 +78,10 @@ public class PlayerAnimationController : MonoBehaviour
         StartCoroutine(WaitTimeLockInput(time));
     }
    
+    public void PlayFireExtinguisher(float time)
+    {
+        _animator.SetTrigger(_HAS_ANI_TRIGGER_ISFIRE);
+        StartCoroutine(WaitTimeLockInput(time));
+    }    
 
 }

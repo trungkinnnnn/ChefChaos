@@ -3391,6 +3391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _botTaskType: 0
+  _spriteBot: {fileID: 21300000, guid: 487f01dd2d9778e4fbc5a2ffd962beeb, type: 3}
 --- !u!1 &3054325250223903075
 GameObject:
   m_ObjectHideFlags: 0

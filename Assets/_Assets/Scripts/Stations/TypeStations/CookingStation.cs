@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CookingStation : BaseStation
@@ -9,7 +10,7 @@ public class CookingStation : BaseStation
     private StationRecipeManager _stationRecipe;
     private ProgressBar _progressBarCurrent;
     private float _timeWait = 0.2f;
-    private float _timeFireOn = 5f;
+    private float _timeFireOn = 5f; 
     private bool _isCooking = false;    
     private bool _isSpanwer = false;// Check obj spawner or pickup => Skip base.PickableObj    
 
@@ -26,6 +27,7 @@ public class CookingStation : BaseStation
 
     protected override void PickableObj(PickableObj obj)
     {
+        if(_isFire) return;
         if (obj is FoodObj foodObj && CheckTypeFood(foodObj.GetDataFood()))
         {
             ProcessRule rule = _stationRecipe.GetProcessRule(foodObj.GetDataFood().foodType);
@@ -95,6 +97,7 @@ public class CookingStation : BaseStation
             yield return null;
         }
         _fire.SetActive(true);
+        _isFire = true;
     }    
 
     // ============== Service =================
@@ -108,5 +111,9 @@ public class CookingStation : BaseStation
         }    
     }
 
-
+    public override void FireOff()
+    {
+        _fire.SetActive(false);
+        _isFire = false;
+    } 
 }

@@ -15,6 +15,9 @@ public class PlayerInteraction : MonoBehaviour
     private ISelectable _currentSelectable;
     private Transform _currentTransform;
 
+    // =============== Kitchen Porp ===================
+    [SerializeField] GameObject _porpKitchen;
+
     private PickableObj _pickObj;
 
     private PlayerAnimationController _playerAnimationController;
@@ -98,6 +101,15 @@ public class PlayerInteraction : MonoBehaviour
     public void SetPickUpObj(PickableObj pickable)
     {
         _pickObj = pickable;
+        if(pickable != null && _pickObj.GetDataPickableObj().typeObj == KitchenType.Porp)
+        {
+            _porpKitchen.SetActive(true);
+            return;
+        }else
+        {
+            _porpKitchen.SetActive(false);
+        }
+
         _playerAnimationController.SetBoolAnimationService(pickable != null);
     }
 

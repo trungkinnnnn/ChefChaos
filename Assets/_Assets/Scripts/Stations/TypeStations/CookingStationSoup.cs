@@ -25,6 +25,12 @@ public class CookingStationSoup : BaseStation
         }
     }
 
+    public override void DoSomeThing()
+    {
+        if(_isFire) return;
+        base.DoSomeThing();
+    }
+
     // ============ Service =============
 
     public override void SetPickableObj(PickableObj obj)
@@ -36,10 +42,16 @@ public class CookingStationSoup : BaseStation
     public void ActiveFireBruned(bool value)
     {
         _fireBruned.SetActive(value); 
+        _isFire = value;
     }
 
     public void ActiveFireCooked(bool value)
     {
         _fireCooked.SetActive(value);
+    }
+
+    public override void FireOff()
+    {
+        ActiveFireBruned(false);
     }
 }
