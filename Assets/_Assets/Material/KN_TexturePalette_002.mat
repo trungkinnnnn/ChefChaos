@@ -8,33 +8,25 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: KN_TexturePalette_002
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords:
-  - _GLOSSYREFLECTIONS_OFF
-  m_InvalidKeywords:
-  - _FRESNELHIGHLIGHTS_ON
-  - _MK_ALBEDO_MAP
-  - _MK_ARTISTIC_ANIMATION_STUTTER
-  - _MK_DETAIL_BLEND_MIX
-  - _MK_ENVIRONMENT_REFLECTIONS_ADVANCED
-  - _MK_FRESNEL_HIGHLIGHTS
-  - _MK_LIGHT_CEL
-  - _MK_RECEIVE_SHADOWS
-  - _MK_SPECULAR_ISOTROPIC
-  - _MK_WRAPPED_DIFFUSE
-  - _RECEIVESHADOWS_ON
-  - _WRAPPEDLIGHTING_ON
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap:
     IGNOREPROJECTOR: False
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoMap:
+        m_Texture: {fileID: 2800000, guid: aa86f4df647a6154dbf69f975b3d4af4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
         m_Texture: {fileID: 2800000, guid: aa86f4df647a6154dbf69f975b3d4af4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -151,6 +143,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SketchMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -327,3 +323,16 @@ Material:
     - _SpecularColor: {r: 0.19999993, g: 0.19999993, b: 0.19999993, a: 1}
     - _VertexAnimationFrequency: {r: 2.5, g: 2.5, b: 2.5, a: 1}
   m_BuildTextureStacks: []
+--- !u!114 &7497386693841270059
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

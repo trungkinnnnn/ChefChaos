@@ -8,15 +8,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: KN_Water
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: b40423d93e623d1448f1a437f49c3994, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _COLORMODE_LINEAR
   - _FOAMMODE_TEXTURE
   - _OPAQUE_OFF
-  - _RECEIVESHADOWS_ON
   - _WAVEMODE_GRID
-  - _WRAPPEDLIGHTING_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -32,6 +30,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _AlphaTex:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 766a7edc5f25e3b4daafb5554da17927, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -123,7 +125,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 766a7edc5f25e3b4daafb5554da17927, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -166,6 +168,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecularMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -205,6 +211,7 @@ Material:
     - _AdvancedTab: 0
     - _AlbedoMapIntensity: 1
     - _AlembicMotionVectors: 0
+    - _AlphaClip: 0
     - _AlphaClipping: 0
     - _AlphaCutoff: 0.5
     - _Anisotropy: 0
@@ -214,17 +221,22 @@ Material:
     - _Blend: 0
     - _BlendDst: 0
     - _BlendDstAlpha: 0
+    - _BlendOp: 0
     - _BlendSrc: 1
     - _BlendSrcAlpha: 1
     - _Brightness: 1
     - _BumpScale: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
     - _ColorGrading: 0
     - _ColorMask: 15
     - _ColorMode: 0
     - _Contrast: 1
     - _CrestSharpness: 0.323
     - _CrestSize: 0
+    - _Cull: 2
     - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
     - _DetailBlend: 0
     - _DetailMix: 0.5
     - _DetailNormalMapIntensity: 1
@@ -256,6 +268,7 @@ Material:
     - _FresnelHighlights: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
+    - _GlossinessSource: 0
     - _GlossyReflections: 1
     - _GoochRampIntensity: 0.5
     - _HatchingMapScale: 1
@@ -303,12 +316,15 @@ Material:
     - _RimSmoothness: 0.5
     - _RimThresholdOffset: 0.25
     - _Roughness: 0.5
+    - _SampleGI: 0
     - _Saturation: 1
     - _ShadowStrength: 0.929
     - _Shininess: 0.2
     - _SketchMapScale: 1
     - _Smoothness: 0.5
+    - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0
+    - _SpecSource: 0
     - _Specular: 1
     - _SpecularHighlights: 1
     - _SpecularIntensity: 1
@@ -342,11 +358,13 @@ Material:
     - _WaveNoise: 0.691
     - _WaveSpeed: 0.2
     - _Workflow: 0
+    - _WorkflowMode: 1
     - _WrappedLighting: 1
     - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
     - _AlbedoColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorDeep: {r: 0.514151, g: 0.88479865, b: 1, a: 1}
     - _ColorShallow: {r: 0, g: 0.61418635, b: 0.8773585, a: 0.78431374}
@@ -365,6 +383,7 @@ Material:
     - _RimBrightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimDarkColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular: {r: 0, g: 0, b: 0, a: 0}
     - _SpecularColor: {r: 0.203125, g: 0.203125, b: 0.203125, a: 1}
     - _VertexAnimationFrequency: {r: 2.5, g: 2.5, b: 2.5, a: 1}
