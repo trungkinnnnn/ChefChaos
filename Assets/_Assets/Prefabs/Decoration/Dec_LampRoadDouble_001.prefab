@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 7689311363063439790}
   - component: {fileID: 7689311363063444517}
   - component: {fileID: 7689311363063441452}
+  - component: {fileID: 825500942}
   m_Layer: 0
   m_Name: Dec_LampRoadDouble_001
   m_TagString: Untagged
@@ -315,3 +316,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &825500942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7689311363063418850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549a7587cf4f1cd41928889c35578e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -20,12 +20,14 @@ public class OrderSelected : MonoBehaviour
         _ani = GetComponentInChildren<Animator>();
         _buttonSelected.onClick.AddListener(OnSelectedByPlayer);
         _currentSprite = _imageSelected.sprite;
+        _imageSelected.enabled = false;
     }
 
     private void OnDisable()
     {
         _isSelected = false;
         _buttonSelected.enabled = true;
+        _imageSelected.enabled = false;
     }
 
     private void OnSelectedByPlayer()
@@ -33,6 +35,7 @@ public class OrderSelected : MonoBehaviour
         _isSelected = !_isSelected;
         _ani.SetBool(_HAS_ANI_TRIGGER_ISSELECTED, _isSelected);
         SetImage(_currentSprite);
+        _imageSelected.enabled = true;
     }
     
     private void SetImage(Sprite sprite)
@@ -50,5 +53,6 @@ public class OrderSelected : MonoBehaviour
         _buttonSelected.enabled = false;
         _ani.SetBool(_HAS_ANI_TRIGGER_ISSELECTED, true);
         SetImage(spriteBot);
+        _imageSelected.enabled = true;
     }
 }
