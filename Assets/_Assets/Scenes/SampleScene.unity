@@ -2864,7 +2864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vcam: {fileID: 329223931}
-  _zoomSpeed: 0.2
+  _zoomSpeed: 0.01
   _minDistance: -18
   _maxDistance: -9
 --- !u!1001 &333131590

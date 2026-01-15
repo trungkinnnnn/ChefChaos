@@ -8,15 +8,16 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField] Light _sun;
     [SerializeField] float _dayDuration;
     [SerializeField] Vector2 _dayStartEnd;
+
+    private int _dayCount = 1;
     
     private TimeOfDay _currenState = TimeOfDay.Day;
     private float _rotationSpeed;
 
-    
-
     private void Start()
     {
         _rotationSpeed = 360f / _dayDuration;
+        EventManager.EmitEvent(GameEventKeys.DayStarted);
     }
 
     private void Update()
@@ -38,8 +39,18 @@ public class DayNightCycle : MonoBehaviour
         if(newState == _currenState) return;
         _currenState = newState;
 
-        if(_currenState == TimeOfDay.Day) EventManager.EmitEvent(GameEventKeys.DayStarted);
-        else EventManager.EmitEvent(GameEventKeys.NightStarted);
+        if(_currenState == TimeOfDay.Day)
+        {
+            EventManager.EmitEvent(GameEventKeys.DayStarted);
+            _dayCount++;
+            Debug.Log("Day " +  _dayCount); 
+        }
+        else
+        {
+            EventManager.EmitEvent(GameEventKeys.NightStarted);
+            Debug.Log("Night");
+        }
+         
     }
 }
 

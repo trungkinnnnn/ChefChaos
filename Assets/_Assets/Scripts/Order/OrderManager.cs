@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TigerForge;
 using UnityEngine;
 
 public class OrderManager : MonoBehaviour
@@ -20,7 +21,10 @@ public class OrderManager : MonoBehaviour
     private int _orderMax = 3;
     private float _timeSpawnOrder = 4f;
 
+    private int _totalOrderInday = 0;
+
     private OrderSpanwer _orderSpanwer;
+    private Coroutine _orderSpawnCoroutine;
 
     private void Awake()
     {
@@ -32,8 +36,27 @@ public class OrderManager : MonoBehaviour
     private void Start()
     {
         _orderSpanwer = new OrderSpanwer(_recipeDatabase);
-        StartCoroutine(OrderSpawnLoop());
+        EventListening();
     }
+
+    private void EventListening()
+    {
+        EventManager.StartListening(GameEventKeys.DayStarted, OnDay);
+        EventManager.StartListening(GameEventKeys.NightStarted, OnNight);
+    }    
+
+    private void OnDay()
+    {
+        _orderSpawnCoroutine = StartCoroutine(OrderSpawnLoop());
+    }    
+
+    private void OnNight()
+    {
+        if(_orderSpawnCoroutine != null) StopCoroutine(_orderSpawnCoroutine);
+        Debug.Log("Total inday : " + _totalOrderInday);
+        _totalOrderInday = 0;
+    }    
+
 
     private IEnumerator OrderSpawnLoop()
     {
@@ -47,6 +70,7 @@ public class OrderManager : MonoBehaviour
                 MoveInScreen(obj);
                 yield return new WaitForSeconds(1.5f);
                 RefreshPosition();
+                _totalOrderInday++;
             }    
             yield return new WaitForSeconds(_timeSpawnOrder);
         }    

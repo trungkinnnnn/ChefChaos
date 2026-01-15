@@ -6,22 +6,28 @@ public class MobileCameraZoom : MonoBehaviour
 {
     [SerializeField] CinemachineVirtualCamera _vcam;
     [SerializeField] float _zoomSpeed = 0.2f;
+    [SerializeField] float _zoomSmoothTime = 0.15f;
     [SerializeField] float _minDistance = -18;
     [SerializeField] float _maxDistance = -9;
 
     private CinemachineOrbitalTransposer _orbital;
 
+    private float _targetZoom;
+    private float _zoomVelocity;
+
     private void Start()
     {
         _orbital = _vcam.GetCinemachineComponent<CinemachineOrbitalTransposer>();
+        _targetZoom = _orbital.m_FollowOffset.z;
     }
 
     private void Update()
     {
-        Zoom();
+        HandleZoom();
+        ZoomSmooth();
     }
 
-    private void Zoom()
+    private void HandleZoom()
     {
         if(Input.touchCount != 2) return;   
 
@@ -39,13 +45,18 @@ public class MobileCameraZoom : MonoBehaviour
 
         float delta = currDist - prevDist;
 
-        Vector3 offset = _orbital.m_FollowOffset;
-        offset.z -= delta * _zoomSpeed;
-        offset.z = Mathf.Clamp(offset.z, _minDistance, _maxDistance);
-        _orbital.m_FollowOffset = offset;
-
+        _targetZoom -= delta * _zoomSpeed;
+        _targetZoom = Mathf.Clamp(_targetZoom, _minDistance, _maxDistance);
 
     }
+
+    private void ZoomSmooth()
+    {
+        Vector3 offset = _orbital.m_FollowOffset;
+
+        offset.z = Mathf.SmoothDamp(offset.z, _targetZoom, ref _zoomVelocity, _zoomSmoothTime);
+        _orbital.m_FollowOffset = offset;
+    }    
 
     private bool IsTouchOnUI(Touch t)
     {
