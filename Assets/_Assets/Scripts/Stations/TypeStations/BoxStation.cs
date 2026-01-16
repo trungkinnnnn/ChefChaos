@@ -5,7 +5,9 @@ public class BoxStation : BaseStation
 {
     private static int _HAS_ANI_BOOL_ISOPEN = Animator.StringToHash("isOpen");
 
-    [SerializeField] GameObject _foodPrefab;
+    [SerializeField] FoodType _foodSpawn;        
+    
+
     private Animator _animator;
 
     protected override void Start()
@@ -35,7 +37,9 @@ public class BoxStation : BaseStation
 
     public PickableObj SpawnFood(PlayerInteraction interaction)
     {
-        var objFood = PoolManager.Instance.Spawner(_foodPrefab, _transformHoldFood.position, Quaternion.identity, _transformHoldFood);
+        GameObject foodSpawn = IngredientService.Instance.PurchaseIngredient(_foodSpawn, transform.position);
+        if (foodSpawn == null) return null;
+        var objFood = PoolManager.Instance.Spawner(foodSpawn, _transformHoldFood.position, Quaternion.identity, _transformHoldFood);
         if (objFood != null && objFood.TryGetComponent<PickableObj>(out PickableObj obj))
         {
             StartCoroutine(WaitOneFrameToSpawnerAndPickUp(obj));
@@ -49,7 +53,9 @@ public class BoxStation : BaseStation
     public override void DoSomeThing()
     {
         if (!_player.CheckNullPickUpObj()) return;
-        _player.SetPickUpObj(SpawnFood(_player));
+        PickableObj pickableObj = SpawnFood(_player);
+        if (pickableObj == null) return;
+        _player.SetPickUpObj(pickableObj);
     }
 
 }

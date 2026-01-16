@@ -9,6 +9,7 @@ public class ServiceStation : BaseStation
     [SerializeField] Transform _positionSpawn;
     private float _timeSpawnPlate = 3f;
     private PlateEmptyHidde _plateHidden;
+
     protected override void Start()
     {
         base.Start();
@@ -33,7 +34,11 @@ public class ServiceStation : BaseStation
         base.PickableObj(obj);
 
         StartCoroutine(DespawnPlateAndCreateWaitSeconds(obj));
-        bool isMatch = TryOrderMatch(foodTypes);  
+        bool isMatch = TryOrderMatch(foodTypes);
+        if (isMatch)
+        {
+            IngredientService.Instance.CompletedOrder(transform.position, foodTypes);
+        }
     }
 
     private bool TryOrderMatch(List<FoodType> food)
