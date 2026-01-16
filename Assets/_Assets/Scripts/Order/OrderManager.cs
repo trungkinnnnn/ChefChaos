@@ -24,7 +24,7 @@ public class OrderManager : MonoBehaviour
     private float _timeSpawnOrder = 4f;
 
     // Count Order
-    private int _totalOrderInday = 0;
+    private int _totalOrderSpawnerInday = 0;
     private int _totalOrderCompeletedInDay = 0; 
     private bool _isNight = false;
 
@@ -52,9 +52,9 @@ public class OrderManager : MonoBehaviour
     }    
 
     private void OnDay()
-    {
+    {   
+        StartNewDay();
         _orderSpawnCoroutine = StartCoroutine(OrderSpawnLoop());
-        _isNight = false;
     }    
 
     private void OnNight()
@@ -77,7 +77,7 @@ public class OrderManager : MonoBehaviour
                 MoveInScreen(obj);
                 yield return new WaitForSeconds(1.5f);
                 RefreshPosition();
-                _totalOrderInday++;
+                _totalOrderSpawnerInday++;
             }    
             yield return new WaitForSeconds(_timeSpawnOrder);
         }    
@@ -119,16 +119,23 @@ public class OrderManager : MonoBehaviour
     private void TryEndDay()
     {
         if(!_isNight || _orderCount != 0) return;
-        Debug.Log("Total orderSpawn inday : " + _totalOrderInday);
-        _totalOrderInday = 0;
-        Debug.Log("Total orderCompleted inday : " + _totalOrderCompeletedInDay);
+        EventManager.EmitEvent(GameEventKeys.DayEnded);
+    }
+
+
+    private void StartNewDay()
+    {
         _totalOrderCompeletedInDay = 0;
+        _totalOrderSpawnerInday = 0;
+        _isNight = false;
     }
 
     // ================== Service =================
 
-
     public void PlusOrderCompletedInDay() => _totalOrderCompeletedInDay += 1;
+
+    public int GetTotalOrderCompletedInday() => _totalOrderCompeletedInDay;
+    public int GetTotalOrderSpawnerInday() => _totalOrderSpawnerInday;
 
     public void RemoveOrderForList(OrderUI orderUI)
     {

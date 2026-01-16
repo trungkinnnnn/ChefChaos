@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TigerForge;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -11,4 +12,19 @@ public class GameManager : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = _fps;
     }
+
+    private void Start()
+    {
+        EventListen();
+    }
+
+    private void EventListen()
+    {
+        EventManager.StartListening(GameEventKeys.DataEndDayReady, StopTimeScale);
+    }    
+
+    private void StopTimeScale()
+    {
+        Time.timeScale = 0;
+    }    
 }

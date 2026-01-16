@@ -24,46 +24,26 @@ public class MoneyService : MonoBehaviour
 
     private void EventListening()
     {
-        EventManager.StartListening(GameEventKeys.NightStarted, ShowMoney);
+        EventManager.StartListening(GameEventKeys.DayStarted, ResetMoney);
     }
 
-    private void ShowMoney()
+    private void ResetMoney()
     {
-        ShowEarnedMoneyToday();
-        ShowSpentMoneyToday();
-    }
-
-    private void ShowEarnedMoneyToday()
-    {
-        //Debug.Log("EarnedMoney today : " +  _earnedMoneyToday);
         _earnedMoneyToday = 0;
-    }
-
-    private void ShowSpentMoneyToday()
-    {
-        //Debug.Log("SpentMoney today : " + _spentMoneyToday);
         _spentMoneyToday = 0;
     }
 
+
     // ================ Service ================
-    public void PlusEarnedMoneyToday(int money)
-    {
-        _earnedMoneyToday += money;
-    }
+    public void PlusEarnedMoneyToday(int money) => _earnedMoneyToday += money;
+    public void PlusSpentMoneyToday(int money) => _spentMoneyToday += money;
+    public void MinusMoneyTotal(int money) => _totalMoney -= money;
+    public bool HasEnoughPrice(int money) => money < _totalMoney;
+    public int GetEarnedMoneyToday() => _earnedMoneyToday;  
+    public int GetSpentMoneyToday() => _spentMoneyToday;
 
-    public void PlusSpentMoneyToday(int money)
+    public void UpdateTotalCoin(int coin)
     {
-        _spentMoneyToday += money;
-    }
-
-    public void MinusMoneyTotal(int money)
-    {
-        _totalMoney -= money;
+        _totalMoney += coin;
     }    
-
-    public bool HasEnoughPrice(int money)
-    {
-        return money < _totalMoney;
-    }
-
 }

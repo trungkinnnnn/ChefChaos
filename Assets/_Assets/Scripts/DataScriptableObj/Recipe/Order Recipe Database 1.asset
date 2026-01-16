@@ -25,4 +25,4 @@ MonoBehaviour:
       amount: 3
       isRequied: 1
     maxTotalFood: 3
-    timeCookDone: 10
+    timeCookDone: 20

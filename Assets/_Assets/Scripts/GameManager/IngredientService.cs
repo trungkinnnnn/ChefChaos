@@ -84,7 +84,7 @@ public class IngredientService : MonoBehaviour
         }
 
         var orderResult = _orderProcessor.ProcessOrder(orderedFoods, _lookup);
-
+        MoneyService.Instance.PlusEarnedMoneyToday(orderResult.BasePrice + orderResult.TipBonus);
         ShowOrderCompleteUI(position, orderResult);
     }
 
