@@ -8,7 +8,7 @@ public class MoneyService : MonoBehaviour
 {
     public static MoneyService Instance;
 
-    private int _totalMoney = 20;
+    private int _totalMoney = 25;
     private int _earnedMoneyToday;
     private int _spentMoneyToday;
 
@@ -35,13 +35,13 @@ public class MoneyService : MonoBehaviour
 
     private void ShowEarnedMoneyToday()
     {
-        Debug.Log("EarnedMoney today : " +  _earnedMoneyToday);
+        //Debug.Log("EarnedMoney today : " +  _earnedMoneyToday);
         _earnedMoneyToday = 0;
     }
 
     private void ShowSpentMoneyToday()
     {
-        Debug.Log("SpentMoney today : " + _spentMoneyToday);
+        //Debug.Log("SpentMoney today : " + _spentMoneyToday);
         _spentMoneyToday = 0;
     }
 

@@ -8,6 +8,7 @@ public class OrderManager : MonoBehaviour
 {
     public static OrderManager Instance;
 
+    // Animation Order
     [SerializeField] CookingRecipeDatabase _recipeDatabase;
     [SerializeField] GameObject _orderUIPrefab;
     [SerializeField] Transform _orderParent;
@@ -16,13 +17,18 @@ public class OrderManager : MonoBehaviour
     [SerializeField] RectTransform _positionSpawner;
     [SerializeField] float _spacingOderBox = 190;
 
+    // Order Setting
     private List<OrderUI> _orders = new();
     private int _orderCount = 0;
     private int _orderMax = 3;
     private float _timeSpawnOrder = 4f;
 
+    // Count Order
     private int _totalOrderInday = 0;
+    private int _totalOrderCompeletedInDay = 0; 
+    private bool _isNight = false;
 
+    // Service Order
     private OrderSpanwer _orderSpanwer;
     private Coroutine _orderSpawnCoroutine;
 
@@ -48,13 +54,14 @@ public class OrderManager : MonoBehaviour
     private void OnDay()
     {
         _orderSpawnCoroutine = StartCoroutine(OrderSpawnLoop());
+        _isNight = false;
     }    
 
     private void OnNight()
     {
         if(_orderSpawnCoroutine != null) StopCoroutine(_orderSpawnCoroutine);
-        Debug.Log("Total inday : " + _totalOrderInday);
-        _totalOrderInday = 0;
+        _isNight = true;
+        TryEndDay();
     }    
 
 
@@ -109,12 +116,27 @@ public class OrderManager : MonoBehaviour
 
     }    
 
-    // ============= Service ============
+    private void TryEndDay()
+    {
+        if(!_isNight || _orderCount != 0) return;
+        Debug.Log("Total orderSpawn inday : " + _totalOrderInday);
+        _totalOrderInday = 0;
+        Debug.Log("Total orderCompleted inday : " + _totalOrderCompeletedInDay);
+        _totalOrderCompeletedInDay = 0;
+    }
+
+    // ================== Service =================
+
+
+    public void PlusOrderCompletedInDay() => _totalOrderCompeletedInDay += 1;
+
     public void RemoveOrderForList(OrderUI orderUI)
     {
         _orders.Remove(orderUI);
         _orderCount -= 1;
         RefreshPosition();
+
+        TryEndDay();
     }    
 
     public List<OrderUI> GetOrders()

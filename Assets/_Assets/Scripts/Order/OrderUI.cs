@@ -163,6 +163,7 @@ public class OrderUI : MonoBehaviour
             yield return null;
         }       
         StartCoroutine(WaitTimeDestroy(_HAS_ANI_ISDESRTOY));
+
     }
 
     private IEnumerator WaitTimeDestroy(int ani, float duration = 1f) 
@@ -211,6 +212,7 @@ public class OrderUI : MonoBehaviour
     {
         _isCompleted = true;
         _FoodCompletedObj.SetActive(true);
+        _manager.PlusOrderCompletedInDay();
         StartCoroutine(WaitTimeDestroy(_HAS_ANI_ISCOMPLETED, 1.5f));
     }
 
