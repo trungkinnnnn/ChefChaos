@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TigerForge;
+using UnityEngine;
 
 public class DayNightCycle : MonoBehaviour
-{   
+{
+    public static DayNightCycle Instance;
+
     [SerializeField] Light _sun;
     [SerializeField] float _dayDuration;
     [SerializeField] Vector2 _dayStartEnd;
@@ -13,6 +13,11 @@ public class DayNightCycle : MonoBehaviour
     
     private TimeOfDay _currenState = TimeOfDay.Day;
     private float _rotationSpeed;
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+    }
 
     private void Start()
     {
@@ -52,6 +57,11 @@ public class DayNightCycle : MonoBehaviour
         }
          
     }
+
+    // ================== Service ====================
+
+    public int GetDay() => _dayCount;
+
 }
 
 public enum TimeOfDay

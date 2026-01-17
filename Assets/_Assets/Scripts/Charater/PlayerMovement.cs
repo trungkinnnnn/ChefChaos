@@ -1,3 +1,4 @@
+using TigerForge;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IMovement
@@ -11,8 +12,19 @@ public class PlayerMovement : MonoBehaviour, IMovement
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        EventListen();
     }
 
+    private void EventListen()
+    {
+        EventManager.StartListening(GameEventKeys.DayEnded, LockInputDayEnd);
+        EventManager.StartListening(GameEventKeys.DayStarted, OpenInputDayStart);
+    }    
+
+    private void LockInputDayEnd() => _lockInput = true;
+
+    private void OpenInputDayStart() => _lockInput = false;
+  
     private void FixedUpdate()
     {
         if (_lockInput)
@@ -27,7 +39,7 @@ public class PlayerMovement : MonoBehaviour, IMovement
 
 
     // ============= Interface (IMovement) ================
-    public bool IsMoving() => _joystick.Vertical != 0 || _joystick.Horizontal != 0;      
+    public bool IsMoving() => (_joystick.Vertical != 0 || _joystick.Horizontal != 0) && _lockInput != true ;      
 
     public void LockInput(bool value) => _lockInput = value;   
 

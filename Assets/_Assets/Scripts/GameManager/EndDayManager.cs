@@ -14,7 +14,7 @@ public class EndDayManager : MonoBehaviour
     private int _totalOrderCompleted;
     private int _totalOrderSpawnerInDay;
     private int _totalOrderCompletedInDay;
-    private int _orderCpmpletedPre;
+    private float _orderCpmpletedPre;
 
     // Money today
     private int _tax = 0;   
@@ -77,7 +77,7 @@ public class EndDayManager : MonoBehaviour
         _totalOrderSpawner += _totalOrderSpawnerInDay;
         _totalOrderCompleted += _totalOrderCompletedInDay;
 
-        _orderCpmpletedPre = _totalOrderCompleted / _totalOrderSpawner;
+        _orderCpmpletedPre = 1.0f * _totalOrderCompleted / _totalOrderSpawner;
     }    
 
     private IEnumerator UpdateTotaCoinAndUI()
@@ -91,7 +91,7 @@ public class EndDayManager : MonoBehaviour
 
     public int TotalOrderSpawnerInday() => _totalOrderSpawnerInDay;
     public int TotalOrderCompletedInday() => _totalOrderCompletedInDay;
-    public int OrderCompletedPre() => _orderCpmpletedPre;
+    public int OrderCompletedPre() => (int)(_orderCpmpletedPre * 100f);
     public int EarnedMoneyInday() => _earnedMoneyToday;
     public int SpentMoneyInday() => _spentMoneyToday;
     public float TaxPer() => _taxPer * 100f;

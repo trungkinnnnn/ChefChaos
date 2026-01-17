@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     private int _fps = 60;
 
     private void Awake()
     {
+        if (Instance == null) Instance = this;
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = _fps;
     }
@@ -21,10 +24,11 @@ public class GameManager : MonoBehaviour
     private void EventListen()
     {
         EventManager.StartListening(GameEventKeys.DataEndDayReady, StopTimeScale);
-    }    
+    }
 
-    private void StopTimeScale()
-    {
-        Time.timeScale = 0;
-    }    
+    private void StopTimeScale() => Time.timeScale = 0;    
+
+    // ============== Service ============
+    public void RunTimeScale() => Time.timeScale = 1;
+ 
 }

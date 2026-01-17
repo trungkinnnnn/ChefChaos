@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using TigerForge;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class EndDayUI : MonoBehaviour
+public class SummaryUI : MonoBehaviour
 {
     private const string _COLOR_RED = "#C94A4A";
     private const string _COLOR_GREEN = "#3FA34D";
@@ -28,10 +29,13 @@ public class EndDayUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI _net;
     [SerializeField] TextMeshProUGUI _total;
 
+    [Header("Button")]
+    [SerializeField] Button _nextDayButton;
 
     private void Start()
     {
         _canvasGroup.gameObject.SetActive(false);
+        _nextDayButton.onClick.AddListener(NextDay);
         EventListen();
     }
 
@@ -43,11 +47,17 @@ public class EndDayUI : MonoBehaviour
     private void ShowDayEnd()
     {
         _canvasGroup.gameObject.SetActive(true);
-        StartCoroutine(ChangeAlpha());
+        StartCoroutine(ChangeAlpha(0, 1));
+        SetTitalDay();
         SetCompletedOrder();
         SetOverall();
         SetMoney();
     }   
+
+    private void SetTitalDay()
+    {
+        _tilteDay.text ="day" + DayNightCycle.Instance.GetDay();
+    }    
     
     private void SetCompletedOrder()
     {
@@ -88,15 +98,22 @@ public class EndDayUI : MonoBehaviour
         }    
     }    
 
-    private IEnumerator ChangeAlpha()
+    private IEnumerator ChangeAlpha(int timeStart, float timeEnd)
     {
         float time = 0;
         while(time < _timeChange)
         {
             time += Time.unscaledDeltaTime;
-            _canvasGroup.alpha = Mathf.Lerp(0, 1, time/_timeChange);    
+            _canvasGroup.alpha = Mathf.Lerp(timeStart, timeEnd, time/_timeChange);    
             yield return null;
         }    
+        if(timeEnd == 0) _canvasGroup.gameObject.SetActive(false);
+    }    
+
+    private void NextDay()
+    {
+        GameManager.Instance.RunTimeScale();
+        StartCoroutine(ChangeAlpha(1, 0));
     }    
 
 }
