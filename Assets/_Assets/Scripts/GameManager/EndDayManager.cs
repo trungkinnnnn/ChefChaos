@@ -82,7 +82,7 @@ public class EndDayManager : MonoBehaviour
 
     private IEnumerator UpdateTotaCoinAndUI()
     {
-        MoneyService.Instance.UpdateTotalCoin(_moneyReturnWallet);
+        MoneyService.Instance.PlusTotalCoin(_moneyReturnWallet);
         yield return new WaitForSeconds(1f); 
         EventManager.EmitEvent(GameEventKeys.DataEndDayReady);
     }    

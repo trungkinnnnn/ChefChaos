@@ -67,6 +67,7 @@ public class OrderManager : MonoBehaviour
 
     private IEnumerator OrderSpawnLoop()
     {
+        yield return new WaitForSecondsRealtime(1f);
         while (true)
         {
             if(_orderCount < _orderMax)

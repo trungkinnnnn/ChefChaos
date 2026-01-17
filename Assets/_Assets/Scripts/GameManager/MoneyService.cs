@@ -15,11 +15,12 @@ public class MoneyService : MonoBehaviour
     private void Awake()
     {
         if (Instance == null) Instance = this;
+        EventListening(); 
     }
 
     private void Start()
     {
-        EventListening();
+        ChangeTotalCoin();
     }
 
     private void EventListening()
@@ -33,17 +34,30 @@ public class MoneyService : MonoBehaviour
         _spentMoneyToday = 0;
     }
 
+    private void ChangeTotalCoin()
+    {
+        EventManager.SetData(GameEventKeys.DataCointotal, _totalMoney);
+        EventManager.EmitEvent(GameEventKeys.DataCointotal);
+    }
+
 
     // ================ Service ================
     public void PlusEarnedMoneyToday(int money) => _earnedMoneyToday += money;
     public void PlusSpentMoneyToday(int money) => _spentMoneyToday += money;
-    public void MinusMoneyTotal(int money) => _totalMoney -= money;
+    public void MinusMoneyTotal(int money)
+    {
+        _totalMoney -= money;
+        ChangeTotalCoin();
+    }    
+    
+    public void PlusTotalCoin(int coin)
+    {
+        _totalMoney += coin;
+        ChangeTotalCoin();
+    }  
     public bool HasEnoughPrice(int money) => money < _totalMoney;
     public int GetEarnedMoneyToday() => _earnedMoneyToday;  
     public int GetSpentMoneyToday() => _spentMoneyToday;
 
-    public void UpdateTotalCoin(int coin)
-    {
-        _totalMoney += coin;
-    }    
+  
 }

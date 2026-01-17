@@ -112,7 +112,7 @@ public class SummaryUI : MonoBehaviour
 
     private void NextDay()
     {
-        GameManager.Instance.RunTimeScale();
+        EventManager.EmitEvent(GameEventKeys.SkipNight);
         StartCoroutine(ChangeAlpha(1, 0));
     }    
 

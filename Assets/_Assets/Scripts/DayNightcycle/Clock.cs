@@ -5,16 +5,16 @@ using UnityEngine;
 public class Clock : MonoBehaviour
 {
     [SerializeField] float _dayDuration;
+    [SerializeField] float _timeStart;
 
     [SerializeField] Transform _minuteHand;
     [SerializeField] Transform _hourHand;
+
+    private float _clockSpeed = 2f;
     
-
-    [SerializeField] float _timeStart;
-
     private void Update()
     {
-        _timeStart += Time.deltaTime;
+        _timeStart += Time.deltaTime * _clockSpeed;
         UpdateClock();
     }
 

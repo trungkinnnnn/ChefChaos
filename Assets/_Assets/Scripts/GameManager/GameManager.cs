@@ -27,8 +27,5 @@ public class GameManager : MonoBehaviour
     }
 
     private void StopTimeScale() => Time.timeScale = 0;    
-
-    // ============== Service ============
-    public void RunTimeScale() => Time.timeScale = 1;
  
 }
