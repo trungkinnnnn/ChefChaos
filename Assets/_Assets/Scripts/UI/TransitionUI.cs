@@ -13,10 +13,16 @@ public class TransitionUI : MonoBehaviour
     [Header("Button")]
     [SerializeField] List<Button> _buttonTransition = new();
 
+    [Header("Screen")]
+    [SerializeField] List<GameObject> _sceenUI = new();
+
+    private int _currentIndex = 0;
+
     private void Start()
     {
         AddOnclickButton();
-        ChangeColor(0);
+        SetUpColorStart(0);
+        SetupScreenStart(0);
     }
 
     private void AddOnclickButton()
@@ -28,12 +34,20 @@ public class TransitionUI : MonoBehaviour
         }    
     }
 
-    private void HandleChangeScreen(int index)
+    private void SetUpColorStart(int index)
     {
-        ChangeColor(index);
+        for (int i = 0; i < _sceenUI.Count; i++)
+        {
+            if(i == index)
+            {
+                _sceenUI[i].SetActive(true);
+                continue;
+            }
+            _sceenUI[i].SetActive(false);
+        }
     }
 
-    private void ChangeColor(int index)
+    private void SetupScreenStart(int index)
     {
         for (int i = 0; i < _imageColorsButton.Count; i++)
         {
@@ -43,7 +57,42 @@ public class TransitionUI : MonoBehaviour
                 _imageColorsButton[i].color = color;
             }
         }
+    }    
 
+    private void HandleChangeScreen(int index)
+    {
+        ChangeColor(index);
+        ChangeScreen(index);
+        _currentIndex = index;
     }
+
+    private void ChangeColor(int index)
+    {
+        OnDisableColor(_currentIndex);
+        OnEnableColor(index);
+    }   
+    
+    private void OnEnableColor(int index)
+    {
+        string colorHex = _colorHex[index];
+        if (ColorUtility.TryParseHtmlString(colorHex, out Color color))
+        {
+            _imageColorsButton[index].color = color;
+        }
+    }
+    
+    private void OnDisableColor(int index)
+    {
+        if (ColorUtility.TryParseHtmlString(_colorDisable, out Color color))
+        {
+            _imageColorsButton[index].color = color;
+        }
+    }    
+
+    private void ChangeScreen(int index)
+    {
+        _sceenUI[_currentIndex].SetActive(false);
+        _sceenUI[index].SetActive(true);
+    }    
 
 }
