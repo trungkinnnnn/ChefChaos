@@ -12,17 +12,19 @@ public class TransitionUI : MonoBehaviour
 
     [Header("Button")]
     [SerializeField] List<Button> _buttonTransition = new();
+    [SerializeField] Button _quitButton;
 
     [Header("Screen")]
     [SerializeField] List<GameObject> _sceenUI = new();
 
     private int _currentIndex = 0;
 
-    private void Start()
+    private void OnEnable()
     {
         AddOnclickButton();
         SetUpColorStart(0);
         SetupScreenStart(0);
+        _quitButton.onClick.AddListener(BackToHome);
     }
 
     private void AddOnclickButton()
@@ -93,6 +95,11 @@ public class TransitionUI : MonoBehaviour
     {
         _sceenUI[_currentIndex].SetActive(false);
         _sceenUI[index].SetActive(true);
+    }    
+
+    private void BackToHome()
+    {
+        LoadingScene.Instance.LoadSceneHome();
     }    
 
 }

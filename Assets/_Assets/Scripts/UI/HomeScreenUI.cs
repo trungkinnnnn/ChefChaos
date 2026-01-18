@@ -38,7 +38,6 @@ public class HomeScreenUI : MonoBehaviour
     private IEnumerator FlowStartGame()
     {
         yield return new WaitForSeconds(_timeStartGame);    
-        LoadingScene.Instance.PlayAniOpen();
         yield return ActiveLogo(0, 1);
         yield return Loading();
     }
@@ -78,6 +77,7 @@ public class HomeScreenUI : MonoBehaviour
     private void ActionOnClick()
     {
         LoadingScene.Instance.LoadSceneIngame();
+        StartCoroutine(ActiveLogo(1, 0));
     }
 
 

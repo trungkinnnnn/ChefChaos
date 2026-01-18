@@ -7,9 +7,15 @@ using UnityEngine;
 public class UpdateTotalCoinUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _textCoin;
-    void Start()
+
+    private void OnEnable()
     {
         EventListen();
+    }
+
+    private void Start()
+    {
+        UpdateTotalCoin();
     }
 
     private void EventListen()

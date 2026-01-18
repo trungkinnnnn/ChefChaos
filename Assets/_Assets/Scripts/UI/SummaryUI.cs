@@ -32,9 +32,13 @@ public class SummaryUI : MonoBehaviour
     [Header("Button")]
     [SerializeField] Button _nextDayButton;
 
-    private void Start()
+    private void OnEnable()
     {
         _canvasGroup.gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
         _nextDayButton.onClick.AddListener(NextDay);
         EventListen();
     }

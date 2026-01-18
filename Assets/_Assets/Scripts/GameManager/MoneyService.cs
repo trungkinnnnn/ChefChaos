@@ -18,10 +18,11 @@ public class MoneyService : MonoBehaviour
         EventListening(); 
     }
 
-    private void Start()
+    private void OnEnable()
     {
         ChangeTotalCoin();
     }
+
 
     private void EventListening()
     {

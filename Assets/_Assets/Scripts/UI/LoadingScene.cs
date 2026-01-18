@@ -14,7 +14,6 @@ public class LoadingScene : MonoBehaviour
     private static string _SCENE_HOME = "Home";
     private float _timeDelay = 3f;
 
-
     private Animator _ani;
 
     private void Awake()
@@ -31,13 +30,25 @@ public class LoadingScene : MonoBehaviour
         _ani = GetComponentInChildren<Animator>();
     }
 
+    private void Start()
+    {
+        StartCoroutine(WaitForOpen());
+    }
+
+    private IEnumerator WaitForOpen()
+    {
+        yield return new WaitForSeconds(_timeDelay);
+        PlayAniOpen();
+    }    
+
     private IEnumerator FlowChangeScene(string sceneName)
     {
         PlayAniClose();
-        yield return new WaitForSeconds(_timeDelay);
+        yield return new WaitForSecondsRealtime(_timeDelay);
         SceneManager.LoadScene(sceneName);
-        yield return new WaitForSeconds(_timeDelay);
+        yield return new WaitForSecondsRealtime(_timeDelay);
         PlayAniOpen();
+        Time.timeScale = 1f;
     }   
         
 
@@ -48,5 +59,10 @@ public class LoadingScene : MonoBehaviour
     public void LoadSceneIngame()
     {
         StartCoroutine(FlowChangeScene(_SCENE_INGAME));
+    }    
+
+    public void LoadSceneHome()
+    {
+        StartCoroutine(FlowChangeScene(_SCENE_HOME));
     }    
 }

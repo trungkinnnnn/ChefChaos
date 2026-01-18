@@ -11,14 +11,7 @@ public class ProgressBarManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }else
-        {
-            Destroy(gameObject);
-        }    
+        if(Instance == null) Instance = this; 
     }
 
     public ProgressBar CreateProgressBar(Transform transform, float timeEnd, float heighUp = 1f, bool value = true)
