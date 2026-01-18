@@ -18,7 +18,7 @@ public class BotTaskPlannerOrder
             AddBotStep(StationType.Non, foodType, kitchenType, 0);
         }
         AddBotStep(StationType.ServiceStation, FoodType.Non, kitchenType, 0);
-        Print();
+        //Print();
         return _steps;
     }
 

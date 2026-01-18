@@ -6,18 +6,21 @@ using UnityEngine;
 public class DayNightCycle : MonoBehaviour
 {
     public static DayNightCycle Instance;
-
+    [SerializeField] float _timeDelay;
     [SerializeField] Light _sun;
     [SerializeField] float _dayDuration;
     [SerializeField] Vector2 _dayStartEnd;
+    [SerializeField] Vector2 _timeScaleMinMax = new Vector2(1, 5);
 
     private int _dayCount = 1;
+    private bool _canUpdate = false;
+    private bool _canStopSkip = false;
+    // setting rotate speed day
     private float _rotationSpeed;
     private float _timeScaleSpeed = 1;
-    private Vector2 _timeScaleMinMax = new Vector2(1, 5);
+    
 
     private TimeOfDay _currenState = TimeOfDay.Day;
-    
 
     private void Awake()
     {
@@ -26,9 +29,16 @@ public class DayNightCycle : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(WaitForSecondAfterStart());
+    }
+
+    private IEnumerator WaitForSecondAfterStart()
+    {
+        yield return new WaitForSeconds(_timeDelay);
         _rotationSpeed = 360f / _dayDuration;
         EventListen();
-    }
+        _canUpdate = true;
+    }    
 
     private void EventListen()
     {
@@ -39,6 +49,7 @@ public class DayNightCycle : MonoBehaviour
 
     private void Update()
     {
+        if(!_canUpdate) return;
         RotateSun();
         UpdateState();
     }
@@ -60,15 +71,15 @@ public class DayNightCycle : MonoBehaviour
     private void OnDay()
     {
         Debug.Log("Day");
-        EventManager.EmitEvent(GameEventKeys.DayStarted);
         _dayCount++;
+        EventManager.EmitEvent(GameEventKeys.DayStarted);
         StartCoroutine(ChangTimeScale(_timeScaleMinMax.y, _timeScaleMinMax.x));
     }   
     
     private void OnNight()
     {
         EventManager.EmitEvent(GameEventKeys.NightStarted);
-        Debug.Log("Night");
+        Debug.Log("Night"); 
     }    
 
     private void SkipNight()
@@ -91,6 +102,8 @@ public class DayNightCycle : MonoBehaviour
     // ================== Service ====================
 
     public int GetDay() => _dayCount;
+    public float GetTimeDelay () => _timeDelay;
+    public float GetDayDuration() => _dayDuration;
 
 }
 

@@ -3352,6 +3352,7 @@ MonoBehaviour:
     m_Bits: 192
   _maxDirectionMark: 1.5
   _transformHoldFood: {fileID: 2343401794007514187}
+  _porpKitchen: {fileID: 0}
 --- !u!114 &9133665725557073409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9715,7 +9716,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 7012346978b8bec47942d4f6f977afaa, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 1eeafb371c276b5418f98f71053a8971, type: 2}
   m_Bones:
   - {fileID: 3054325250223915190}
   - {fileID: 3054325250223916031}
@@ -9988,7 +9989,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: ad382e109bd0bb440bb423970b37e263, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 7e22bd24ea32f74408de78d153172ec3, type: 2}
   m_Bones:
   - {fileID: 3054325250223915190}
   - {fileID: 3054325250223916031}
@@ -12782,7 +12783,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: aa6da559d9becbe489a53a909df86165, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 8ad3533388bba064bbc9704e1ba629d2, type: 2}
   m_Bones:
   - {fileID: 3054325250223915190}
   - {fileID: 3054325250223916031}

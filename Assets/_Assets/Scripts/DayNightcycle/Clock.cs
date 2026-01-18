@@ -4,16 +4,36 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
-    [SerializeField] float _dayDuration;
-    [SerializeField] float _timeStart;
-
     [SerializeField] Transform _minuteHand;
     [SerializeField] Transform _hourHand;
 
+    private float _dayDuration;
+    private float _timeStart;
+
     private float _clockSpeed = 2f;
-    
+    private bool _canUpdate = false;    
+
+    private void Start()
+    {
+        StartCoroutine(WaitForSecondAfterStart());
+    }
+
+    private IEnumerator WaitForSecondAfterStart()
+    {
+        yield return new WaitForSeconds(DayNightCycle.Instance.GetTimeDelay());
+        Setup();
+    }    
+
+    private void Setup()
+    {
+        _canUpdate = true;
+        _dayDuration = DayNightCycle.Instance.GetDayDuration();
+        _timeStart = _dayDuration / 2;
+    }    
+
     private void Update()
     {
+        if (!_canUpdate) return;
         _timeStart += Time.deltaTime * _clockSpeed;
         UpdateClock();
     }
