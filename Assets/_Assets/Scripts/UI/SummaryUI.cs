@@ -24,7 +24,7 @@ public class SummaryUI : MonoBehaviour
     [Header("Money")]
     [SerializeField] TextMeshProUGUI _earned;
     [SerializeField] TextMeshProUGUI _spent;
-    [SerializeField] TextMeshProUGUI _tax;
+    [SerializeField] TextMeshProUGUI _taxCalulate;
     [SerializeField] TextMeshProUGUI _taxPer;
     [SerializeField] TextMeshProUGUI _net;
     [SerializeField] TextMeshProUGUI _total;
@@ -80,7 +80,7 @@ public class SummaryUI : MonoBehaviour
         _earned.text ="+" + EndDayManager.Instance.EarnedMoneyInday();
         _spent.text ="-" + EndDayManager.Instance.SpentMoneyInday();
         _taxPer.text = EndDayManager.Instance.TaxPer()+ "%";
-        _tax.text = "-" + EndDayManager.Instance.Tax();
+        _taxCalulate.text = "-" + EndDayManager.Instance.Tax();
         _total.text = "+" + EndDayManager.Instance.Total();
         SetNet();
         

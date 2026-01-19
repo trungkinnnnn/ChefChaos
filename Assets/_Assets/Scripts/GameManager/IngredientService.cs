@@ -11,13 +11,14 @@ public class IngredientService : MonoBehaviour
     [SerializeField] IngredientDatabase _database;
 
     [Header("EconomySettin")]
-    [SerializeField] float _ingredientDiscount = 0.2f;
     [SerializeField] Vector2 _tipBonusRanger = new Vector2(1, 5);
 
     private Dictionary<FoodType, InfoFood> _lookup = new();
     private PriceCalculator _priceCalculator;
     private OrderProcessor _orderProcessor;
-    
+
+    private float _ingredientDiscount = 0.1f;
+
 
     private void Awake()
     {
@@ -104,5 +105,11 @@ public class IngredientService : MonoBehaviour
         return foodInfo.prefabFood;
 
     }
+
+    public void UpdateDiscount(float value)
+    {
+        _ingredientDiscount = value;
+        _priceCalculator.UpdateDiscountRate(value);
+    }    
 
 }

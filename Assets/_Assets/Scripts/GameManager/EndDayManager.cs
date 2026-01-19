@@ -53,7 +53,6 @@ public class EndDayManager : MonoBehaviour
         _spentMoneyToday = MoneyService.Instance.GetSpentMoneyToday();
 
         _profitToday = _earnedMoneyToday - _spentMoneyToday;
-        _tax = 0;
         if (_profitToday > _minIncomeForTax)
         {
             _tax = (int)(_profitToday * _taxPer);
@@ -88,7 +87,6 @@ public class EndDayManager : MonoBehaviour
     }    
 
     // =================== Service ==================
-
     public int TotalOrderSpawnerInday() => _totalOrderSpawnerInDay;
     public int TotalOrderCompletedInday() => _totalOrderCompletedInDay;
     public int OrderCompletedPre() => (int)(_orderCpmpletedPre * 100f);
@@ -98,5 +96,7 @@ public class EndDayManager : MonoBehaviour
     public float Tax() => _tax;
     public int Net() => _profitToday;
     public int Total() => _moneyReturnWallet;
+
+    public void UpdateTaxPer(float amount) => _taxPer = amount; 
 
 }

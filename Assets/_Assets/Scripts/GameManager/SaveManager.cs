@@ -69,7 +69,7 @@ public static class SaveManager
         PlayerPrefs.SetInt(KeyPlayerPref.TAX_KEY, taxLevel);
     }
 
-    public static void SaveDiscount(int discount)
+    public static void SaveDiscountLevel(int discount)
     {
         PlayerPrefs.SetInt(KeyPlayerPref.DISCOUNT_KEY, discount);
     }
