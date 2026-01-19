@@ -9207,7 +9207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ScreenGameOver: {fileID: 772532892}
   _minOrderCompletedPre: 50
-  _cousecutivaFaidDay: 5
+  _cousecutivaFaidDay: 3
   _textOrderCompleted: {fileID: 489592861}
   _textDay: {fileID: 271698950}
   _textBest: {fileID: 739160457}
