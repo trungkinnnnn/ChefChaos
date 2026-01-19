@@ -13,6 +13,8 @@ public static class KeyPlayerPref
     public const string TAX_KEY = "TAX";
     public const string DISCOUNT_KEY = "DISCOUNT";
 
-    public const string ACHIEVEMENT_KEY = "ACHIEVEMENT";
+    public const string ACHIEVEMENT_SURVIVAL_KEY = "ACHIEVEMENT_SURVIVAL";
+    public const string ACHIEVEMENT_COMPLETED_KEY = "ACHIVEMENT_COMPLETED";
+    public const string ACHIEVEMENT_BURN_KEY = "ACHIEVEMENT_BURN";
 
 }

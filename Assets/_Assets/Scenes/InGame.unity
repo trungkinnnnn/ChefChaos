@@ -2294,7 +2294,7 @@ GameObject:
   - component: {fileID: 87937340}
   - component: {fileID: 87937339}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ImageSecret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6627,7 +6627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &314251503
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9060,6 +9060,8 @@ GameObject:
   - component: {fileID: 424602869}
   - component: {fileID: 424602871}
   - component: {fileID: 424602867}
+  - component: {fileID: 424602872}
+  - component: {fileID: 424602873}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -9205,7 +9207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ScreenGameOver: {fileID: 772532892}
   _minOrderCompletedPre: 50
-  _cousecutivaFaidDay: 15
+  _cousecutivaFaidDay: 5
   _textOrderCompleted: {fileID: 489592861}
   _textDay: {fileID: 271698950}
   _textBest: {fileID: 739160457}
@@ -9289,6 +9291,52 @@ MonoBehaviour:
   - {fileID: 555394815}
   - {fileID: 145029298}
   - {fileID: 1517104715}
+--- !u!114 &424602872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424602860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752bcde20f6594b44badf5bac344f7ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: 89100113da2f1ee42b6babcd04b1c79b, type: 2}
+  _textDescriptions:
+  - {fileID: 252309115}
+  _textCoin:
+  - {fileID: 709135008}
+  _notDones:
+  - {fileID: 22854994}
+  _dones:
+  - {fileID: 467308246}
+  _doneButtons:
+  - {fileID: 717816321}
+--- !u!114 &424602873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424602860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4bb545d12c56e4ba75d2b1eedbb474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: 3210edeb49d2df54b8d401c1ed4d2314, type: 2}
+  _textDescriptions:
+  - {fileID: 362132279}
+  _textCoin:
+  - {fileID: 1171064960}
+  _notDones:
+  - {fileID: 2031853784}
+  _dones:
+  - {fileID: 1719865751}
+  _doneButtons:
+  - {fileID: 1072946322}
 --- !u!1 &425735324
 GameObject:
   m_ObjectHideFlags: 0
@@ -10391,7 +10439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &467308247
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14790,7 +14838,7 @@ GameObject:
   - component: {fileID: 709135009}
   - component: {fileID: 709135008}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15062,7 +15110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &717816320
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16893,7 +16941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &799188811
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25392,7 +25440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1316408546
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35842,7 +35890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1930507120
 RectTransform:
   m_ObjectHideFlags: 0

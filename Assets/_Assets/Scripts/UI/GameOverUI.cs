@@ -32,6 +32,7 @@ public class GameOverUI : MonoBehaviour
         EvenListen();
         _ScreenGameOver.SetActive(false);
         _quitGame.onClick.AddListener(BackToHome);
+        _buttonRestart.onClick.AddListener(ResetGame);
     }
 
     private void EvenListen()
@@ -76,5 +77,11 @@ public class GameOverUI : MonoBehaviour
     private void BackToHome()
     {
         LoadingScene.Instance.LoadSceneHome();
+    }
+
+    private void ResetGame()
+    {
+        SaveManager.ResetAllData();
+        LoadingScene.Instance.LoadSceneIngame();
     }
 }

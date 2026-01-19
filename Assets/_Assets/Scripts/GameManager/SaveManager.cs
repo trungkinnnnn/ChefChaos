@@ -57,14 +57,26 @@ public static class SaveManager
         return PlayerPrefs.GetInt(KeyPlayerPref.DISCOUNT_KEY, 0);
     }
 
-    public static string LoadAchievemnt()
+
+    // ================== Achievement ===============
+    public static string LoadAchievmentSurvivalDay()
     {
-        return PlayerPrefs.GetString(KeyPlayerPref.ACHIEVEMENT_KEY, string.Empty);
+         return PlayerPrefs.GetString(KeyPlayerPref.ACHIEVEMENT_SURVIVAL_KEY, string.Empty);
+    }
+
+    public static string LoadAchievemetCompletedOrder()
+    {
+        return PlayerPrefs.GetString(KeyPlayerPref.ACHIEVEMENT_COMPLETED_KEY, string.Empty);
+    }
+
+    public static string LoadAchievementBurn()
+    {
+        return PlayerPrefs.GetString(KeyPlayerPref.ACHIEVEMENT_BURN_KEY, string.Empty);
     }
 
     // =================== SaveData =================
 
-    // ================ Day ===============
+    // =================== Day ======================
 
     public static void SaveCurrentDay(int currentDay)
     {
@@ -115,9 +127,19 @@ public static class SaveManager
         PlayerPrefs.SetInt(KeyPlayerPref.DISCOUNT_KEY, discount);
     }
 
-    public static void SaveAchievement(string achievement)
+    public static void SaveAchievementSurvivalDay(string achievement)
     { 
-        PlayerPrefs.SetString(KeyPlayerPref.ACHIEVEMENT_KEY, achievement);
+        PlayerPrefs.SetString(KeyPlayerPref.ACHIEVEMENT_SURVIVAL_KEY, achievement);
+    }
+
+    public static void SaveAchievementCompletedOrder(string achievement)
+    {
+        PlayerPrefs.SetString(KeyPlayerPref.ACHIEVEMENT_COMPLETED_KEY, achievement);
+    }
+
+    public static void SaveAchievementBurnFood(string achievement)
+    {
+        PlayerPrefs.SetString(KeyPlayerPref.ACHIEVEMENT_BURN_KEY, achievement);
     }
 
     public static void SaveData()
