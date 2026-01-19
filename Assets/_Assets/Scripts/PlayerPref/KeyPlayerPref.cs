@@ -5,6 +5,7 @@ public static class KeyPlayerPref
 
     public const string MONEY_KEY = "MONEY";
 
+    public const string SHOP_BOT_KEY = "SHOP";
     public const string TAX_KEY = "TAX";
     public const string DISCOUNT_KEY = "DISCOUNT";
 

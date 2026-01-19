@@ -28,27 +28,27 @@ public class BotExecuteTaskOrder
             case StepTask.StartTask:
                 _botTaskCase.StartTask.Init(kitchenType);
                 yield return _botTaskCase.StartTask.Execute(_botContext, _timeDelay);
-                Debug.Log("Done StartTask");
+                //Debug.Log("Done StartTask");
                 break;
             case StepTask.EndTask:
                 _botTaskCase.EndTask.Init(kitchenType);
                 yield return _botTaskCase.EndTask.Execute(_botContext, _timeDelay);
-                Debug.Log("Done EndTask");
+                //Debug.Log("Done EndTask");
                 break;
             case StepTask.PickUpFood:
                 _botTaskCase.PickFood.Init(step);
                 yield return _botTaskCase.PickFood.Execute(_botContext, _timeDelay);
-                Debug.Log("Done PickUpFood");
+                //Debug.Log("Done PickUpFood");
                 break;
             case StepTask.DropFood:
                 _botTaskCase.DropFood.Init(step);
                 yield return _botTaskCase.DropFood.Execute(_botContext, _timeDelay);
-                Debug.Log("Done DropFood");
+                //Debug.Log("Done DropFood");
                 break;
             case StepTask.ProcessAt:
                 _botTaskCase.ProcessAt.Init(step);
                 yield return _botTaskCase.ProcessAt.Execute(_botContext, _timeDelay);
-                Debug.Log("Done ProcessAt");
+                //Debug.Log("Done ProcessAt");
                 break;
 
         }

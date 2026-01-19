@@ -20,6 +20,7 @@ public class MoneyService : MonoBehaviour
 
     private void OnEnable()
     {
+        _totalMoney = SaveManager.LoadTotalMoney();
         ChangeTotalCoin();
     }
 
@@ -59,6 +60,7 @@ public class MoneyService : MonoBehaviour
     public bool HasEnoughPrice(int money) => money < _totalMoney;
     public int GetEarnedMoneyToday() => _earnedMoneyToday;  
     public int GetSpentMoneyToday() => _spentMoneyToday;
+    public int GetTotalCoin() => _totalMoney;
 
   
 }

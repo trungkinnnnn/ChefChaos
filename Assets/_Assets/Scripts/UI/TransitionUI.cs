@@ -102,4 +102,12 @@ public class TransitionUI : MonoBehaviour
         LoadingScene.Instance.LoadSceneHome();
     }    
 
+    // ================= Service ===============
+    public void GameOver()
+    {
+        foreach(var button in _buttonTransition)
+        {
+            button.gameObject.SetActive(false);
+        }
+    }
 }
