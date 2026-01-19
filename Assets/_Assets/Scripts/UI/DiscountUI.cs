@@ -49,8 +49,8 @@ public class DiscountUI : MonoBehaviour
 
     private void FillText()
     {
-        _titalText.text ="-" + (int)(_discountLevelList[_currentLevel].value * 100);
-        _beforeText.text = CalculateExample(_discountLevelList[_currentLevel].value).ToString();
+        _titalText.text ="-" + (int)(_discountLevelList[_currentLevel].value * 100) + "%";
+        _beforeText.text = _exampleTomato.ToString();
         _afterText.text = CalculateExample(_discountLevelList[_currentLevel + 1].value).ToString();
         _checkObj.gameObject.SetActive(false);
     }

@@ -7,6 +7,8 @@ public static class SaveManager
 
     private static int _moneyStart = 200;
     // ================ LoadData ================
+
+    // ================ Day ===============
     public static int LoadCurrentDay()
     {
         return PlayerPrefs.GetInt(KeyPlayerPref.CURRENT_DAY_KEY, 1);
@@ -16,6 +18,24 @@ public static class SaveManager
     {
         return PlayerPrefs.GetInt(KeyPlayerPref.MAX_DAY_KEY, 1);
     }
+
+    public static int LoadDayLevel()
+    {
+        return PlayerPrefs.GetInt(KeyPlayerPref.DAYLEVEL_KEY, 0);
+    }
+
+    // ================ Order ===================
+    public static int LoadOrderSpawnAll()
+    {
+        return PlayerPrefs.GetInt(KeyPlayerPref.ORDERS_SPAWN_KEY, 0);
+    }
+
+    public static int LoadOrderSpawnCompleted()
+    {
+        return PlayerPrefs.GetInt(KeyPlayerPref.ORDERS_SPAWN_COMPLETED_KEY, 0);
+    }
+    
+    // 
 
     public static int LoadTotalMoney()
     {
@@ -44,6 +64,8 @@ public static class SaveManager
 
     // =================== SaveData =================
 
+    // ================ Day ===============
+
     public static void SaveCurrentDay(int currentDay)
     {
         PlayerPrefs.SetInt(KeyPlayerPref.CURRENT_DAY_KEY, currentDay);
@@ -53,6 +75,25 @@ public static class SaveManager
     {
         PlayerPrefs.SetInt(KeyPlayerPref.MAX_DAY_KEY, maxDay);  
     }
+
+    public static void SaveDayLevel(int dayLevel)
+    {
+        PlayerPrefs.SetInt(KeyPlayerPref.DAYLEVEL_KEY, dayLevel);
+    }
+
+    // ================ Order ===================
+
+    public static void SaveOrderSpawnAll(int orderSpawnAll)
+    {
+        PlayerPrefs.SetInt(KeyPlayerPref.ORDERS_SPAWN_KEY, orderSpawnAll);
+    }
+
+    public static void SaveOrderSpawnCompleted(int orderSpawnCompleted)
+    {
+        PlayerPrefs.SetInt(KeyPlayerPref.ORDERS_SPAWN_COMPLETED_KEY, orderSpawnCompleted);
+    }
+    
+    //
 
     public static void SaveTotalCoin(int totalCoin)
     {
@@ -81,6 +122,12 @@ public static class SaveManager
 
     public static void SaveData()
     {
+        PlayerPrefs.Save();
+    }
+
+    public static void ResetAllData()
+    {
+        PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
     }
 

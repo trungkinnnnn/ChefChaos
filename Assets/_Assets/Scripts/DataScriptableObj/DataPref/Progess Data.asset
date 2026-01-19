@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1088edfde4c103b4db7ea46a50a7b27c, type: 3}
+  m_Name: Progess Data
+  m_EditorClassIdentifier: 
+  daylevels:
+  - id: 0
+    dayLevel: 1
+    database: {fileID: 11400000, guid: d40e44c4ecccc3347a36b1abf0926e40, type: 2}
+  - id: 1
+    dayLevel: 5
+    database: {fileID: 11400000, guid: 25683996ea84cdf41af3ed5901550d25, type: 2}
+  - id: 2
+    dayLevel: 10
+    database: {fileID: 11400000, guid: 828916f68ca698348a366bd8f781725f, type: 2}

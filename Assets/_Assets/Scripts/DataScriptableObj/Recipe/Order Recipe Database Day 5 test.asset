@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cc3a357665bbbc40a8a8af7003c28d1, type: 3}
-  m_Name: Order Recipe Database
+  m_Name: Order Recipe Database Day 5 test
   m_EditorClassIdentifier: 
   recipes:
   - id: 0
@@ -35,50 +35,30 @@ MonoBehaviour:
       amount: 1
       isRequied: 0
     maxTotalFood: 3
-    timeCookDone: 70
+    timeCookDone: 10
   - id: 1
-    disName: 
-    sprite: {fileID: 21300000, guid: 6af48737308a89748ba8f9e851006235, type: 2}
-    resultPrefab: {fileID: 0}
-    type: 2
-    ingredients:
-    - id: 1
-      foodType: 23
-      foodSprite: {fileID: 21300000, guid: 36017fcafb2ec8f49afd2ed736a17a62, type: 3}
-      amount: 1
-      isRequied: 1
-    - id: 1
-      foodType: 3
-      foodSprite: {fileID: 21300000, guid: ee61395d1e26af840844f9ba73f24b78, type: 3}
-      amount: 1
-      isRequied: 1
-    - id: 1
-      foodType: 13
-      foodSprite: {fileID: 21300000, guid: b6d9f2d1cff756840a5ccaf5702ab5c4, type: 2}
-      amount: 1
-      isRequied: 0
-    - id: 1
-      foodType: 11
-      foodSprite: {fileID: 21300000, guid: 77627d930391fac4b8309aa65ffc82d8, type: 2}
-      amount: 1
-      isRequied: 0
-    - id: 1
-      foodType: 9
-      foodSprite: {fileID: 21300000, guid: b2f2575c36daf3143bbaa08ae3fa8e47, type: 2}
-      amount: 1
-      isRequied: 0
-    maxTotalFood: 3
-    timeCookDone: 70
-  - id: 2
     disName: 
     sprite: {fileID: 21300000, guid: 5f437d3e7a6074e489cce4db630b6823, type: 3}
     resultPrefab: {fileID: 0}
     type: 1
     ingredients:
-    - id: 2
+    - id: 1
       foodType: 13
       foodSprite: {fileID: 21300000, guid: b6d9f2d1cff756840a5ccaf5702ab5c4, type: 2}
       amount: 3
       isRequied: 1
     maxTotalFood: 3
-    timeCookDone: 70
+    timeCookDone: 10
+  - id: 2
+    disName: 
+    sprite: {fileID: 21300000, guid: 9dd0d9e94550d714cb9a3c4c00ce50c2, type: 3}
+    resultPrefab: {fileID: 0}
+    type: 1
+    ingredients:
+    - id: 2
+      foodType: 15
+      foodSprite: {fileID: 21300000, guid: 101845abb0494e8409bdefe54f3c9bbb, type: 2}
+      amount: 3
+      isRequied: 1
+    maxTotalFood: 3
+    timeCookDone: 10

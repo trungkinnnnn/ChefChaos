@@ -43,3 +43,8 @@ MonoBehaviour:
     outputType: 9
     processTime: 1.5
     resultPrefabs: {fileID: 7995084307631034053, guid: de03ff1df3fd0c9489c8ebc91de0c318, type: 3}
+  - stationType: 3
+    inputType: 14
+    outputType: 15
+    processTime: 1.5
+    resultPrefabs: {fileID: 4020153638894575917, guid: 3599b9ccc4542944c890373b7a9a937c, type: 3}

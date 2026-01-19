@@ -14,7 +14,7 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField][Range(0f, 1f)] float _time01;
     
 
-    private int _dayCount = 1;
+    private int _dayCount;
     private bool _canUpdate = false;
     private bool _canStopSkip = false;
     public float timeStopSkip = 0.3f;
@@ -29,10 +29,16 @@ public class DayNightCycle : MonoBehaviour
     {
         if (Instance == null) Instance = this;
     }
-
     private void Start()
     {
+        LoadData();
         StartCoroutine(WaitForSecondAfterStart());
+    }
+
+    private void LoadData()
+    {
+        int day = SaveManager.LoadCurrentDay();
+        _dayCount = day <= 0 ? 1 : day;
     }
 
     private IEnumerator WaitForSecondAfterStart()
@@ -46,6 +52,8 @@ public class DayNightCycle : MonoBehaviour
     private void EventListen()
     {
         EventManager.StartListening(GameEventKeys.SkipNight, SkipNight);
+
+        // Call Even Day Start
         EventManager.EmitEvent(GameEventKeys.DayStarted);
     }    
 

@@ -36,9 +36,9 @@ public class OrderManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
     }
+
     private void Start()
     {
-        _orderSpanwer = new OrderSpanwer(_recipeDatabase);
         EventListening();
     }
 
@@ -130,6 +130,11 @@ public class OrderManager : MonoBehaviour
 
     // ================== Service =================
 
+    public void UpdateDataOrder(CookingRecipeDatabase data)
+    {
+        _orderSpanwer = new OrderSpanwer(data);
+
+    }
     public void PlusOrderCompletedInDay() => _totalOrderCompeletedInDay += 1;
 
     public int GetTotalOrderCompletedInday() => _totalOrderCompeletedInDay;

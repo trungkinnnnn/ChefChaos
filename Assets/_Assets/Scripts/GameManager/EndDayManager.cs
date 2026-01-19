@@ -32,7 +32,14 @@ public class EndDayManager : MonoBehaviour
 
     private void Start()
     {
+        LoadData();
         EventListening();
+    }
+
+    private void LoadData()
+    {
+        _totalOrderSpawner = SaveManager.LoadOrderSpawnAll();
+        _totalOrderCompleted = SaveManager.LoadOrderSpawnCompleted();
     }
 
     private void EventListening()
@@ -45,6 +52,16 @@ public class EndDayManager : MonoBehaviour
         CalculateMoneyToday();
         CalculateTotalOrderCompletedRate();
         StartCoroutine(UpdateTotaCoinAndUI());
+        SaveData();
+    }
+
+    private void SaveData()
+    {
+        SaveManager.SaveCurrentDay(DayNightCycle.Instance.GetDay() + 1);
+        SaveManager.SaveTotalCoin(MoneyService.Instance.GetTotalCoin());
+        SaveManager.SaveOrderSpawnAll(_totalOrderSpawner);
+        SaveManager.SaveOrderSpawnCompleted(_totalOrderCompleted);
+        SaveManager.SaveData();
     }
 
     private void CalculateMoneyToday()

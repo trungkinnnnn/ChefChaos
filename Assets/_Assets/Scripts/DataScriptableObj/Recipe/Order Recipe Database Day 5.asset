@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc3a357665bbbc40a8a8af7003c28d1, type: 3}
+  m_Name: Order Recipe Database Day 5
+  m_EditorClassIdentifier: 
+  recipes:
+  - id: 0
+    disName: 
+    sprite: {fileID: 21300000, guid: 6160b484da1894a4f8dc1cf09c1f4645, type: 2}
+    resultPrefab: {fileID: 0}
+    type: 2
+    ingredients:
+    - id: 0
+      foodType: 7
+      foodSprite: {fileID: 21300000, guid: f416c916292aef545935a3219c954275, type: 3}
+      amount: 1
+      isRequied: 1
+    - id: 0
+      foodType: 13
+      foodSprite: {fileID: 21300000, guid: b6d9f2d1cff756840a5ccaf5702ab5c4, type: 2}
+      amount: 1
+      isRequied: 0
+    - id: 0
+      foodType: 11
+      foodSprite: {fileID: 21300000, guid: 283326f5d281e7f47809f2dc1f18fb14, type: 3}
+      amount: 1
+      isRequied: 0
+    maxTotalFood: 3
+    timeCookDone: 70
+  - id: 1
+    disName: 
+    sprite: {fileID: 21300000, guid: 5f437d3e7a6074e489cce4db630b6823, type: 3}
+    resultPrefab: {fileID: 0}
+    type: 1
+    ingredients:
+    - id: 1
+      foodType: 13
+      foodSprite: {fileID: 21300000, guid: b6d9f2d1cff756840a5ccaf5702ab5c4, type: 2}
+      amount: 3
+      isRequied: 1
+    maxTotalFood: 3
+    timeCookDone: 70
+  - id: 2
+    disName: 
+    sprite: {fileID: 21300000, guid: 9dd0d9e94550d714cb9a3c4c00ce50c2, type: 3}
+    resultPrefab: {fileID: 0}
+    type: 1
+    ingredients:
+    - id: 2
+      foodType: 15
+      foodSprite: {fileID: 21300000, guid: 101845abb0494e8409bdefe54f3c9bbb, type: 2}
+      amount: 3
+      isRequied: 1
+    maxTotalFood: 3
+    timeCookDone: 70
