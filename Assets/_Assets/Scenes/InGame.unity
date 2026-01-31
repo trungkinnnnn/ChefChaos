@@ -3732,7 +3732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &148436993
 Transform:
   m_ObjectHideFlags: 0
@@ -8036,7 +8036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &373184364
 Transform:
   m_ObjectHideFlags: 0
@@ -11894,7 +11894,7 @@ PrefabInstance:
       objectReference: {fileID: 705507994}
     - target: {fileID: 517018723, guid: d7dce48e404868c46a862ca531fddf3d, type: 3}
       propertyPath: _dayDuration
-      value: 60
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 517018723, guid: d7dce48e404868c46a862ca531fddf3d, type: 3}
       propertyPath: timeStopSkip
@@ -14642,14 +14642,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.9659259, y: -0, z: 0.258819, w: 0}
+  m_LocalRotation: {x: 0.5657092, y: -0.20978655, z: 0.15158129, w: 0.7829342}
   m_LocalPosition: {x: -995.5494, y: -598.1216, z: 47.291237}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1211470113}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 180, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 71.7, y: -30, z: 0}
 --- !u!114 &705507996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15767,7 +15767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2505038701228364822, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2505038701228374044, guid: cd1f034eb140d644093c6b5f901853be, type: 3}
       propertyPath: m_RootOrder
@@ -16226,7 +16226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &781160344
 Transform:
   m_ObjectHideFlags: 0
@@ -29842,6 +29842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1577145174}
   - component: {fileID: 1577145175}
+  - component: {fileID: 1577145176}
   m_Layer: 5
   m_Name: TotalCoin
   m_TagString: Untagged
@@ -29884,6 +29885,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textCoin: {fileID: 1165453082}
+--- !u!114 &1577145176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577145173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501746b30ff068c41adf5ecc88342151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buyCoinBtn: {fileID: 387397920}
 --- !u!1001 &1578938838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32753,7 +32767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1779259681
 Transform:
   m_ObjectHideFlags: 0
@@ -40557,7 +40571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3054325250223903029, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3054325250223918842, guid: acd189fc2741efb48b652d5f8bb4e54c, type: 3}
       propertyPath: m_RootOrder
@@ -40676,7 +40690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8822430322346345684, guid: b625cd03d1e4fee438fbb39d07b18f8d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b625cd03d1e4fee438fbb39d07b18f8d, type: 3}
